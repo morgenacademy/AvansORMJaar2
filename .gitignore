@@ -1,0 +1,9 @@
+# Alles negeren
+*
+
+# Behalve de deploy map
+!docs/
+!docs/**
+
+# En de gitignore zelf
+!.gitignore

@@ -7,3 +7,6 @@
 
 # En de gitignore zelf
 !.gitignore
+
+# En de README voor collega's
+!README.md

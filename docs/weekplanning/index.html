@@ -5525,5 +5525,35 @@
       renderActionPlan();
       setActivePage(pageFromLocation());
     </script>
-  </body>
+<script>
+  (() => {
+    const replacement = 'Leiderschap en Communicatie';
+    const pattern = /\bMDT[\s-]*missies?\b/gi;
+
+    const replaceText = (node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        node.nodeValue = node.nodeValue.replace(pattern, replacement);
+        return;
+      }
+
+      if (node.nodeType !== Node.ELEMENT_NODE || ['SCRIPT', 'STYLE'].includes(node.tagName)) {
+        return;
+      }
+
+      for (const child of node.childNodes) {
+        replaceText(child);
+      }
+    };
+
+    const update = () => replaceText(document.body);
+
+    update();
+    new MutationObserver(update).observe(document.body, {
+      childList: true,
+      subtree: true,
+      characterData: true
+    });
+  })();
+</script>
+</body>
 </html>

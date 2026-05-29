@@ -1,0 +1,763 @@
+/* Reader Kennistrack P1 — ORM jaar 2
+   Stijl geleend van docs/index.html (praatplaat). Avenir Next + warm papier.
+   Print-vriendelijk: één sectie per pagina, callouts blijven intact. */
+
+:root {
+  --ink: #162136;
+  --muted: #62708c;
+  --page: #f5f1e8;
+  --panel: #ffffff;
+  --slate: #2f3849;
+  --blue: #2f61a8;
+  --blue-soft: #dbe8f9;
+  --green: #5f9d36;
+  --green-soft: #e5f2d9;
+  --orange: #d98b2f;
+  --orange-soft: #f8ead8;
+  --yellow: #f4bf3a;
+  --yellow-soft: #fff1bf;
+  --red: #d60000;
+  --red-soft: #ffd6d6;
+  --border: rgba(22, 33, 54, 0.1);
+  --shadow: 0 12px 32px rgba(22, 33, 54, 0.06);
+  --reading-width: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", "Segoe UI", -apple-system, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(244, 191, 58, 0.18), transparent 24%),
+    radial-gradient(circle at top right, rgba(47, 97, 168, 0.12), transparent 22%),
+    var(--page);
+  color: var(--ink);
+  line-height: 1.6;
+  font-size: 17px;
+}
+
+/* ===== Layout ===== */
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+aside.toc {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+aside.toc h2 {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+aside.toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: chapter;
+}
+
+aside.toc li {
+  counter-increment: chapter;
+  margin: 4px 0;
+}
+
+aside.toc a {
+  display: block;
+  padding: 8px 12px 8px 36px;
+  position: relative;
+  color: var(--ink);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: background 0.15s;
+}
+
+aside.toc a::before {
+  content: counter(chapter);
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+aside.toc a:hover {
+  background: var(--yellow-soft);
+}
+
+main {
+  max-width: var(--reading-width);
+}
+
+/* ===== Hero / cover ===== */
+.cover {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow);
+}
+
+.cover .eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ece3d1;
+  color: #6c5114;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.cover h1 {
+  margin: 16px 0 12px;
+  font-size: clamp(32px, 4.5vw, 48px);
+  line-height: 1.05;
+}
+
+.cover .lead {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 0;
+}
+
+/* ===== Chapter ===== */
+.chapter {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow);
+}
+
+.chapter > .chapter-number {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.chapter h2 {
+  margin: 12px 0 8px;
+  font-size: clamp(26px, 3.2vw, 36px);
+  line-height: 1.1;
+}
+
+.chapter .subtitle {
+  color: var(--muted);
+  font-size: 17px;
+  margin: 0 0 24px;
+}
+
+.chapter h3 {
+  margin: 32px 0 12px;
+  font-size: 22px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+
+.chapter h4 {
+  margin: 20px 0 8px;
+  font-size: 17px;
+}
+
+.chapter p { margin: 0 0 14px; }
+
+.chapter ul, .chapter ol {
+  margin: 0 0 14px;
+  padding-left: 22px;
+}
+
+.chapter li { margin-bottom: 6px; }
+
+/* ===== Meta-knoppen (Overzicht / Toetsinhoud, inklapbaar) ===== */
+.meta-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0 8px;
+}
+
+.meta {
+  flex: 1 1 220px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--panel);
+  align-self: start;
+}
+
+.meta > summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 18px;
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--blue);
+  background: var(--blue-soft);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.meta > summary::-webkit-details-marker { display: none; }
+.meta > summary::after { content: "▸"; font-weight: 800; }
+.meta[open] > summary::after { content: "▾"; }
+.meta[open] { flex-basis: 100%; }
+.meta > summary:hover { filter: brightness(0.97); }
+
+/* binnenblokken vlak maken: de .meta levert de rand al */
+.meta > .callout,
+.meta > .toetsmatrix {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .meta { flex-basis: 100%; }
+}
+
+/* ===== Toetsmatrix (overzichtstabel) ===== */
+.toetsmatrix {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 32px 36px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow);
+}
+
+.toetsmatrix h2 {
+  margin: 0 0 6px;
+  font-size: 24px;
+}
+
+.toetsmatrix > p {
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+.toetsmatrix table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.toetsmatrix th,
+.toetsmatrix td {
+  text-align: left;
+  vertical-align: top;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.toetsmatrix thead th {
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.toetsmatrix tbody tr:nth-child(even) { background: #faf6ec; }
+
+.toetsmatrix .tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-top: 6px;
+}
+
+.toetsmatrix .tag-nieuw { background: var(--green-soft); color: #34691a; }
+.toetsmatrix .tag-opfris { background: var(--yellow-soft); color: #6c5114; }
+
+@media (max-width: 700px) {
+  .toetsmatrix { padding: 20px; }
+  .toetsmatrix table, .toetsmatrix thead, .toetsmatrix tbody, .toetsmatrix tr, .toetsmatrix td { display: block; }
+  .toetsmatrix thead { display: none; }
+  .toetsmatrix tbody tr { margin-bottom: 16px; border: 1px solid var(--border); border-radius: 12px; padding: 8px; }
+  .toetsmatrix td { border-bottom: none; padding: 4px 8px; }
+  .toetsmatrix td::before { content: attr(data-label); display: block; font-weight: 800; font-size: 11px; text-transform: uppercase; color: var(--muted); }
+}
+
+/* ===== Blockquote / citaat ===== */
+blockquote {
+  margin: 20px 0;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--orange);
+  color: var(--ink);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--muted);
+  font-style: normal;
+}
+
+blockquote cite::before { content: "— "; }
+
+/* ===== Klikbare thumbnails (klein, vergroot in nieuw tabblad) ===== */
+.thumb-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 6px 0;
+}
+
+.thumb {
+  max-height: 150px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: zoom-in;
+  display: block;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.thumb:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow);
+}
+
+/* ===== Figuur / model-illustratie ===== */
+figure {
+  margin: 24px 0;
+  padding: 20px;
+  background: #faf6ec;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
+figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ===== Empathy Map (6-grid model) ===== */
+.empathy-map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 8px;
+  margin: 16px 0;
+  font-size: 14px;
+}
+
+.empathy-map .em-cell {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.empathy-map .em-cell h5 {
+  margin: 0 0 6px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+}
+
+.empathy-map .em-cell p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.empathy-map .em-pains { background: var(--red-soft); }
+.empathy-map .em-pains h5 { color: var(--red); }
+.empathy-map .em-gains { background: var(--green-soft); }
+.empathy-map .em-gains h5 { color: var(--green); }
+
+/* ===== Power/Interest matrix ===== */
+.power-interest {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr;
+  grid-template-rows: 1fr 1fr 50px;
+  gap: 6px;
+  margin: 16px 0;
+  font-size: 13px;
+  min-height: 280px;
+}
+
+.power-interest .pi-label-y {
+  grid-row: 1 / 3;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 8px 0;
+}
+
+.power-interest .pi-cell {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.power-interest .pi-cell strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--blue);
+}
+
+.power-interest .pi-cell em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 12px;
+}
+
+.power-interest .pi-axis-x {
+  grid-column: 2 / 4;
+  text-align: center;
+  font-weight: 600;
+  color: var(--muted);
+  padding-top: 10px;
+}
+
+.power-interest .pi-tag-low,
+.power-interest .pi-tag-high {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+  align-self: end;
+}
+
+/* ===== Mad Lib formule ===== */
+.madlib {
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 8px 0;
+}
+
+.madlib strong {
+  background: var(--yellow-soft);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-style: normal;
+}
+
+/* ===== Inline citatie (APA) ===== */
+cite, .ref {
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* ===== Callouts ===== */
+.callout {
+  margin: 24px 0;
+  padding: 20px 24px;
+  border-radius: 14px;
+  border-left: 4px solid;
+  background: var(--yellow-soft);
+  border-color: var(--yellow);
+}
+
+.callout.spark {
+  background: #fff8e7;
+  border-color: var(--orange);
+}
+
+.callout.spark::before {
+  content: "⚡ Zo deed Spark het";
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 10px;
+}
+
+.callout.warning {
+  background: var(--red-soft);
+  border-color: var(--red);
+}
+
+.callout.warning::before {
+  content: "⚠ Veelgemaakte fout";
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 10px;
+}
+
+.callout.tip {
+  background: var(--green-soft);
+  border-color: var(--green);
+}
+
+.callout.tip::before {
+  content: "✓ Tip";
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+/* ===== Kernbegrippen-tabel ===== */
+.begrippen {
+  margin: 16px 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.begrippen dt {
+  background: var(--blue-soft);
+  padding: 10px 16px;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.begrippen dd {
+  margin: 0;
+  padding: 10px 16px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.begrippen dd:last-child { border-bottom: none; }
+
+/* ===== Video embed ===== */
+.video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  margin: 24px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-caption {
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: -16px;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+/* ===== Oefenvragen ===== */
+.quiz {
+  margin: 32px 0 0;
+  padding: 24px;
+  background: #faf6ec;
+  border-radius: 14px;
+  border: 1px dashed rgba(22, 33, 54, 0.15);
+}
+
+.quiz h3 {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+  color: var(--orange);
+}
+
+.quiz details {
+  margin: 12px 0;
+  padding: 12px 16px;
+  background: var(--panel);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.quiz summary {
+  cursor: pointer;
+  font-weight: 600;
+  list-style: none;
+}
+
+.quiz summary::-webkit-details-marker { display: none; }
+
+.quiz summary::before {
+  content: "▸ ";
+  color: var(--orange);
+  font-weight: 800;
+}
+
+.quiz details[open] summary::before { content: "▾ "; }
+
+.quiz .opties {
+  margin: 12px 0 8px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.quiz .opties li {
+  padding: 6px 0 6px 28px;
+  position: relative;
+}
+
+.quiz .opties li::before {
+  content: attr(data-letter) ".";
+  position: absolute;
+  left: 4px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.quiz .antwoord {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.quiz .antwoord strong { color: var(--green); }
+
+/* ===== Samenvatting / checklist ===== */
+.samenvatting {
+  margin: 32px 0 0;
+  padding: 20px 24px;
+  background: var(--blue-soft);
+  border-radius: 14px;
+}
+
+.samenvatting h3 {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+  color: var(--blue);
+}
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  padding: 4px 0 4px 28px;
+  position: relative;
+}
+
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 4px;
+  color: var(--blue);
+  font-size: 18px;
+}
+
+/* ===== Print ===== */
+@media print {
+  /* meta-blokken altijd tonen in afdruk, ook als ze dichtgeklapt zijn */
+  .meta > *:not(summary) { display: block !important; }
+  .meta > summary { background: none; color: var(--ink); }
+  .meta > summary::after { content: ""; }
+  .meta-nav { display: block; }
+  body {
+    background: #fff;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+  .layout { display: block; max-width: none; padding: 0; }
+  aside.toc { display: none; }
+  main { max-width: none; }
+  .cover, .chapter {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+    page-break-after: always;
+  }
+  .chapter:last-of-type { page-break-after: auto; }
+  .callout { page-break-inside: avoid; }
+  .quiz details { page-break-inside: avoid; }
+  .quiz details[open]:not(:has(.antwoord:empty)) { display: block; }
+  /* Toon antwoorden in print */
+  .quiz details > * { display: block !important; }
+  .video { display: none; }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  aside.toc { position: static; max-height: none; }
+}

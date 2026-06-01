@@ -313,6 +313,21 @@ main {
   box-shadow: none;
 }
 
+/* Platte content binnen .meta (zonder gekleurd callout-blok) */
+.meta-content {
+  padding: 18px 22px 20px;
+  background: var(--panel);
+}
+.meta-content p:first-child { margin-top: 0; }
+.meta-content p.studietip {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--muted);
+}
+.meta-content p.studietip strong { color: var(--ink); }
+
 @media (max-width: 600px) {
   .meta { flex-basis: 100%; }
 }

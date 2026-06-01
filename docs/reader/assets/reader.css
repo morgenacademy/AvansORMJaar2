@@ -440,6 +440,85 @@ figure {
   border-left: 1px solid var(--border);
 }
 
+/* Magazine-style: figure zweeft rechts naast tekst, paragrafen lopen eromheen */
+.callout.spark figure.float-right,
+.spark-scene figure.float-right {
+  float: right;
+  max-width: 46%;
+  margin: 0 0 12px 22px;
+  padding: 10px;
+}
+.callout.spark figure.float-right img,
+.spark-scene figure.float-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  cursor: zoom-in;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.callout.spark figure.float-right a:hover img,
+.spark-scene figure.float-right a:hover img {
+  transform: scale(1.02);
+  box-shadow: var(--shadow);
+}
+.callout.spark figure.float-right figcaption,
+.spark-scene figure.float-right figcaption {
+  font-size: 13px;
+  text-align: left;
+}
+.callout.spark::after { content: ""; display: block; clear: both; }
+.spark-scene::after { content: ""; display: block; clear: both; }
+@media (max-width: 600px) {
+  .callout.spark figure.float-right,
+  .spark-scene figure.float-right {
+    float: none;
+    max-width: 100%;
+    margin: 14px 0;
+  }
+}
+
+/* ===== Lightbox overlay ===== */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 33, 54, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 40px;
+  cursor: zoom-out;
+  animation: lightbox-fade 0.18s ease-out;
+}
+.lightbox-overlay img {
+  max-width: 95%;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+  cursor: default;
+}
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.lightbox-close:hover { background: rgba(255, 255, 255, 0.32); }
+@keyframes lightbox-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 figure img {
   max-width: 100%;
   height: auto;

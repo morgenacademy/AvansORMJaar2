@@ -21,6 +21,12 @@
   --border: rgba(22, 33, 54, 0.1);
   --shadow: 0 12px 32px rgba(22, 33, 54, 0.06);
   --reading-width: 720px;
+
+  /* Avans-huisstijl (subtiel toegepast: alleen voor cover-titel, chapter-titels en accenten) */
+  --avans-rood: #C6002A;
+  --avans-donkerblauw: #001A6A;
+  --font-titel: 'Sofia Sans Extra Condensed', 'Avenir Next', sans-serif;
+  --font-body: 'Hanken Grotesk', 'Avenir Next', 'Segoe UI', -apple-system, sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -29,7 +35,7 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
 body {
   margin: 0;
-  font-family: "Avenir Next", "Segoe UI", -apple-system, sans-serif;
+  font-family: var(--font-body);
   background:
     radial-gradient(circle at top left, rgba(244, 191, 58, 0.18), transparent 24%),
     radial-gradient(circle at top right, rgba(47, 97, 168, 0.12), transparent 22%),
@@ -51,15 +57,22 @@ body {
 
 aside.toc {
   position: sticky;
-  top: 24px;
+  top: 80px;
   align-self: start;
-  max-height: calc(100vh - 48px);
+  max-height: calc(100vh - 104px);
   overflow-y: auto;
   padding: 20px;
   background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 16px;
   box-shadow: var(--shadow);
+}
+
+/* Scroll-anchor offset zodat #h1, #overzicht, #toetsinhoud etc. niet onder de sticky topbar verdwijnen */
+:target,
+section.chapter,
+details.meta {
+  scroll-margin-top: 72px;
 }
 
 aside.toc h2 {
@@ -69,6 +82,44 @@ aside.toc h2 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: saturate(180%) blur(8px);
+  -webkit-backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 24px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.topbar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #ffffff;
+  color: var(--avans-rood);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.15s, transform 0.1s;
+  border: 1.5px solid var(--avans-rood);
+}
+.topbar a:hover {
+  background: var(--avans-rood);
+  color: #ffffff;
+}
+.topbar a:active { transform: translateY(1px); }
+@media (max-width: 600px) {
+  .topbar { padding: 8px 12px; gap: 8px; }
+  .topbar a { font-size: 13px; padding: 6px 12px; }
 }
 
 aside.toc ol {
@@ -142,8 +193,14 @@ main {
 
 .cover h1 {
   margin: 16px 0 12px;
-  font-size: clamp(32px, 4.5vw, 48px);
-  line-height: 1.05;
+  font-family: var(--font-titel);
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 0.9;
+  color: var(--avans-rood);
 }
 
 .cover .lead {
@@ -175,8 +232,12 @@ main {
 
 .chapter h2 {
   margin: 12px 0 8px;
-  font-size: clamp(26px, 3.2vw, 36px);
-  line-height: 1.1;
+  font-family: var(--font-titel);
+  font-weight: 800;
+  font-style: normal;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 0.95;
+  color: var(--avans-rood);
 }
 
 .chapter .subtitle {
@@ -525,19 +586,61 @@ cite, .ref {
 }
 
 .callout.spark {
-  background: #fff8e7;
-  border-color: var(--orange);
+  background: #fffaf0;
+  border-left-width: 6px;
+  border-color: var(--avans-rood);
+  box-shadow: inset 0 0 0 1px rgba(198, 0, 42, 0.08);
 }
 
 .callout.spark::before {
   content: "⚡ Zo deed Spark het";
   display: block;
+  font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 10px;
+  color: var(--avans-rood);
+  margin-bottom: 12px;
+}
+
+/* ===== Spark-scene: omhult de openings-scène van elk hoofdstuk ===== */
+.spark-scene {
+  position: relative;
+  margin: 28px 0 32px;
+  padding: 28px 32px 24px;
+  background:
+    linear-gradient(180deg, #fffaf0 0%, #fffefb 100%);
+  border-radius: 16px;
+  border-left: 6px solid var(--avans-rood);
+  box-shadow: inset 0 0 0 1px rgba(198, 0, 42, 0.08);
+}
+
+.spark-scene::before {
+  content: "⚡ Spark-scène";
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--avans-rood);
+  margin-bottom: 8px;
+}
+
+.spark-scene h3 {
+  margin-top: 4px;
+  border-top: none;
+  padding-top: 0;
+  color: var(--ink);
+}
+
+.spark-scene > p:first-of-type {
+  margin-top: 12px;
+}
+
+.spark-scene blockquote {
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .callout.warning {
@@ -738,6 +841,7 @@ cite, .ref {
   }
   .layout { display: block; max-width: none; padding: 0; }
   aside.toc { display: none; }
+  .topbar { display: none; }
   main { max-width: none; }
   .cover, .chapter {
     box-shadow: none;

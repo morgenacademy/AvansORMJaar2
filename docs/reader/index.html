@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Reader Kennistrack P1, ORM jaar 2, Avans Hogeschool</title>
     <meta name="description" content="Studieboek voor de kennistoets van P1 in de opleiding ORM (jaar 2). Zes hoofdstukken over klant- en probleemonderzoek, prototyping en opleveren, met Spark als doorlopend voorbeeld." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,800;1,800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/reader.css" />
   </head>
   <body>
+    <nav class="topbar" aria-label="Reader menu">
+      <a href="#overzicht">📘 Overzicht</a>
+      <a href="#toetsinhoud">📋 Toetsinhoud</a>
+    </nav>
     <div class="layout">
       <aside class="toc">
         <h2>Inhoud</h2>
@@ -26,12 +33,12 @@
           <span class="eyebrow">Reader · Kennistrack P1</span>
           <h1>Van probleem naar oplossing in 6 sessies</h1>
           <p class="lead">
-            Dit is je studieboek voor de kennistoets van P1. Per hoofdstuk leer je de begrippen, methoden en stappen die horen bij het proces van klantvraag tot opgeleverde oplossing, in 6 sessies, van eerste verkenning tot reflectie. Als rode draad gebruiken we <strong>Spark</strong> (sparkenergy.io): een Nederlands bedrijf dat zonne-energie-oplossingen levert in Sub-Sahara Afrika. Bij elk onderwerp lees je hoe Spark dat in de praktijk heeft gedaan, om abstracte modellen te verankeren in een echt verhaal.
+            Deze reader vormt, samen met het boek <em>Businessideeën testen</em>, de basis voor de kennistoets van blok 1. Per hoofdstuk leer je de begrippen, methoden en stappen die horen bij het proces van klantvraag tot opgeleverde oplossing, in 6 sessies, van eerste verkenning tot oplevering. Als praktische rode draad lees je over het Nederlandse bedrijf <strong>Spark</strong> (sparkenergy.io), gevestigd in Breda, dat zonne-energie-oplossingen levert in Afrika. Bij elk onderwerp lees je hoe Spark dat in de praktijk heeft gedaan. Zo ontdek je hoe deze modellen en theorie echt werken in de praktijk.
           </p>
 
           <div class="meta-nav">
-          <details class="meta">
-            <summary>📘 Overzicht — hoe deze reader werkt</summary>
+          <details class="meta" id="overzicht">
+            <summary>📘 Overzicht: hoe deze reader werkt</summary>
             <div class="callout tip" style="margin-top: 0;">
             <p style="margin-top:0;"><strong>Boek = basis, reader = brug.</strong></p>
             <p>Voor de kennistoets gebruik je 2 bronnen, in deze volgorde:</p>
@@ -43,10 +50,18 @@
             </div>
           </details>
 
-          <details class="meta">
-            <summary>📋 Toetsinhoud — wat moet je kennen voor de toets?</summary>
+          <details class="meta" id="toetsinhoud">
+            <summary>📋 Toetsinhoud: wat moet je kennen voor de toets?</summary>
           <div class="toetsmatrix">
-            <p>Per onderwerp zie je wat je in het boek leest, in welk reader-hoofdstuk het staat, en waarom het ertoe doet. <span class="tag tag-nieuw">nieuw</span> = nieuwe stof voor jaar 2, telt zwaar mee. <span class="tag tag-opfris">opfrisser</span> = je kent het al uit jaar 1.</p>
+            <div class="callout tip" style="margin: 0 0 20px;">
+              <p style="margin-top:0; font-size:16px;"><strong>De toetsstof bestaat uit 2 bronnen, meer niet:</strong></p>
+              <ol style="margin-top:0; margin-bottom:12px;">
+                <li><strong>Deze hele reader</strong>, alle 6 hoofdstukken, van H1 tot en met H6.</li>
+                <li><strong>Bland en Osterwalder (2020), <em>Businessideeën testen</em></strong>: <strong>Deel 1 tot en met Deel 4 (p. 15-328)</strong>, online via Avans Boom Portaal.</li>
+              </ol>
+              <p style="margin-bottom:0;"><strong>Nieuw voor jaar 2, telt zwaar mee:</strong> Haalbaarheids- en Levensvatbaarheidsexperimenten (Deel 3.1-3.3, p. 91-312) en Mindset (Deel 4, p. 313-328). De rest van het boek heb je in jaar 1 al gehad, voor de toets is dat opfrisser. <em>Alle overige bronnen in de bibliografie (Aulet, Blank, Fitzpatrick, Ries, Sinek, etc.) zijn 'verder lezen' en worden niet getoetst.</em></p>
+            </div>
+            <p>Hieronder zie je per onderwerp wat je in het boek leest en in welk reader-hoofdstuk het staat. <span class="tag tag-nieuw">nieuw</span> = nieuwe stof voor jaar 2. <span class="tag tag-opfris">opfrisser</span> = je kent het al uit jaar 1.</p>
             <table>
               <thead>
                 <tr>
@@ -116,20 +131,22 @@
             <p style="margin-bottom:0;">Deze pagina's heb je al gezien in jaar 1, dus voor dit hoofdstuk volstaat een opfrissing. De stof die hierna in dit hoofdstuk komt (opdrachtgever, stakeholders, SBMC, vooronderzoek, persona, TAM/SAM/SOM, beachhead) bouwt voort op deze basis.</p>
           </div>
 
+          <div class="spark-scene">
           <h3>Hoe Spark begon, en bijna meteen vastliep</h3>
           <p>
-            In 2011 zaten 3 ingenieurs in Eindhoven aan een tafel met een aantrekkelijk idee. Harmen van Heist, Marcel van Heist en Evan Mertens hadden tijdens hun studie aan de universiteiten van Tilburg en Eindhoven gewerkt aan een gedecentraliseerd "smart grid": een slim, modulair energienetwerk waarin lokale dorpsbewoners zelf energie konden opwekken, opslaan en met elkaar delen. In India hadden destijds 400 miljoen mensen nog nooit een stekker in een stopcontact gestoken. De technologie was er. De visie was er. Het idee was klaar om de wereld in te gaan.
-          </p>
-          <p>
-            Ze noemden hun bedrijf <strong>Rural Spark</strong>, "rural" omdat het in Nederland authentiek voelt, zoals grootmoeders soep of ambachtelijke appelsap. Ze stapten op het vliegtuig naar India met de stille overtuiging: <em>dit hebben deze mensen nodig</em>. En toen kwamen ze daar.
+            In 2011 stapten <strong>Marcel van Heist</strong> en <strong>Evan Mertens</strong> op het vliegtuig naar India. Evan was net afgestudeerd aan de TU Eindhoven op gedecentraliseerde "smart grids": slimme, modulaire energienetwerken waarin lokale dorpsbewoners zelf energie konden opwekken, opslaan en met elkaar delen. Marcel studeerde Industrial Design op diezelfde universiteit en sloot zich aan voor zijn afstudeerproject. In India hadden destijds 400 miljoen mensen nog nooit een stekker in een stopcontact gestoken. De technologie was er, de visie was er. <em>"Waarom doen we het dan niet?"</em> En zo gebeurde dat, met de stille overtuiging: <em>dit hebben deze mensen nodig</em>. En toen kwamen ze daar.
           </p>
           <blockquote>
             Ja, we waren bevooroordeeld met technische mogelijkheden, denken vanuit product. We gingen daarheen met "dit moet je willen". En dan kom je daar… en dan is er helemaal géén probleem. Ja, er is geen energie, en er gaat wel eens wat mis met open vuur, maar dat is zo. Heel ons verhaal over smart grids resoneerde totaal niet.
-            <cite>Harmen van Heist, mede-oprichter Spark</cite>
+            <cite>Marcel van Heist, mede-oprichter Spark</cite>
           </blockquote>
           <p>
-            Spark zou 10 jaar later 150.000 zonne-energie-kits in 15 Afrikaanse landen verkopen, met €15 miljoen omzet en 800.000 mensen die zij raken. Maar voordat dat kon, moest het team eerst leren wat dit hele hoofdstuk je gaat leren: <strong>hoe weet je of het probleem dat jij ziet, ook werkelijk een probleem is voor de mensen aan de andere kant?</strong>
+            Terug in Nederland kwam Marcels afstudeerrapport uit, en daarmee de vraag: <em>wat nu?</em> <strong>Harmen van Heist</strong> was op dat moment net afgestudeerd aan de Universiteit Tilburg met een project voor het Ministerie van Buitenlandse Zaken. Zijn punt: als dit echt impact wil maken, moet het schalen, en dus moet er een commerciële, schaalbare organisatie omheen. Met 3 besloten zij er een bedrijf van te maken: <strong>Rural Spark</strong>, de "spark" (vonk) die zij in landelijk gebied (<em>rural</em>) wilden laten ontstaan. Marcel won kort daarop de Keep an Eye Award; van dat geld konden zij in 2011 nog 3 maanden terug naar India om de eerste klanten aan te sluiten en partners te vinden. Vanuit een kantoor in Delhi opereerde Spark van 2011 tot 2018 in India, daarna verschoof het zwaartepunt naar Sub-Sahara Afrika.
           </p>
+          <p>
+            10 jaar later zou Spark 150.000 zonne-energie-kits in 15 Afrikaanse landen verkopen, met €15 miljoen omzet en 800.000 mensen die zij raken. Maar voordat dat kon, moesten Marcel, Evan en Harmen eerst leren wat dit hele hoofdstuk je gaat leren: <strong>hoe weet je of het probleem dat jij ziet, ook werkelijk een probleem is voor de mensen aan de andere kant?</strong>
+          </p>
+          </div>
 
           <h3>Waarom dit hoofdstuk?</h3>
           <p>
@@ -166,7 +183,7 @@
 
           <div class="callout spark">
             <p>
-              Voor Spark was de "opdracht" in zekere zin de eigen visie: <em>de wereld heeft slimmer gedistribueerde energienetwerken nodig</em>. Toen het team in 2011 in India arriveerde, zat in die opdracht een hele berg impliciete aannames opgesloten: dat eindgebruikers het gebrek aan elektriciteit als urgent ervoeren, dat zij zouden willen meedoen aan een netwerk, dat decentrale energieopwekking voor hen waardevoller was dan een lampje. Geen van die aannames hield stand in de eerste weken. Het probleem dat Spark dácht op te lossen, was niet het probleem dat de eindgebruiker beleefde.
+              Voor Spark was de "opdracht" in zekere zin de eigen visie: <em>de wereld heeft slimmer gedistribueerde energienetwerken nodig</em>. Toen Marcel in 2011 in India arriveerde, zat in die opdracht een hele berg impliciete aannames opgesloten: dat eindgebruikers het gebrek aan elektriciteit als urgent ervoeren, dat zij zouden willen meedoen aan een netwerk, dat decentrale energieopwekking voor hen waardevoller was dan een lampje. Geen van die aannames hield stand in de eerste weken. Het probleem dat Spark dácht op te lossen, was niet het probleem dat de eindgebruiker beleefde.
             </p>
           </div>
 
@@ -196,7 +213,13 @@
 
           <div class="callout spark">
             <p>
-              Spark's stakeholder-veld is uitzonderlijk veelzijdig en geeft een goed beeld van wat "iedereen die belang heeft" in de praktijk betekent. In de matrix horen onder andere: de <strong>distributiepartners</strong> in Afrika (hoog belang, hoog macht, DMU), de <strong>eindgebruikers</strong> in dorpen (hoog belang, laag macht), de <strong>investeerders</strong> BOM, YARD Energy en DOEN Participaties (hoog macht, hoog belang), de <strong>Nederlandse exportkredietverzekeraar Atradius</strong> (hoog macht, gemiddeld belang via het financieringsprogramma), en de <strong>contractmanufacturer in India</strong> (gemiddeld macht, hoog belang). De crux voor Spark was beseffen dat de eindgebruiker emotioneel het belangrijkst voelde, maar dat de distributiepartner zakelijk de daadwerkelijke beslisser is.
+              Spark's stakeholder-veld is uitzonderlijk veelzijdig en geeft een goed beeld van wat "iedereen die belang heeft" in de praktijk betekent. Van 2011 tot 2018 zat Spark in India, met een kantoor in Delhi. In die jaren stapten de eerste financiers in: in 2013 kwam <strong>Engie</strong> (toen nog GDF SUEZ, een van de grootste energiebedrijven ter wereld) binnen met €150.000, gevolgd door incubator <strong>StartersLift</strong> en <strong>Stichting DOEN</strong>, en later een rij angels. In 2018 verschoof Spark naar Sub-Sahara Afrika. De aanleiding, kort door de bocht: premier Modi had verklaard dat India geëlektrificeerd was, wat in praktijk niet zo was maar wel afdeed van het urgentiegevoel bij financiers en partners. Bovendien werkt de Indiase markt sterk top-down via de overheid (grote projecten of niets), terwijl Sub-Sahara Afrika ruimte laat voor private partijen om kleinschalig te starten en op te schalen.
+            </p>
+            <p>
+              In 2019 stapte de <strong>BOM (Brabantse Ontwikkelings Maatschappij)</strong> in via het Investor Readiness Programma met een convertible van €200.000, het keerpunt richting commerciële schaalbaarheid. In 2020 volgde een echte Series A van €2,3 miljoen equity (BOM, YARD Energy, DOEN Participaties).
+            </p>
+            <p>
+              Vandaag horen in de Power/Interest-matrix onder andere: de <strong>distributiepartners</strong> in Afrika (hoog belang, hoog macht, DMU), de <strong>eindgebruikers</strong> in dorpen (hoog belang, laag macht), de <strong>investeerders</strong> BOM, YARD Energy en DOEN Participaties (hoog macht, hoog belang), de <strong>Nederlandse exportkredietverzekeraar Atradius</strong> (hoog macht, gemiddeld belang via het financieringsprogramma), en de <strong>contractmanufacturer</strong> (gemiddeld macht, hoog belang). De crux voor Spark was beseffen dat de eindgebruiker emotioneel het belangrijkst voelde, maar dat de distributiepartner zakelijk de daadwerkelijke beslisser is.
             </p>
           </div>
 
@@ -252,7 +275,7 @@
 
           <div class="callout spark">
             <p>
-              Marcel van Heist probeerde in 2011 een empathy map in te vullen voor de Indiase dorpsbewoner via een onverwachte methode: hij deelde wegwerpcamera's uit met de vraag "fotografeer wat <em>energie</em> voor jou betekent". Hij kreeg foto's terug van handen die elkaar schudden (levensenergie), van de lucht (zonnewarmte), van water, poëtisch, maar onbruikbaar voor het bouwen van een technisch netwerk. De gebruikers waren bovendien vooral gefascineerd door de huidskleur van de buitenlandse onderzoekers. Traditioneel klantonderzoek faalde compleet, wat Marcel uiteindelijk dwong om een totaal andere methode te ontwikkelen die je in hoofdstuk 4 leert kennen.
+              Marcel van Heist probeerde in 2011 een empathy map in te vullen voor de Indiase dorpsbewoner. Hij deed interviews, hield workshops over wat energie voor de dorpsbewoners betekende, alles om maar inzicht te krijgen. Hij deelde wegwerpcamera's uit met de vraag: "fotografeer wat <em>energie</em> voor jou betekent." Hij kreeg foto's terug van de sterrenhemel (de energie van de cosmos) en van mensen die elkaar een hand geven (levensenergie die uitgewisseld wordt). Erg poëtisch, maar onbruikbaar voor het bouwen van een technisch netwerk. De dorpelingen waren vooral gefascineerd door Marcels aanwezigheid zelf; suggesties over abstracte zaken als een "smart grid" resoneerden al helemaal niet. Traditioneel klantonderzoek faalde compleet, wat Marcel uiteindelijk dwong om een totaal andere methode te ontwikkelen die je in hoofdstuk 4 leert kennen.
             </p>
             <figure style="background:transparent; border:none; padding:0;">
               <div class="thumb-row">
@@ -312,7 +335,7 @@
 
           <div class="callout spark">
             <p>
-              Spark koos India als beachhead in 2011, een land met 400 miljoen mensen zonder elektriciteit en met universiteits-netwerken waaruit het team voortkwam. Later, toen India's overheid besloot zelf top-down de elektrificatie aan te pakken, verschoof de beachhead naar Sub-Sahara Afrika, waar overheden meer ruimte laten voor private ondernemerschappen. De eerste echte <em>early evangelist</em>? Een lokale dorpsondernemer die uit zichzelf een handgeschreven administratie startte toen Spark een prototype bij hem achterliet, meer hierover in hoofdstuk 4.
+              Spark koos India als beachhead in 2011, een land met 400 miljoen mensen zonder elektriciteit, en met de TU/e als bron van het oorspronkelijke smart-grid-onderzoek. In 2018 verschoof de beachhead naar Sub-Sahara Afrika. De eerste echte <em>early evangelist</em>? Een lokale dorpsondernemer die uit zichzelf een handgeschreven administratie startte toen Spark een prototype bij hem achterliet.
             </p>
           </div>
 
@@ -340,7 +363,7 @@
 
           <div class="callout spark">
             <p>
-              Spark heeft eigenlijk <strong>2</strong> VPCs nodig, één voor elk type stakeholder. De VPC voor de <em>eindgebruiker</em> kent als pains: hoge kerosinekosten, ongezond binnenklimaat, geen licht na zonsondergang, geen mobiele telefoon kunnen opladen. De VPC voor de <em>distributiepartner</em> kent heel andere pains: hoge lokale rente (15%) om voorraad te kunnen financieren, beperkte after-sales-support, geen toegang tot kwalitatief goede solar-producten in bulk. Spark's grootste doorbraak (die in hoofdstuk 2 uitgebreid aan bod komt) was beseffen dat ze de pains van de distributiepartner te lang hadden onderschat, terwijl die juist de DMU is.
+              Spark heeft eigenlijk <strong>2</strong> VPCs nodig, één voor elk type stakeholder. De VPC voor de <em>eindgebruiker</em> kent als pains: hoge kerosinekosten, ongezond binnenklimaat, geen licht na zonsondergang, geen mobiele telefoon kunnen opladen. De VPC voor de <em>distributiepartner</em> kent heel andere pains: hoge lokale rente (15%) om voorraad te kunnen financieren, beperkte after-sales-support, geen toegang tot kwalitatief goede solar-producten in bulk. Spark's grootste doorbraak was beseffen dat ze de pains van de distributiepartner te lang hadden onderschat, terwijl die juist de DMU is.
             </p>
           </div>
 
@@ -397,16 +420,20 @@
 
           <div class="callout spark">
             <p>
-              <strong>Spark's eigen rebranding, hoe zelfs een bedrijfsnaam de klanttaal moet spreken.</strong> In 2011 koos het team de naam <em>Rural Spark</em>. In het Nederlands voelt "rural" authentiek: het associeert met grootmoeders soep, ambachtelijke appelsap, dichtbij de bron, traditioneel-met-trots. Een mooie positionering voor investeerders en de Nederlandse markt. Het logo onderstreepte de visie: gekanteld zag je in de R + S een streepje + 2 golfjes, een visuele referentie naar het balanceren van energie binnen een smart grid (de ene keer meer, dan minder, met meerdere bronnen samen toch een constante flow).
+              <strong>Spark's eigen rebranding, hoe zelfs een bedrijfsnaam de klanttaal moet spreken.</strong> In 2011 kozen Marcel, Evan en Harmen de naam <em>Rural Spark</em>, de "spark" (vonk) die zij in landelijk gebied (<em>rural</em>) wilden laten ontstaan. Door hun westerse bril klonk het ook authentiek en ambachtelijk; geen bewuste reden voor de keuze, wel een prettige bijvangst voor Nederlandse investeerders. Het logo onderstreepte de visie: gekanteld zag je in de R + S een streepje + 2 golfjes, een visuele referentie naar het balanceren van energie binnen een smart grid (de ene keer meer, dan minder, met meerdere bronnen samen toch een constante flow).
             </p>
+            <figure style="background:transparent; border:none; padding:0;">
+              <img src="assets/img/h1-rural-spark-logo.png" alt="Logo Rural Spark, 90 graden gekanteld zichtbaar als streepje en 2 golfjes, een visuele referentie naar balanceren van energie in een smart grid" style="max-width:240px; margin:0 auto; display:block;" />
+              <figcaption>Het oorspronkelijke Rural Spark-logo. Kantel het 90° en zie de R + S terug als streepje + 2 golfjes: de smart-grid-flow waarmee Spark begon.</figcaption>
+            </figure>
             <p>
               Maar in Afrika, waar Spark daadwerkelijk verkocht, betekende "rural" iets totaal anders: lagere kwaliteit, achterstand, weinig ambitie. Precies het tegenovergestelde van het merkbeeld dat Spark wilde uitstralen. Bovendien stond het hele frame "wij komen energie brengen aan zielige mensen die hulp nodig hebben" haaks op de realiteit: het waren mensen die, net als iedereen, gewoon een beter leven wilden en energie zagen als praktisch nut, niet als ontwikkelingshulp.
             </p>
             <p>
-              Het team realiseerde zich pas na jaren dat hun eigen naam in de praktijk tegen ze werkte. Met hulp van een marketingbureau werd <em>Rural</em> uiteindelijk geschrapt en bleef alleen <em>Spark</em> over, met een nieuwe positionering: <em>"Spark in your life. Let tomorrow be a bright day."</em> Niet meer redden, maar verbinden met aspiratie. Loslaten van het oude logo was lastig, het was tenslotte hun "kindje" waar ze lang aan hadden getrokken, maar het nieuwe positieve frame paste beter bij wat klanten en eindgebruikers daadwerkelijk wilden horen.
+              Spark realiseerde zich pas na jaren dat hun eigen naam in de praktijk tegen ze werkte. Met hulp van een marketingbureau werd <em>Rural</em> uiteindelijk geschrapt en bleef alleen <em>Spark</em> over, met een nieuwe positionering: <em>SPARK, Let tomorrow be a Bright Day</em>. Niet meer redden, maar verbinden met aspiratie. Loslaten van het oude logo was lastig, het was tenslotte hun "kindje" waar zij lang aan hadden getrokken, maar het nieuwe positieve frame paste beter bij wat klanten en eindgebruikers daadwerkelijk wilden horen.
             </p>
             <p>
-              Dit verhaal is in zekere zin de meta-les van dit hoofdstuk: zelfs het meest aan de klant-toegewijde team kan blinde vlekken houden over hoe hun keuzes binnen het hoofd van die klant landen. Pas door <em>get out of the building</em> te doen, door te luisteren naar wat distributiepartners en eindgebruikers werkelijk zeiden, kwam de naam-mismatch boven water.
+              Dit verhaal is in zekere zin de meta-les van dit hoofdstuk: zelfs een organisatie die volledig op de klant gericht is, kan blinde vlekken houden over hoe haar eigen keuzes binnen het hoofd van die klant landen. Pas door <em>get out of the building</em> te doen, door te luisteren naar wat distributiepartners en eindgebruikers werkelijk zeiden, kwam de naam-mismatch boven water.
             </p>
           </div>
 
@@ -770,20 +797,22 @@
             <p style="margin-bottom:0;">Deze stof ken je uit jaar 1. Wat hierna in dit hoofdstuk komt (oorzaak-gevolganalyse, de 5-why's, DESTEP, SWOT met confrontatiematrix, en valideren bij je opdrachtgever) bouwt daarop voort.</p>
           </div>
 
+          <div class="spark-scene">
           <h3>De vraag die alles op losse schroeven zet</h3>
           <p>
-            Het is 2019. Spark heeft 8 jaar gewerkt aan haar energieoplossing. De kits draaien in meerdere Afrikaanse landen, er zijn distributiepartners, er zijn betalende klanten. Toch groeit het niet zoals het moet. De winstgevendheid blijft uit. Dan nodigt de Brabantse Ontwikkelingsmaatschappij (BOM) het team uit voor een investment readiness programma. 1 van de eerste vragen die ze krijgen is vernietigend eenvoudig: "Wat doen jullie hier eigenlijk? Als jullie het allemaal weten, waarom ben je hier dan?"
+            Het is eind 2018, begin 2019. Rural Spark heeft 8 jaar gewerkt aan haar energieoplossing en aan de verkoop ervan in de Afrikaanse markt. De kits draaien in meerdere Afrikaanse landen, er zijn distributiepartners, er zijn verschillende betalende klanten. Toch groeit het niet zoals het moet. Rural Spark besluit deel te nemen aan het <strong>Investment Readiness Programma</strong> van de Brabantse Ontwikkelingsmaatschappij (BOM). 1 van de eerste vragen die zij krijgen is vernietigend eenvoudig: "Wat doen jullie hier eigenlijk? Als jullie het allemaal weten, waarom ben je hier dan?"
           </p>
           <blockquote>
-            Ik weet niet of het te trots is, maar ook wel te eigenwijs, je denkt dan van: wij zijn hier al jaren mee bezig, jullie snappen het gewoon niet.
+            Ik weet niet of het te trots is, maar ook wel te eigenwijs, je denkt dan van: wij zijn hier al jaren mee bezig, we kennen onze markt echt wel.
             <cite>Harmen van Heist, mede-oprichter Spark</cite>
           </blockquote>
           <p>
-            Spark dacht dat het probleem duidelijk was: de producten moesten worden aangepast. Klanten vroegen om een grotere batterij, een feller lampje, een andere kleur, en goedkopere kits. Het team werkte aan die verzoeken. Maar de grote orders bleven uit. "We waren een beetje een marionet van onze klanten," zegt Harmen, "die het op het product gooiden. En we hadden, denk ik, niet helemaal duidelijk wie onze klant was."
+            Spark dacht dat het probleem duidelijk was: de producten moesten worden aangepast, de prijzen moesten anders en er moest gewoon nog even wat geld bij voor doorontwikkeling. Want ja, klanten vroegen om een grotere batterij, een fellere lamp, een groter zonnepaneel, een andere kleur, en goedkopere kits. Sommige verzoeken pakte Spark op, nieuwe toepassingen werden gezocht en getest. Maar de grote orders bleven uit. "We waren een beetje een marionet van onze klanten," zegt Harmen, "die het op het product gooiden. En we hadden, denk ik, niet helemaal duidelijk wie onze klant was."
           </p>
           <p>
             BOM stuurde Spark terug naar de tekentafel. Wat volgde, was het meest waardevolle klantonderzoek in de geschiedenis van het bedrijf, en het leverde een inzicht op dat de groei van Spark volledig op zijn kop zette. Dat inzicht staat centraal in dit hoofdstuk. Want het laat precies zien wat <strong>probleem in kaart brengen</strong> in de praktijk betekent: voorbij het eerste antwoord gaan, totdat je de oorzaak achter de oorzaak vindt.
           </p>
+          </div>
 
           <h3>Waarom dit hoofdstuk?</h3>
           <p>
@@ -809,7 +838,7 @@
 
           <div class="callout spark">
             <p>
-              Spark dacht jarenlang dat distributiepartners een <em>product</em>probleem hadden. De klanten vroegen immers om technische aanpassingen: een grotere batterij, een feller lampje, een ventilator in de kit. Logische klachten, en dus "logische" oplossingen. Maar achter al die klachten zat een patroon dat Spark pas zag toen het team daadwerkelijk bij de klant op kantoor ging zitten: distributiepartners waren het gros van hun tijd kwijt aan het ophalen van financiering. Ze wilden wel bestellen bij Spark, maar konden de orders niet financieren. Het "batterij-groter"-verzoek was een symptoom. Het échte probleem zat in de kapitaalmarkt van de klant.
+              Spark dacht jarenlang dat distributiepartners een <em>product</em>probleem hadden, de klachten en verzoeken die je hierboven las wezen allemaal in die richting. Logische klachten, en dus "logische" oplossingen. Maar achter al die klachten zat een patroon dat alleen zichtbaar werd toen Spark daadwerkelijk bij de klant op kantoor ging zitten: distributiepartners waren het gros van hun tijd kwijt aan het ophalen van financiering. Ze wilden wel bestellen bij Spark, maar konden de orders niet financieren. Het "batterij-groter"-verzoek was een symptoom. Het échte probleem zat in de kapitaalmarkt van de klant.
             </p>
           </div>
 
@@ -959,7 +988,7 @@
 
           <div class="callout spark">
             <p>
-              Had Spark in 2018-2019 een DESTEP-analyse gedaan voor haar distributiepartners in Sub-Sahara Afrika, dan had minstens 1 dimensie direct de vinger op de wond gelegd. Bij <em>Economisch</em>: lokale rente van 15% maakt externe financiering voor kleine ondernemers prohibitief. Bij <em>Politiek-juridisch</em>: het <strong>Dutch Good Growth Fund (DGGF)</strong>, een programma van het Ministerie van Economische Zaken, uitgevoerd door exportkredietverzekeraar Atradius, biedt exportkrediet aan Nederlandse bedrijven voor precies dit type markt. Bij <em>Technologisch</em>: mobiel geld (M-Pesa en vergelijkbare platforms) maakt betalen in termijnen via PayGo steeds haalbaarder voor eindgebruikers in Afrika. Al die factoren waren beschikbaar in openbare data. Maar je vindt ze alleen als je actief de omgeving analyseert in plaats van te wachten totdat een klant er toevallig over begint.
+              Had Spark in 2018-2019 een DESTEP-analyse gedaan voor haar distributiepartners in Sub-Sahara Afrika, dan had minstens 1 dimensie direct de vinger op de wond gelegd. Bij <em>Economisch</em>: lokale rente van 15% maakt externe financiering voor kleine ondernemers prohibitief. Bij <em>Politiek-juridisch</em>: het <strong>Dutch Good Growth Fund (DGGF)</strong>, een programma van het Ministerie van Buitenlandse Zaken, uitgevoerd door exportkredietverzekeraar Atradius, biedt exportkrediet aan Nederlandse bedrijven voor precies dit type markt. Bij <em>Technologisch</em>: mobiel geld (M-Pesa en vergelijkbare platforms) maakt betalen in termijnen via PayGo steeds haalbaarder voor eindgebruikers in Afrika. Al die factoren waren beschikbaar in openbare data. Maar je vindt ze alleen als je actief de omgeving analyseert in plaats van te wachten totdat een klant er toevallig over begint.
             </p>
           </div>
 
@@ -1031,7 +1060,7 @@
               Het kwartje bij Spark viel niet in 1 moment. De business developer bracht de interviewresultaten terug, maar pas toen het team ze inwerkte in de pitch voor het BOM-programma, begon het patroon te landen. "Toen we het even uitwerkten en op papier zetten, realiseerden we ons ineens: wacht, hier moet iets mee," vertelt Harmen. Op hetzelfde moment raakten ze in gesprek met <strong>One Planet Crowd</strong>, die hen wees op het DGGF-programma van de overheid. Later volgde een gesprek met exportkredietverzekeraar <strong>Atradius</strong> over de concrete uitvoering. In Tilburg, op kantoor, viel alles op zijn plek.
             </p>
             <p>
-              De gevalideerde probleemstelling van Spark luidde daarna zoiets als: <em>"Onze distributiepartners in Sub-Sahara Afrika kunnen geen grotere orders plaatsen omdat ze geen toegang hebben tot betaalbare financiering, de lokale rente van 15% maakt groei economisch niet haalbaar. Dit patroon is bevestigd bij 4 tot 8 klanten in verschillende landen."</em> Dat is een probleemstelling om op te handelen. En dat deden ze.
+              De gevalideerde probleemstelling van Spark luidde daarna zoiets als: <em>"Onze distributiepartners in Sub-Sahara Afrika kunnen geen grotere orders plaatsen omdat ze geen toegang hebben tot betaalbare financiering, de lokale rente van 15% maakt groei economisch niet haalbaar. Dit patroon is bevestigd bij 8 tot 10 klanten in verschillende landen."</em> Dat is een probleemstelling om op te handelen. En dat deden ze.
             </p>
           </div>
 
@@ -1043,7 +1072,12 @@
           <div class="video">
             <iframe src="https://www.youtube-nocookie.com/embed/KNOut-mkEJ4" title="Spark, BOM-investering en klantinterviews (2019)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-          <p class="video-caption">BOM-investeerder en Harmen van Heist vertellen hoe de investment readiness-vraag leidde tot de klantinterviews en het Access to Finance-inzicht, het keerpunt in Spark's groei.</p>
+          <p class="video-caption">Pepijn Herman (BOM) en Harmen van Heist vertellen hoe de investment readiness-vraag leidde tot de klantinterviews en het Access to Finance-inzicht, het keerpunt in Spark's groei.</p>
+
+          <div class="callout tip" style="margin-top:16px;">
+            <p style="margin-top:0;"><strong>Externe stem, het BOM-perspectief.</strong> Wil je het verhaal van de andere kant horen? Lees het bericht dat de BOM bij de investering schreef:</p>
+            <p style="margin-bottom:0;"><a href="https://www.bom.nl/actueel/rural-spark-verovert-afrika-met-3-5-miljoen-groeikapitaal" target="_blank" rel="noopener">bom.nl, "Rural Spark verovert Afrika met 3,5 miljoen groeikapitaal" (11 november 2020)</a>. Het artikel vat het kerninzicht zo samen: door echt beter te kijken naar de lokale distributiepartijen (de directe klant van Spark, een soort tussenhandel met toegang tot de landelijke gebieden) werd duidelijk dat zij het product heel graag wilden verkopen, maar simpelweg geen geld hadden.</p>
+          </div>
 
           <h3>Veelgemaakte fouten in deze fase (samengevat)</h3>
           <div class="callout warning">
@@ -1371,6 +1405,7 @@
             <p style="margin-bottom:0;">De rest van dit hoofdstuk (breed divergeren, brainstormtechnieken en scherp convergeren naar een kansrijke oplossing) staat niet in het boek. Die stof vind je hier in de reader.</p>
           </div>
 
+          <div class="spark-scene">
           <h3>Wat als de oplossing niet zit waar je hem verwacht?</h3>
           <p>
             Eind 2019 wist het Spark-team eindelijk wat het echte probleem was. Niet een te kleine batterij of een te dure kit, maar het ontbreken van betaalbare financiering voor hun distributiepartners in Afrika. Lokale rente van 15% maakte grotere orders onhaalbaar, hoe goed het product ook was.
@@ -1382,7 +1417,7 @@
             De meest voor de hand liggende reactie: doorverwijzen naar een bank. Of wachten totdat de markt zichzelf oplost. Of concluderen: "Dat is niet ons probleem, wij maken kits, geen leningen." Maar Harmen van Heist, mede-oprichter van Spark, legt het uit met een analogie die je bijblijft:
           </p>
           <blockquote>
-            Kijk naar Audi. Audi zegt: wij zijn een automerk, wij maken auto's. Maar tegelijkertijd zorgen zij dat je die auto kunt leasen. Ze lossen niet alleen het rijprobleem op, ze lossen ook het betalingsprobleem op, zodat jij kunt kopen. Dat is precies wat wij ook moesten doen. Wij lossen het energieprobleem op, maar als onze klant het niet kan betalen, dan lossen we het niet echt op.
+            Kijk naar Audi. Audi maakt auto's, maar zorgt tegelijkertijd dat je 'm kunt leasen. Ze lossen niet alleen het rij-probleem op, ze lossen ook het betalingsprobleem op, zodat je überhaupt kunt kopen. Datzelfde moesten wij doen. Wij lossen het energieprobleem op, maar als onze klant het niet kan betalen, lossen we het niet echt op.
             <cite>Harmen van Heist, mede-oprichter Spark</cite>
           </blockquote>
           <p>
@@ -1391,6 +1426,7 @@
           <p>
             Dit hoofdstuk gaat over die stap: van gevalideerd probleem naar een oplossingsrichting die écht werkt. Niet de eerste ingeving, niet de meest voor de hand liggende aanpak, maar een doordacht proces van breed denken en dan scherp kiezen.
           </p>
+          </div>
 
           <h3>Waarom dit hoofdstuk?</h3>
           <p>
@@ -1417,7 +1453,7 @@
 
           <div class="callout spark">
             <p>
-              De double-diamond-beweging is in Spark's sessie-3-moment letterlijk zichtbaar. Na de klantinterviews (einde eerste diamant: gevalideerd probleem = financiering) stond het team voor een open ruimte: hoe lossen we dit op? Meerdere opties waren denkbaar, doorverwijzen naar banken, lobbyen voor betere lokale rentetarieven, alleen PayGo aanbieden, of zelf financiering organiseren. Via een gesprek met One Planet Crowd kwamen DGGF en Atradius in beeld. Maar ook de keuze om <em>niet</em> in koekstoven te gaan, is een convergentiemoment: een richting die financieel even aantrekkelijk leek, maar de kernmissie (energie, niet koken) zou hebben verwaterd. Convergeren is ook: nee zeggen.
+              De double-diamond-beweging is in Spark's oplossingsfase van eind 2018/2019 letterlijk zichtbaar. Na de klantinterviews (einde eerste diamant: gevalideerd probleem = financiering) stond Spark voor een open ruimte: hoe lossen we dit op? Meerdere opties waren denkbaar, doorverwijzen naar banken, lobbyen voor betere lokale rentetarieven, alleen PayGo aanbieden, of zelf financiering organiseren. Via een gesprek met One Planet Crowd kwamen DGGF en Atradius in beeld. Het convergentiemoment was dus niet alleen "kiezen wat we wél doen", maar ook actief richtingen schrappen die de kernmissie zouden verwateren.
             </p>
           </div>
 
@@ -1498,7 +1534,7 @@
 
           <div class="callout spark">
             <p>
-              Harmen van Heist en zijn team hebben nooit expliciet SCAMPER gebruikt. "Geen expliciete technieken," zegt hij, "we hebben gewoon met veel mensen gepraat, linkjes gelegd, nooit neergelegd bij 'dat kan niet'." Maar kijk je achteraf met de SCAMPER-lens naar hun oplossing, dan zie je de <strong>C (Combine)</strong>-stap: een energiekit combineren met een financieringsproduct. En de <strong>A (Adapt)</strong>-stap: het leasemodel dat Audi in de autobranche gebruikt, vertalen naar de off-grid energiesector in Afrika. Geen formele methode, maar dezelfde beweging die erachter zit: kijken wat er elders al werkt, en dat toepassen op jouw context.
+              Bij Spark is SCAMPER nooit expliciet gebruikt. "We hebben gewoon met veel mensen gepraat, linkjes gelegd, en het nooit neergelegd bij 'dat kan niet'," vat Harmen het zelf samen. Maar kijk je achteraf met de SCAMPER-lens naar hun oplossing, dan zie je de <strong>C (Combine)</strong>-stap: een energiekit combineren met een financieringsproduct. En de <strong>A (Adapt)</strong>-stap: het leasemodel dat Audi in de autobranche gebruikt, vertalen naar de off-grid energiesector in Afrika. Geen formele methode, wel dezelfde beweging die erachter zit: kijken wat er elders al werkt, en dat toepassen op jouw context.
             </p>
           </div>
 
@@ -1538,9 +1574,14 @@
 
           <div class="callout spark">
             <p>
-              Zet je Spark's propositie langs de 10 types, dan zie je een opvallend patroon. Op <em>product performance</em> was Spark sterk: modulaire kit, klimschakelaar van lampje naar koelkast. Op <em>product system</em> ook: Router + Cubes + zonnepanelen die samenwerken. Maar de grootste doorbraak zat in 2 andere categorieën. <em>Network</em>: Spark koppelde zich aan het DGGF-programma van de Nederlandse overheid en aan Atradius, een partnernetwerk dat concurrenten niet hadden. En <em>service</em>: Access to Finance werd een apart element van de propositie, bovenop de kit. Die combinatie, kit + financiering + platform + service op locatie, is precies het ecosysteem dat klanten niet bij een concurrent konden vinden.
+              Zet je Spark's propositie langs de 10 types, dan zie je een opvallend patroon. Op <em>product performance</em> was Spark sterk: de kit was modulair op 2 vlakken, namelijk in capaciteit (je begint met 1 module en klikt later modules bij voor meer batterijvermogen) én in toepassingen (van een enkel lampje tot koelkastvermogen). Op <em>product system</em> ook: Router + Cubes + zonnepanelen die samenwerken. Maar de grootste doorbraak zat in 2 andere categorieën. <em>Network</em>: Spark koppelde zich aan het DGGF-programma van de Nederlandse overheid en aan Atradius, een partnernetwerk dat concurrenten niet hadden. En <em>service</em>: Access to Finance werd een apart element van de propositie, bovenop de kit. Die combinatie, kit + financiering + platform + service op locatie, is precies het ecosysteem dat klanten niet bij een concurrent konden vinden.
             </p>
           </div>
+
+          <figure>
+            <img src="assets/img/h3-spark-productlijn.png" alt="Spark's modulaire productlijn: 1, 2, 3 of 4 modules naast elkaar, met onder elke configuratie de bijpassende apparaten van lampje tot ventilator, tv en koelkast" />
+            <figcaption>Spark's modulariteit in 1 beeld: meer modules erbij klikken betekent meer batterijcapaciteit, en daarmee zwaardere apparaten die je kunt aansluiten, van 1 lampje (1 module) tot ventilator, tv en uiteindelijk koelkast (4 modules). Spark was de eerste in de markt met deze opklikbare uitbreiding. (Bron: Spark Energy.)</figcaption>
+          </figure>
 
           <h3>5 · Value proposition fit, van oplossingsidee naar match</h3>
           <p>
@@ -1590,7 +1631,7 @@
               Malango Washikala, CEO van Altech in de Democratische Republiek Congo, 1 van Spark's distributiepartners, beschrijft het verschil dat Access to Finance maakt: <em>"They are a pioneer as far as combining both product supply and financing."</em> Dat is precies het ecosysteem-principe in de praktijk: de kit alleen was niet genoeg. De combinatie van product + financiering + service op locatie maakte Spark tot een partner die klanten niet elders konden vinden.
             </p>
             <p>
-              Harmen benadrukt ook wat ze <em>niet</em> hebben gedaan: in koekstoven gaan. Dat leek financieel aantrekkelijk, maar het had Spark tot een kookoplossing gemaakt, en daarmee de kernmissie (energie voor alles: licht, fan, tv, productiviteit) verraden. Ecosysteem-denken vraagt ook nee zeggen: wat hoort wél bij jouw ecosysteem en wat hoort er niet bij?
+              Harmen benadrukt ook wat ze <em>niet</em> hebben gedaan: uitbreiden naar <strong>cookstoves</strong> (efficiënte kookkachels op biomassa). Dat was rond die tijd een populaire markt waar veel impact-investeerders op stuurden, en het leek financieel aantrekkelijk. Maar het had Spark tot een kookoplossing gemaakt, en daarmee de kernmissie (energie voor alles: licht, fan, tv, productiviteit) verraden. Ecosysteem-denken vraagt ook nee zeggen: wat hoort wél bij jouw ecosysteem en wat hoort er niet bij?
             </p>
           </div>
 
@@ -1634,7 +1675,7 @@
 
           <div class="callout spark">
             <p>
-              Voor Spark was de keuze in dit geval snel duidelijk: de Access to Finance-richting scoorde hoog op alle 3 dimensies. <em>Wenselijk</em>: distributiepartners gaven aan dat financiering hun voornaamste barrière was. <em>Haalbaar</em>: via DGGF en Atradius was het instrument er al, Spark hoefde het niet zelf te bouwen. <em>Levensvatbaar</em>: grotere orders betekenden hogere marges, en de DGGF-constructie was schaalbaar over meerdere landen. Harmen: <em>"Toen dat allemaal duidelijk werd, was het bij iedereen meteen 1+1=2. Marcel en ik lieten alles uit onze handen vallen om die eerste deal met Atradius voor elkaar te krijgen."</em>
+              Voor Spark was de keuze in dit geval snel duidelijk: de Access to Finance-richting scoorde hoog op alle 3 dimensies. <em>Wenselijk</em>: distributiepartners gaven aan dat financiering hun voornaamste barrière was. <em>Haalbaar</em>: via DGGF en Atradius was het instrument er al, Spark hoefde het niet zelf te bouwen. <em>Levensvatbaar</em>: grotere orders betekenden hogere marges, en de DGGF-constructie was schaalbaar over meerdere landen. Harmen: <em>"Toen dat eenmaal duidelijk werd, was het bij iedereen meteen 1+1=3. Marcel en ik lieten alles vallen om die eerste deal met Atradius rond te krijgen."</em>
             </p>
           </div>
 
@@ -1964,12 +2005,13 @@
             <p style="margin-bottom:0;"><strong>Let op: dit is nieuwe stof voor jaar 2 en telt mee voor de toets.</strong> De wenselijkheidsexperimenten uit Deel 3.2 ken je al uit jaar 1. Deze reader herhaalt de experimenten niet, maar vult aan met actieonderzoek, peerfeedback en het werken met een opdrachtgever.</p>
           </div>
 
+          <div class="spark-scene">
           <h3>Jabalpur, avond, mayonaiseflesje</h3>
           <p>
-            Het is 2011. Marcel van Heist, mede-oprichter van Spark, zit alleen in een schraal hokje op een universiteit in Jabalpur, de hoofdstad van Madhya Pradesh in India. Daarvoor heeft hij doelgroeponderzoek gedaan: wegwerpcamera's uitgedeeld, vragen gesteld. Hij had gehoopt dat de bewoners van het omliggende dorp zouden vertellen wat energie voor hen betekent. In plaats daarvan kreeg hij foto's terug van sterren, van de kosmos, van 2 mensen die elkaar een hand gaven, levensenergie. Mooi. Filosofisch. Nutteloos voor een energienetwerk.
+            Het is 2011. Marcel van Heist, mede-oprichter van Spark, zit alleen in een kaal hokje op een universiteit in Jabalpur, de hoofdstad van Madhya Pradesh in India. Daarvoor heeft hij doelgroeponderzoek gedaan: wegwerpcamera's uitgedeeld, vragen gesteld. Hij had gehoopt dat de bewoners van het omliggende dorp zouden vertellen wat energie voor hen betekent. In plaats daarvan kreeg hij foto's terug van sterren, van de kosmos, van 2 mensen die elkaar een hand gaven, levensenergie. Mooi. Filosofisch. Nutteloos voor een energienetwerk.
           </p>
           <p>
-            Marcel heeft nog een week voordat de trip afloopt. En hij heeft niets, geen product, geen bewijs, geen contact. <em>"We moeten iets hebben. We gaan zelf iets maken,"</em> blikt mede-oprichter Harmen van Heist later terug. Marcel gaat naar de markt, naar Nitin. Een vaste fixer in een winkeltje vol kleinkram, batterijtjes, cameraatjes, hamers, draad. Engels-sprekend, iemand die dingen voor elkaar weet te krijgen, waar Marcel al vaker dingen had gekocht. Hij haalt materiaal: draad, lampjes, een mayonaiseflesje. Die avond soldeert hij het in elkaar. De volgende ochtend trekt hij met een lokale tolk het dorp in.
+            Marcel heeft nog een week voordat de trip afloopt. En hij heeft niets, geen product, geen bewijs, geen contact. <em>"We moeten iets hebben. We gaan zelf iets maken."</em> Marcel gaat naar de markt, naar Nitin. Een shop-owner met een winkeltje vol kleinkram, batterijtjes, cameraatjes, hamers, draad. Engels-sprekend, iemand die dingen voor elkaar weet te krijgen. Marcel had er al vaker dingen gekocht, zo iemand heb je nodig. Hij haalt materiaal: draad, lampjes, ketchup- en mayonaiseflesjes, een pillendoosje als <em>bulb</em>, een broodtrommel als casing voor de stroomverdeler. Die avond soldeert hij het in elkaar. De volgende ochtend trekt hij met een lokale tolk het dorp in.
           </p>
 
           <figure style="background:transparent; border:none; padding:0;">
@@ -1980,8 +2022,9 @@
             <figcaption>Links de onderdelen van de lokale markt, rechts de afgewerkte lampjes: in 1 dag in elkaar gezet uit mayonaise- en ketchupflesjes. Klik om te vergroten. (Bron: Spark Energy.)</figcaption>
           </figure>
           <p>
-            Dat mayonaiseflesje is het eerste prototype van wat later de Spark Energy Kit zou worden. Het is niet mooi. Het is niet veilig getest. Het is niet schaalbaar. Maar het is <em>tastbaar</em>, en dat maakt het mogelijk om iets te leren wat geen workshop, geen vragenlijst en geen PowerPoint had kunnen opleveren: hoe reageren mensen wanneer je hun geen verhaal vertelt, maar een product in hun handen drukt?
+            Dat mayonaiseflesje is het eerste prototype van wat later de Spark Energy Kit zou worden. Het is niet mooi. Het is niet veilig getest. Het is niet schaalbaar. De lokale partner vond er ook van alles van: het was te groot, te klein, te fel, de beugel zat verkeerd. <em>"We gaan toch,"</em> zei Marcel. Want het is <em>tastbaar</em>, en dat maakt het mogelijk om iets te leren wat geen workshop, geen vragenlijst en geen PowerPoint had kunnen opleveren: hoe reageren mensen wanneer je hun geen verhaal vertelt, maar een product in hun handen drukt? Dan reageren ze ineens niet meer als co-creator (een rol die ze moeten spelen), maar als gebruiker, als consument, de rol die ze ook hebben in deze context.
           </p>
+          </div>
 
           <h3>Waarom dit hoofdstuk?</h3>
           <p>
@@ -2013,7 +2056,7 @@
 
           <div class="callout spark">
             <p>
-              Spark's mayonaiseflesje stond ergens tussen papier en Wizard of Oz: fysiek en tastbaar, maar geen commercieel product. Het diende 1 doel, kon een lampje in een Indiaas dorp een reactie oproepen die een workshop niet had kunnen opwekken? Harmen: <em>"Vanalles was er mis mee, maar we zijn gewoon gegaan."</em> Wat de kit bewees, financierde de volgende stap: de Keep an Eye Foundation Award van 25.000 euro. Daarmee maakten ze in 3 maanden de eerste echte kits, sloten ze nieuwe klanten aan en vonden ze hun eerste lokale partner: Basix Group India. De methode zelf werd later genomineerd voor de Rotterdam Design Prize.
+              Spark's mayonaiseflesje stond ergens tussen papier en Wizard of Oz: fysiek en tastbaar, maar geen commercieel product. Het diende 1 doel (al werd het wel bewust zo gepresenteerd): kon een lampje in een Indiaas dorp een reactie oproepen die een workshop niet had kunnen opwekken? Er was van alles mis mee, maar ze zijn gewoon gegaan. Wat de kit bewees, financierde de volgende stap: de Keep an Eye Foundation Award van 25.000 euro. Daarmee maakten ze in 3 maanden een verbeterde versie van de kits, sloten ze nieuwe klanten aan en vonden ze hun eerste lokale partner: Basix Group India. De methode zelf werd later genomineerd voor de Rotterdam Design Prize.
             </p>
           </div>
 
@@ -2042,7 +2085,7 @@
 
           <div class="callout spark">
             <p>
-              Spark's iteratiefase van 2013 tot 2014 is een schoolvoorbeeld van Build-Measure-Learn. Na het mayonaiseflesje: eerste echte kits met lokale partner Basix Group India. Daarna: iets grotere pilot, nu met een usb-aansluiting zodat mensen hun telefoon konden opladen. Dan: kijken of lokale partners defecten zelf konden verhelpen. Elke ronde 1 nieuw leermoment. Spark's 20-uitgangs-router, die energie met 20 huishoudens tegelijk kon delen, was direct gebaseerd op wat ze in de eerste prototypes hadden geleerd over hoe mensen energie wilden delen.
+              Spark's iteratiefase van 2011 tot 2013 is een schoolvoorbeeld van Build-Measure-Learn. Na het eerste prototype (broodtrommel met sauceflesjes, in 1 dag in elkaar gezet) kwam een tweede versie: een houten casing, usb-poorten zodat mensen ook hun telefoon konden opladen, en een printplaatje dat nu écht ergens op sloeg. Nog steeds zelf in elkaar geknutseld, maar betrouwbaarder. Daarna: kijken of lokale partners defecten zelf konden verhelpen. Elke ronde 1 nieuw leermoment, elke iteratie net wat beter dan de vorige. Dat is Build-Measure-Learn in z'n meest letterlijke vorm: bouw iets dat net werkt, kijk wat ervan klopt en wat niet, en bouw de volgende versie met die les erin.
             </p>
           </div>
 
@@ -2075,11 +2118,15 @@
 
           <div class="callout spark">
             <p>
-              De eerste klant die de kit wilde, was Ranjit. Hij nam de kit mee naar huis. Het team liet hem achter en kwam na een paar dagen terug. De kit had een prominentere plek gekregen; de kerosinelamp was verdwenen. Een week later: de kit was mooi gedecoreerd. En er lag een handgeschreven boekje, met namen, lampen en betalingen. Ranjit had uit zichzelf een verhuurservice opgezet. Zijn buren huurden zijn lampen; hij inde het geld en laadde ze 's ochtends op. Hij was de energieleverancier van zijn dorp geworden.
+              De eerste klant die de kit wilde, was Ranjit. Hij nam de kit mee naar huis. Marcel liet hem achter en kwam na een paar dagen terug. De kit had een prominentere plek gekregen; de kerosinelamp was verdwenen. Een week later: de kit was mooi gedecoreerd (op z'n landelijk Indiaas met karton, maar oké). En er lag een handgeschreven boekje, met namen, lampen en betalingen. Ranjit had uit zichzelf een verhuurservice opgezet. Zijn buren huurden zijn lampen; hij inde het geld en laadde ze 's ochtends op. Hij was de energieleverancier van zijn dorp geworden.
             </p>
             <p>
-              Harmen, terugkijkend: <em>"We stonden erover te praten, vertaald door een partner, en hij vertelde hoe trots hij was dat als hij 's avonds zijn dorp in uitkeek, dat zijn lampjes het verlichten. Hij was de sociale hub geworden. Bruiloften werden bij hem aangekondigd."</em>
+              Toen Marcel er, via een tolk, met Ranjit over sprak vertelde hij hoe trots hij was dat zijn lampjes 's avonds het dorp verlichtten. Hij was de sociale hub geworden. Bruiloften werden bij hem aangekondigd.
             </p>
+            <figure style="background:transparent; border:none; padding:0; margin-top:8px;">
+              <a href="assets/img/h4-spark-ranjit.png" target="_blank" rel="noopener"><img src="assets/img/h4-spark-ranjit.png" alt="Ranjit, Spark's eerste klant, met de kit in zijn huis in een Indiaas dorp" style="max-width:100%; border-radius:8px;" /></a>
+              <figcaption>Ranjit, Spark's eerste klant, in zijn huis met de kit. Hij begon spontaan met het verhuren van lampjes aan buren en hield een handgeschreven administratie bij. Klik om te vergroten. (Bron: Spark Energy.)</figcaption>
+            </figure>
             <p>
               Dat boekje was nooit gevraagd. Het was nooit ontworpen. Het was het bewijs dat de aanname klopte: mensen willen dit gebruiken, en als je ze de tool geeft, verzinnen ze zelf hoe.
             </p>
@@ -2115,7 +2162,7 @@
 
           <div class="callout spark">
             <p>
-              De vingerafdruk-anekdote die Harmen vertelt, laat het omgekeerde zien. Greenpeace en Basix Group India wilden boeren toegang geven tot een bankrekening. Ze identificeerden een cruciaal probleem (geen ID-bewijs) en een technische oplossing (vingerafdrukken). Ze bouwden direct de volledige infrastructuur: kastjes, scanners, gecertificeerde apparatuur. Pas daarna ontdekten ze dat mensen die dag in dag uit op het land werken geen leesbare vingerafdruk hebben. <em>"Als ze 1 keer 1.000 euro voor een iPhone met vingerafdrukscanner mee het dorp in hadden genomen,"</em> zegt Harmen, <em>"hadden ze dit ontdekt."</em> 1 aanname, zo goedkoop en vroeg mogelijk getoetst. Dat had hen waarschijnlijk een half productprogramma bespaard.
+              De vingerafdruk-anekdote die Harmen vertelt, laat het omgekeerde zien. Een ngo en een lokale partner wilden in een Indiaas project boeren toegang geven tot een bankrekening. Zij identificeerden een cruciaal probleem (geen ID-bewijs) en een technische oplossing (vingerafdrukken). Ze bouwden direct de volledige infrastructuur: kastjes, scanners, gecertificeerde apparatuur. Pas daarna ontdekten ze dat mensen die dag in dag uit op het land werken regelmatig geen leesbare vingerafdruk hebben. <em>"Als ze 1 keer 1.000 euro voor een iPhone met vingerafdrukscanner mee het dorp in hadden genomen,"</em> zegt Harmen, <em>"hadden ze dit ontdekt."</em> 1 aanname, zo goedkoop en vroeg mogelijk getoetst. Dat had hen waarschijnlijk een half productprogramma en veel geld bespaard.
             </p>
           </div>
 
@@ -2170,7 +2217,10 @@
 
           <div class="callout spark">
             <p>
-              Spark's hele vroege fase van 2011 tot 2014 is in essentie actieonderzoek. Marcel ging het dorp in (actie), observeerde (wat doen mensen met de kit?), evalueerde (de boekjesadministratie van Ranjit was het bewijs dat mensen willen ondernemen met energie) en stelde de volgende ronde bij (nu met usb-aansluiting, dan met lokale partnerinstructies, dan groter). Geen onderzoeksplan van 40 pagina's, wel een strak cyclisch patroon van doen, kijken en leren. Harmen vat het zo samen: <em>"Je moet het gewoon bij je klant gaan testen. Niet gaan vragen, maar gaan testen."</em>
+              Spark's hele vroege fase van 2011 tot 2014 is in essentie actieonderzoek. Marcel, Evan en (later) Harmen gingen de dorpen in (actie), observeerden (wat doen mensen met de kit?), evalueerden (de boekjesadministratie van Ranjit was het bewijs dat mensen willen ondernemen met energie) en stelden de volgende ronde bij (nu met usb-aansluiting, dan met lokale partnerinstructies, dan groter). Geen onderzoeksplan van 40 pagina's, wel een strak cyclisch patroon van doen, kijken en leren. Spark's eigen formulering: <em>"De enige manier om écht inzicht te krijgen in hoe je de maatschappij verandert, is door het te doen."</em> (Spark)
+            </p>
+            <p>
+              Dat principe komt in dit hoofdstuk steeds terug: niet vragen of mensen iets zouden gebruiken, maar laten zien dat ze het gebruiken, en daaruit leren wat de volgende stap moet zijn.
             </p>
           </div>
 
@@ -2199,7 +2249,7 @@
 
           <div class="callout spark">
             <p>
-              Spark's 3-tier customer journey, van Tier 1 (kleine pilot met 100 tot 250 kits) naar Tier 2 (eerste grote order mét Access to Finance) naar Tier 3 (doorlopende bestellingen), is in essentie een experimentenladder. Elke tier toetst een andere set aannames. Tier 1 toetst haalbaarheid in de praktijk: kunnen we leveren, kunnen partners installeren, houden de kits het vol? Tier 2 toetst levensvatbaarheid: willen klanten grotere volumes afnemen als financiering beschikbaar is? Tier 3 is pas het bewijs van product-markt fit. Dat bewijs kun je pas ophalen nadat Tier 1 en Tier 2 hun lessen hebben opgeleverd.
+              Spark's klantfasering, van Fase 1 (kleine pilot met 100 tot 250 kits) naar Fase 2 (eerste grote order mét Access to Finance, 1.500+ kits) naar Fase 3 (doorlopende bestellingen), is in essentie een experimentenladder. Elke fase toetst een andere set aannames. Fase 1 toetst haalbaarheid in de praktijk: kunnen we leveren, kunnen partners installeren, houden de kits het vol? Fase 2 toetst levensvatbaarheid: willen klanten grotere volumes afnemen als financiering beschikbaar is? Fase 3 is pas het bewijs van product-markt fit. Dat bewijs kun je pas ophalen nadat Fase 1 en Fase 2 hun lessen hebben opgeleverd. In hoofdstuk 5 zie je deze fasering terug als ladder van bewijskracht.
             </p>
           </div>
 
@@ -2502,7 +2552,7 @@
             <li>Reason, P., &amp; Bradbury, H. (Red.). (2008). <em>The SAGE handbook of action research</em> (2e ed.). SAGE.</li>
             <li>Ries, E. (2011). <em>The lean startup: How today's entrepreneurs use continuous innovation to create radically successful businesses</em>. Crown Business.</li>
             <li>Stringer, E. T. (2014). <em>Action research</em> (4e ed.). SAGE.</li>
-            <li>Van Heist, H. (2023). <em>Een mayonaiseflesje dat 1 miljoen mensen van energie voorziet</em> [Lezing]. TEDx Veemarktkade, Den Bosch.</li>
+            <li>Van Heist, H. (2025). <em>Een mayonaiseflesje dat 1 miljoen mensen van energie voorziet</em> [Lezing]. TEDx Veemarktkade, Den Bosch.</li>
             <li>Van Heist, M. (z.d.). <em>Hidden Design methode</em> [Video]. YouTube. https://youtu.be/cjFmkWsgeXg</li>
           </ul>
         </section>
@@ -2524,23 +2574,25 @@
             <p style="margin-bottom:0;">Deze reader herhaalt de experimenten niet, maar vult aan met het verwerken van feedback, het omgaan met negatieve feedback en het opbouwen van een business case voor je opdrachtgever.</p>
           </div>
 
+          <div class="spark-scene">
           <h3>Een dorp, een neef, en een Proof-of-Concept</h3>
           <p>
-            Het is rond 2015. Spark heeft inmiddels een echte kit, geen mayonaiseflesje meer, maar een eerste serie modulaire zonne-energie-pakketten met een usb-aansluiting. Een lokale partner in Sub-Sahara Afrika heeft een paar van die kits aangesloten in dorpen. Eén van de eerste klanten is een ondernemer die, net als Ranjit in India 4 jaar eerder, een verhuurservice rond de kit heeft opgezet. Hij betaalt elke maand een termijn. Het werkt. Spark heeft 1 succesvolle klant en denkt: <em>nu hebben we bewijs</em>.
+            Het is rond 2012. Rural Spark heeft een verbeterde versie van het eerste mayonaiseflesje-prototype in het veld gezet. Een lokale partner in India heeft een paar van die kits aangesloten in dorpen. 1 van de eerste klanten is een ondernemer die, net als Ranjit, een verhuurservice rond de kit heeft opgezet. Hij betaalt elke maand een termijn. Het werkt. Spark heeft weer een succesvolle klant en denkt: <em>nu hebben we bewijs dat meer mensen dit willen</em>.
           </p>
           <p>
-            Tot Harmen van Heist gebeld wordt. De klant is in zijn dorp uitgezet. Hij is vreemdgegaan, en de gemeenschap heeft een beraad gehouden. Een paar dagen later opnieuw contact: hij mag terugkeren, op voorwaarde dat hij ook met de tweede vrouw trouwt. Hij heeft nu plotseling 2 vrouwen, 2 huishoudens, andere prioriteiten. De kit is geen overweging meer. <em>"Daar had ik wel druk,"</em> vat Harmen het droog samen.
+            Tot Harmen van Heist gebeld wordt. De klant is in zijn dorp uitgezet. Hij is vreemdgegaan, en de gemeenschap heeft een beraad gehouden. Een paar dagen later opnieuw contact: hij mag terugkeren, op voorwaarde dat hij ook met de tweede vrouw trouwt. Hij heeft nu plotseling 2 vrouwen, 2 huishoudens, andere prioriteiten.
           </p>
           <p>
             Maar dan: zijn neef wil de kit overnemen. Het verdienmodel was duidelijk genoeg, het ondernemerschap had wortel geschoten. De klant veranderde, het systeem werkte door.
           </p>
           <blockquote>
-            Je probeert dus eigenlijk van een n=1, een n=wat meer dan 1 te maken, zodat je langzaam in de richting van een Proof-of-Concept gaat. Blijven mensen ook betalen? Kun je dat geld ook ophalen? Want ze hadden allemaal geen bankrekening. Daar moest een Proof-of-Concept gehaald worden. En dat heeft uiteindelijk geleid tot die investering van GDF SUEZ, nu Engie.
+            Je probeert dus eigenlijk van 1 klant wat meer klanten te maken, zodat je langzaam in de richting van een Proof-of-Concept gaat. Blijven mensen ook betalen? Kun je dat geld ook ophalen? Blijft de kit werken, blijven klanten 'm gebruiken? Blijft het interessant genoeg voor de lokale partner? Daar moest een Proof-of-Concept gehaald worden. En dat heeft uiteindelijk geleid tot die investering van GDF SUEZ, nu Engie.
             <cite>Harmen van Heist, mede-oprichter Spark</cite>
           </blockquote>
           <p>
             Dat is de kern van dit hoofdstuk. Eén klant die enthousiast is, is geen bewijs. Twee klanten ook niet. Pas wanneer een patroon zichtbaar wordt, en wanneer het patroon blijft bestaan ook als er omstandigheden veranderen, heb je een gevalideerd idee dat draagt. Dat proces van losse signalen omzetten naar herhaalbaar bewijs, met de iteraties, de tegenvallers en de conflicterende feedback die daar onvermijdelijk bij horen, leer je hier.
           </p>
+          </div>
 
           <h3>Waarom dit hoofdstuk?</h3>
           <p>
@@ -2573,7 +2625,7 @@
 
           <div class="callout spark">
             <p>
-              De vroege Spark-iteraties van 2013 tot 2016 zijn een schoolvoorbeeld van iteratieve discipline. Elke ronde 1 leerelement extra: <em>blijven mensen het gebruiken? Blijven ze betalen? Kunnen lokale partners het repareren? Werkt de uitwisseling van energie tussen huishoudens?</em> Het verhaal van de man met 2 vrouwen liet vooral zien dat een succesvolle klant op zichzelf niets bewijst, wel dat het verdienmodel sterk genoeg was om te overleven als de oorspronkelijke gebruiker uitvalt. Dat is een sterker signaal dan 1 enkele tevreden klant.
+              De vroege Spark-iteraties van 2011 tot 2013, vóór de Engie/GDF SUEZ-investering en het vestigen van de Spark Pvt Ltd in Delhi, zijn een schoolvoorbeeld van iteratieve discipline. Elke ronde 1 leerelement extra: <em>blijven mensen het gebruiken? Blijven ze betalen? Kunnen lokale partners het repareren? Werkt de uitwisseling van energie tussen huishoudens?</em> Het verhaal van de man met 2 vrouwen liet zien dat 1 enthousiaste klant nog niets bewijst, wel dat het verdienmodel sterk genoeg was om te overleven toen de oorspronkelijke gebruiker uitviel. Dat is een sterker signaal dan 1 enkele tevreden klant.
             </p>
           </div>
 
@@ -2611,7 +2663,7 @@
 
           <div class="callout spark">
             <p>
-              Spark's customer journey verloopt langs 3 stadia: Tier 1 is een kleine pilot (100 tot 250 kits, lokale partner test of het werkt), Tier 2 is de eerste grote order (1.500+ kits, inclusief financiering via het Access to Finance programma), Tier 3 is doorlopende afname. Dat is letterlijk een ladder van bewijskracht: Tier 1 toetst haalbaarheid (kunnen we leveren, houden kits het uit), Tier 2 toetst levensvatbaarheid (willen partners grotere volumes afnemen als financiering rond is), Tier 3 is pas het bewijs van duurzame product-marktfit. Pas in Tier 3 weet Spark of de partner een blijvende klant is geworden.
+              Spark's klantfasering, Fase 1 (kleine pilot) → Fase 2 (eerste grote order met Access to Finance) → Fase 3 (doorlopende afname), is niet alleen een experimentenladder, ook een ladder van bewijskracht. Elke fase verhoogt wat Spark zeker weet: na Fase 1 is haalbaarheid bewezen (het werkt in een dorp), na Fase 2 is levensvatbaarheid bewezen (de partner durft een grote order te plaatsen als de financiering rond is), en pas in Fase 3 is duurzame product-marktfit bewezen (de partner blijft bestellen, ronde na ronde). Eenzelfde structuur, gelezen door een andere lens.
             </p>
           </div>
 
@@ -2641,7 +2693,7 @@
 
           <div class="callout spark">
             <p>
-              Spark's vroege metric in Sub-Sahara Afrika was niet <em>"hoeveel kits hebben we verkocht?"</em>, dat is een vanity-getal dat met campagnes makkelijk omhoog gaat. De actionable metric was: <em>welk percentage van de eindgebruikers blijft hun maandelijkse termijn betalen?</em> Bij Spark's klant Altech in DRC bleek dat percentage 99%. Dat is een voorspellend getal: als 99% blijft betalen na 6 maanden, weet je dat de financiering werkt. Als je vooral keek naar het aantal aangesloten kits, had je je verschrikkelijk kunnen vergissen.
+              Een goede metric in Spark's keten was niet <em>"hoeveel kits hebben we verkocht?"</em>, dat is een vanity-getal dat met campagnes makkelijk omhoog gaat. De actionable metric die bewees dat het ondernemingsmodel werkte was: <em>welk percentage van de eindgebruikers blijft hun maandelijkse termijn betalen?</em> Malango Washikala, CEO van Spark's distributiepartner Altech in DRC, vertelt het zelf: <em>"the repayment rate was almost 99%. So we said 'okay let us scale it!'"</em> Dat is een voorspellend getal: als bijna 99% van de eindgebruikers in een dorp na een paar maanden nog steeds netjes hun termijn afdraagt, weet je dat het kredietmodel klopt en dat opschalen kan. Als je vooral op het aantal aangesloten kits had gelet, had je je verschrikkelijk kunnen vergissen.
             </p>
           </div>
 
@@ -2692,7 +2744,7 @@
             Het verschil tussen iteratie en pivot wordt vaak verkeerd begrepen. Een pivot is niet "we maken de knop blauw in plaats van rood". Dat is een iteratie. Een pivot is "we verkopen niet meer aan eindgebruikers maar aan distributiepartners". De vraag die je jezelf kunt stellen: <em>welk bouwblok van mijn Business Model Canvas moet wezenlijk anders?</em> Eén bouwblok aanpassen is meestal iteratie. Meerdere bouwblokken tegelijk omgooien, vooral klantsegment of waardepropositie, is een pivot.
           </p>
           <p>
-            Het Spark-verhaal bevat een goed voorbeeld van iteratie versus pivot. De BOM-anekdote uit sessie 2 (de ontdekking dat het echte probleem niet techniek maar klantfinanciering was) leidde tot een pivot: niet alleen kits verkopen, maar ook financiering aanbieden via het Access to Finance programma. Klantsegment verschoof van eindgebruiker naar lokale distributiepartner; de waardepropositie kreeg er een bouwblok bij. Daarna volgden alleen nog iteraties: kit verbeteren, batterij vergroten, financieringsvoorwaarden bijschaven.
+            Het Spark-verhaal bevat een goed voorbeeld van iteratie versus pivot. De BOM-ontdekking, het échte probleem was niet techniek maar klantfinanciering, leidde tot een pivot: niet alleen kits verkopen, maar ook financiering aanbieden via het Access to Finance programma. Klantsegment verschoof van eindgebruiker naar lokale distributiepartner; de waardepropositie kreeg er een bouwblok bij. Daarna volgden alleen nog iteraties: kit verbeteren, batterij vergroten, financieringsvoorwaarden bijschaven.
           </p>
           <p>
             Beslissen tussen de 3 opties doe je niet op gevoel, maar tegen een vooraf vastgelegd <strong>stop-criterium</strong>. Dat is de drempelwaarde waarop je zegt: <em>"als we dit niet halen, gaan we niet door zoals nu."</em> Bijvoorbeeld: <em>"als minder dan 30% van de testers in deze cohort de oplossing een tweede keer gebruikt, dan pivoteren we."</em> Door de norm vooraf vast te leggen voorkom je dat je het succescijfer achteraf bijbuigt om je oorspronkelijke richting te kunnen verdedigen. Dat is de hardste vorm van zelfbedrog in deze fase.
@@ -2705,7 +2757,7 @@
 
           <div class="callout spark">
             <p>
-              Een treffend voorbeeld van een verschuivende kritieke aanname bij Spark: zodra de PoC voor klantgebruik rond was, verschoof het zwaartepunt. Harmen: <em>"Als je dan je Proof-of-Concept hebt dat mensen het willen gebruiken en blijven betalen, kom je erachter dat je zwaar verlies maakt omdat je producten te duur zijn als je in Nederland of Europa produceert. Dan is de vraag niet meer 'gaan mensen het gebruiken', die is beantwoord. Dan is de vraag: kunnen we het financieel aantrekkelijk maken en houden?"</em> Daarvoor was de Engie-equity nodig om de productie te industrialiseren in India en Chili. Geen pivot, geen iteratie op de oude vraag, een nieuwe kritieke aanname op de volgende laag.
+              Een treffend voorbeeld van een verschuivende kritieke aanname bij Spark: zodra de PoC voor klantgebruik rond was, verschoof het zwaartepunt. Harmen: <em>"Als je dan je Proof-of-Concept hebt dat mensen het willen gebruiken en blijven betalen, kom je erachter dat je zwaar verlies maakt omdat je producten te duur zijn als je in Nederland of Europa produceert. Dan is de vraag niet meer 'gaan mensen het gebruiken', die is beantwoord. Dan is de vraag: kunnen we het financieel aantrekkelijk maken en houden?"</em> Daarvoor was de Engie-equity nodig om de productie in India en China te industrialiseren. Geen pivot, geen iteratie op de oude vraag, een nieuwe kritieke aanname op de volgende laag.
             </p>
           </div>
 
@@ -2738,10 +2790,7 @@
 
           <div class="callout spark">
             <p>
-              Spark kreeg ooit van een investeerder de suggestie om naast solar-kits ook <em>koekstoven</em> (efficiënte kookkachels) te gaan leveren. Financieel leek dat interessant, markt aanwezig, ander productlijn. Maar het paste niet bij de missie: toegang tot energie geven, niet zorgen dat mensen kunnen koken. Spark liet de suggestie liggen. Harmen, terugkijkend: <em>"Blij dat we dat niet gedaan hebben, omdat wij echt energie willen leveren. Onze missie was duidelijk: toegang tot energie."</em>
-            </p>
-            <p>
-              Tegelijkertijd: andere feedback hadden ze juist eerder moeten volgen. <em>"Ik denk dat wij misschien wel eerder de stap naar Afrika hadden moeten zetten. Dat hadden we wel eerder gehoord, maar India leek op papier zo'n goede markt: een groot land. In Afrika is dat heel anders, dus daar hadden we misschien wel eerder naar moeten luisteren."</em> Twee stukken externe feedback, eentje terecht genegeerd, eentje onterecht. Het verschil maakte de motivatie en de afstemming op de missie.
+              Spark kreeg ooit van een investeerder de suggestie om naast solar-kits ook cookstoves (kookkachels) te leveren. Aantrekkelijk op papier, maar buiten de missie. Spark legde de suggestie terecht naast zich neer. Maar er is ook feedback die ze achteraf <em>onterecht</em> hebben laten liggen. Harmen: <em>"Ik denk dat wij misschien wel eerder de stap naar Afrika hadden moeten zetten. Dat hadden we wel eerder gehoord, maar India leek op papier zo'n goede markt, een groot land, dus 1 markt, dachten wij. In Afrika is dat heel anders, dus daar hadden we misschien wel eerder naar moeten luisteren."</em> 2 stukken externe feedback, eentje terecht genegeerd, eentje onterecht. Het verschil maakte uiteindelijk de toets aan de missie en aan wat distributiepartners daadwerkelijk nodig hadden.
             </p>
           </div>
 
@@ -3139,6 +3188,7 @@
             <p style="margin-bottom:0;">De rest van dit hoofdstuk (de pitch, meervoudige waarde en reflectie met de STARR-methode) is eigen stof van deze reader.</p>
           </div>
 
+          <div class="spark-scene">
           <h3>Een korte pitch, een grote sprong</h3>
           <p>
             Rond 2019 zit Harmen van Heist tegenover de Brabantse Ontwikkelingsmaatschappij. Spark heeft tot dat moment 8 jaar achter zich: prototypes in Indiase dorpen, een rebrand, een verschuiving van klantfocus naar lokale distributiepartners in Sub-Sahara Afrika, en sinds kort een nieuw inzicht, het echte probleem van die partners is niet techniek, maar financiering. Spark wil €200.000 ophalen om dat inzicht om te zetten in een werkend programma: Access to Finance.
@@ -3147,15 +3197,16 @@
             De BOM is niet onder de indruk van het product alleen. Energie-kits maken meer bedrijven. Wat de BOM wél wil zien is <em>schaalbaarheid</em>. Hoe gaat dit van enkele honderden kits per partner naar duizenden? De pitch die Harmen voorbereidt is kort. Geen tientallen slides, geen technische diepteduik. Eén centrale boodschap.
           </p>
           <blockquote>
-            Wij hebben hier ontdekt dat de distributiepartij de betalende klant is. En dat we, om energie op te lossen, ook moeten zorgen dat die klant de oplossing kan betalen. Daarom bieden we nu ook financiering aan. Kijk, als Audi een leaseconstructie aanbiedt, zeggen ze nog steeds: wij zijn een automerk, wij maken auto's. Wij blijven ook een energiebedrijf, alleen kunnen onze klanten ons nu echt afnemen.
+            De distributiepartij is onze betalende klant. Om toegang tot energie in Afrika op te lossen, moeten we ook zorgen dat die klant de oplossing kan betalen. Daarom bieden we nu ook financiering aan.
             <cite>Harmen van Heist, mede-oprichter Spark, over de BOM-pitch 2019</cite>
           </blockquote>
           <p>
-            De BOM zegt ja. Niet vanwege de techniek. Vanwege het verhaal dat het probleem, de oplossing en de schaalbaarheid in 3 zinnen aan elkaar koppelde, en vanwege het bewijs dat eronder lag. €200.000 in 2019 wordt in 2020 €1 miljoen vervolginvestering plus €1 miljoen van YARD Energy en €300.000 van DOEN Participaties. Het Access to Finance-programma loopt. Inmiddels staat Spark in 15+ landen met ruim €15 miljoen omzet en heeft het ruim 800.000 mensen toegang tot energie gegeven.
+            De BOM stapt in. Niet alleen vanwege het inzicht, ook omdat Spark de oplossing er meteen bij had: het Access to Finance-programma was al ontworpen, de eerste contacten met DGGF en Atradius al gelegd. Dat gaf vertrouwen dat dit team niet alleen analyseert, maar ook fixt. In 2019 stapte de BOM in met een eerste investering van €200.000. Een jaar later, in 2020, volgde een echte Series A van €2,3 miljoen: de BOM legde nog €1 miljoen bij, YARD Energy bracht €1 miljoen in en DOEN Participaties €300.000. Het Access to Finance-programma kwam los. Inmiddels staat Spark in 15+ landen, met ruim €15 miljoen omzet en ruim 800.000 mensen die toegang tot energie hebben gekregen.
           </p>
           <p>
             Dit is precies de overgang die dit hoofdstuk je leert. Je hebt in de hoofdstukken 1 tot en met 5 het probleem onderzocht, oplossingen bedacht, een prototype gemaakt en bewijs verzameld. Nu moet je daarmee 1 ding doen: een ander mens, vaak een opdrachtgever met weinig tijd en veel scepsis, overtuigen dat jouw voorstel de stap waard is. En daarna eerlijk terugkijken op wat het jou heeft opgeleverd.
           </p>
+          </div>
 
           <h3>Waarom dit hoofdstuk?</h3>
           <p>
@@ -3200,10 +3251,10 @@
 
           <div class="callout spark">
             <p>
-              Voor Spark zijn de 3 waarden geen aparte zuilen maar één bouwwerk. Harmen formuleert het zo: <em>"Het is geen trade-off; je hebt echt alle 3 nodig. Sociaal nodig dat die mensen er beter van worden, anders blijven ze niet betalen. Ecologisch nodig dat de zonne-energie ook werkelijk schoner en goedkoper is dan een dieselgenerator. Economisch nodig, anders stopt het project op een gegeven moment. Iedereen begrijpt dat als je dit wilt doen, het ook financieel duurzaam moet zijn."</em>
+              Voor Spark zijn de 3 waarden geen aparte zuilen maar 1 bouwwerk. Harmen formuleert het zo: <em>"Het is geen trade-off, je hebt echt alle 3 nodig. Sociaal: het leven van de eindgebruiker moet er beter van worden, anders blijven ze niet betalen. Ecologisch: na de eerste investering is zonne-energie ook werkelijk schoner én goedkoper dan een dieselgenerator. Economisch: zonder financiële duurzaamheid stopt het project op een gegeven moment, en dan bereik je dus ook geen mensen meer."</em>
             </p>
             <p>
-              Tegelijkertijd is hij scherp over het verschil per stakeholder: een BOM-investeerder, een distributiepartner in Zambia en een eindgebruiker in een dorp wegen niet alle 3 even zwaar. <em>"In het dorp zijn mensen niet zo bezig met de milieukant. Voor hen moet het gewoon waarde leveren, hun leven moet beter worden, en het moet betaalbaar zijn."</em>
+              Tegelijkertijd is hij scherp over het verschil per stakeholder. Een BOM-investeerder, een distributiepartner in Zambia en een eindgebruiker in een dorp wegen niet alle 3 even zwaar: <em>"In het dorp zijn mensen niet altijd bezig met de milieukant. Voor hen moet het gewoon waarde leveren, hun leven moet beter worden, en het moet betaalbaar zijn."</em>
             </p>
           </div>
 
@@ -3243,7 +3294,7 @@
 
           <div class="callout spark">
             <p>
-              Harmen's pitch aan de BOM begon niet met de kit. Hij begon niet eens met Spark. Hij begon met de bottleneck: <em>"De partij die onze oplossing aan eindgebruikers moet leveren, kan er financieel niet meer bij, daardoor blijven mensen zonder energie."</em> Dat is een Waarom. De Hoe, Access to Finance via DGGF en Atradius, kwam erna. De Wat, de Spark-kit zelf, kwam pas op het einde. De BOM zat op de waarom-laag. De rest werd onderbouwing.
+              Harmens pitch aan de BOM begon niet met de kit. Hij begon niet eens met Spark. Hij begon met de bottleneck: de distributiepartij die de oplossing aan eindgebruikers moet leveren, kan er financieel niet meer bij, en daardoor blijven mensen zonder energie. Dat is een <em>Waarom</em>. De <em>Hoe</em>, Access to Finance via DGGF en Atradius, kwam erna. De <em>Wat</em>, de Spark-kit zelf, kwam pas op het eind. De BOM zat in de waarom-laag, de rest werd onderbouwing.
             </p>
           </div>
 
@@ -3349,18 +3400,9 @@
             <li><strong>Laat zien dat je iets meeneemt</strong>. Een goede reflectie eindigt met wat je een volgende keer concreet anders zou doen, niet als belofte, als geleerde les die je al ergens kunt toepassen.</li>
           </ul>
 
-          <div class="callout spark">
-            <p>
-              Harmen reflecteert op 15 jaar Spark in vergelijkbare termen. Een paar vaardigheden die hij vóór 2011 niet had: <em>"Ik heb geleerd dat je het gewoon moet doen. Ik heb geleerd dat je voor je verhaal moet staan. Ik heb geleerd dat je gebruik moet maken van bestaande middelen, niet tegen het systeem in vechten, maar kijken hoe je het kunt benutten. De wissels die wij gebruiken voor exportkredietfinanciering zijn een van de oudste financieringsmogelijkheden. Je hoeft niks nieuws te bedenken; er bestaat al van alles."</em>
-            </p>
-            <p>
-              En een hardere les: <em>"We zijn meerdere keren bijna failliet geweest. Allemaal klein, allemaal langzaam, vertrouwen op klanten dat ze met je in zee gaan, weer proberen, weer afwachten, propositie aanpassen, weer een jaar verder zonder resultaten. Maar samen leiden ze tot beter maken en beter doen."</em> Dat is geen succesverhaal zonder kreukels. Dat is reflectie waar iemand iets aan heeft.
-            </p>
-          </div>
-
           <h3>Spark vandaag, meervoudige waarde in cijfers</h3>
           <p>
-            Het einde van een traject is een goed moment om de bredere uitkomst zichtbaar te maken. Voor Spark zien de cijfers van 2024 er als volgt uit. Niet als marketingverhaal, maar als wat 14 jaar gevalideerd ondernemen op meervoudige waarde oplevert.
+            Het einde van een traject is een goed moment om de bredere uitkomst zichtbaar te maken. Voor Spark zien de cijfers van 2024 er als volgt uit: van een mayonaiseflesje tot grootschalige distributie in Afrika.
           </p>
 
           <figure>
@@ -3374,26 +3416,22 @@
             <li><strong>meer dan 250.000 ton CO2</strong> vermeden ten opzichte van kerosine en hout</li>
             <li><strong>€15+ miljoen</strong> omzet, actief in <strong>15+ landen</strong> in Sub-Sahara Afrika</li>
           </ul>
-          <p style="font-size:13px; color: var(--muted); margin-top:-8px;">Cijfers naar opgave van Spark (Keynote 2022; omzet en aantal landen 2023). Actuelere cijfers volgen.</p>
+          <p style="font-size:13px; color: var(--muted); margin-top:-8px;">Cijfers: Spark, 2024.</p>
           <p>
             Het rake aan deze lijst is niet dat de getallen groot zijn. Het rake is dat ze in 3 dimensies tegelijk kloppen. Ruim 800.000 mensen bereikt is sociaal. Meer dan 250.000 ton vermeden CO2 is ecologisch. Ruim €15 miljoen omzet is economisch. Geen van de 3 is gesubsidieerd door de andere 2, ze ondersteunen elkaar. Dat is wat Porter en Kramer (2011) Creating Shared Value noemen, in cijfers.
           </p>
-          <p>
-            Externe stemmen kwamen mee. Het Brabants Dagblad schreef ooit een artikel onder de kop <em>"3 jongens uit Den Bosch veroveren Afrika met toegang tot energie"</em>. Harmen, terugkijkend: <em>"Hartstikke leuk, had je 20 jaar geleden natuurlijk nooit geloofd. Oh, ik ga half Afrika van energie voorzien, klinkt ambitieus, toch? Kan wel, als je maar echt wilt."</em> Externe bevestiging is geen bewijs op zich, maar als ze komt nadat het bewijs is opgebouwd, versterkt ze het verhaal naar nieuwe stakeholders.
-          </p>
-
           <figure>
             <img src="assets/img/h6-spark-roadmap.png" alt="Spark innovation roadmap, het huidige product is stap 1 van 5" />
             <figcaption>Spark's innovation roadmap: het huidige product, <em>power your home</em>, is stap 1 van 5. De volgende stappen: shared energy grid, online trading, plug &amp; play uitbreiding, koppeling tussen gemeenschappen. Het doel, een gedecentraliseerd smart grid voor opkomende markten, is niet verloren. De kit is een stepping stone. (Bron: Spark Energy.)</figcaption>
           </figure>
 
           <p>
-            Het is een mooi slotbeeld voor deze reader. De 6 stappen die je in deze reader hebt geleerd, hebben Spark niet alleen tot een werkend bedrijf gemaakt, ze hebben Spark in staat gesteld onderweg te blijven. Wat Harmen in een TEDx-talk in 2023 als kernboodschap meegaf:
+            Het is een mooi slotbeeld voor deze reader. De 6 stappen die je in deze reader hebt geleerd, hebben Spark niet alleen tot een werkend bedrijf gemaakt, ze hebben Spark in staat gesteld onderweg te blijven. Wat Harmen in een TEDx-talk in 2025 als kernboodschap meegaf:
           </p>
 
           <blockquote>
-            Een commercieel schaalbare organisatie is een middel, geen doel. Net zoals het mayonaiseflesje dat we in 2011 met Marcel in elkaar soldeerden, geen doel was, het was een middel om het verhaal vast te kunnen pakken.
-            <cite>Harmen van Heist, TEDx Veemarkt 2023</cite>
+            Een commercieel schaalbare organisatie is een middel, geen doel. Net zoals het mayonaiseflesje dat Marcel in 2011 in elkaar soldeerde geen doel was, het was een middel om het verhaal vast te kunnen pakken.
+            <cite>Harmen van Heist, TEDx Veemarkt 2025</cite>
           </blockquote>
 
           <p>
@@ -3716,7 +3754,7 @@
             <li>Porter, M. E., &amp; Kramer, M. R. (2011). Creating shared value. <em>Harvard Business Review, 89</em>(1-2), 62-77.</li>
             <li>Sinek, S. (2009). <em>Start with why: How great leaders inspire everyone to take action</em>. Portfolio.</li>
             <li>Spark Inc. (2024). <em>Situatie 2024, impact en bereik</em> [Bedrijfscommunicatie]. Spark Energy.</li>
-            <li>Van Heist, H. (2023). <em>Een mayonaiseflesje dat 1 miljoen mensen van energie voorziet</em> [TEDx-talk]. TEDx Veemarkt.</li>
+            <li>Van Heist, H. (2025). <em>Een mayonaiseflesje dat 1 miljoen mensen van energie voorziet</em> [TEDx-talk]. TEDx Veemarkt.</li>
             <li>Van Heist, H. (z.d.). [Interview Brabants Dagblad: "3 jongens uit Den Bosch veroveren Afrika met toegang tot energie"]. <em>Brabants Dagblad</em>.</li>
           </ul>
         </section>
@@ -3726,5 +3764,24 @@
         </footer>
       </main>
     </div>
+    <script>
+      // Open <details id="overzicht"> of #toetsinhoud automatisch wanneer er via een ankerlink naartoe gesprongen wordt.
+      (function () {
+        function openTargetDetails() {
+          var hash = window.location.hash;
+          if (hash !== '#overzicht' && hash !== '#toetsinhoud') return;
+          var el = document.querySelector(hash);
+          if (el && el.tagName === 'DETAILS') {
+            el.open = true;
+            // Korte timeout zodat de browser eerst de details kan openen voor scroll-positie correct is.
+            setTimeout(function () {
+              el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 60);
+          }
+        }
+        window.addEventListener('hashchange', openTargetDetails);
+        window.addEventListener('DOMContentLoaded', openTargetDetails);
+      })();
+    </script>
   </body>
 </html>

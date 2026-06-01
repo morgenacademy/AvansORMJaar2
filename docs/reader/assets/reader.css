@@ -48,9 +48,9 @@ body {
 /* ===== Layout ===== */
 .layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 32px;
-  max-width: 1400px;
+  grid-template-columns: 220px 1fr;
+  gap: 28px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 24px;
 }
@@ -181,8 +181,8 @@ main {
   display: inline-block;
   padding: 6px 12px;
   border-radius: 999px;
-  background: #ece3d1;
-  color: #6c5114;
+  background: #fbe1e6;
+  color: var(--avans-rood);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -286,21 +286,22 @@ main {
   cursor: pointer;
   list-style: none;
   padding: 14px 18px;
-  font-weight: 800;
-  font-size: 16px;
-  color: var(--blue);
-  background: var(--blue-soft);
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  background: var(--avans-rood);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  transition: background 0.15s;
 }
 
 .meta > summary::-webkit-details-marker { display: none; }
-.meta > summary::after { content: "▸"; font-weight: 800; }
+.meta > summary::after { content: "▸"; font-weight: 800; color: #ffffff; }
 .meta[open] > summary::after { content: "▾"; }
 .meta[open] { flex-basis: 100%; }
-.meta > summary:hover { filter: brightness(0.97); }
+.meta > summary:hover { background: #a30022; }
 
 /* binnenblokken vlak maken: de .meta levert de rand al */
 .meta > .callout,
@@ -646,8 +647,11 @@ figcaption {
   font-weight: 600;
   color: var(--muted);
   text-align: center;
-  align-self: end;
+  align-self: start;
+  grid-row: 3;
 }
+.power-interest .pi-tag-low { grid-column: 2; }
+.power-interest .pi-tag-high { grid-column: 3; }
 
 /* ===== Mad Lib formule ===== */
 .madlib {

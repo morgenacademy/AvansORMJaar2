@@ -268,14 +268,12 @@ main {
 /* ===== Meta-knoppen (Overzicht / Toetsinhoud, inklapbaar) ===== */
 .meta-nav {
   display: flex;
-  flex-wrap: wrap;
-  align-items: stretch;
+  flex-direction: column;
   gap: 12px;
   margin: 24px 0 8px;
 }
 
 .meta {
-  flex: 1 1 220px;
   border: 1px solid var(--border);
   border-radius: 14px;
   overflow: hidden;

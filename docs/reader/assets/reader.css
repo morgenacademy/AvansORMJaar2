@@ -269,6 +269,7 @@ main {
 .meta-nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
   gap: 12px;
   margin: 24px 0 8px;
 }
@@ -279,26 +280,44 @@ main {
   border-radius: 14px;
   overflow: hidden;
   background: var(--panel);
-  align-self: start;
+  display: flex;
+  flex-direction: column;
 }
 
 .meta > summary {
   cursor: pointer;
   list-style: none;
   padding: 14px 18px;
-  font-weight: 700;
-  font-size: 15px;
   color: #ffffff;
   background: var(--avans-rood);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: 12px;
   transition: background 0.15s;
+  min-height: 64px;
+  flex: 1 0 auto;
+}
+
+.meta > summary .meta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.meta > summary .meta-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.meta > summary .meta-sub {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  opacity: 0.92;
 }
 
 .meta > summary::-webkit-details-marker { display: none; }
-.meta > summary::after { content: "▸"; font-weight: 800; color: #ffffff; }
+.meta > summary::after { content: "▸"; font-weight: 800; color: #ffffff; flex-shrink: 0; }
 .meta[open] > summary::after { content: "▾"; }
 .meta[open] { flex-basis: 100%; }
 .meta > summary:hover { background: #a30022; }

@@ -48,9 +48,9 @@ body {
 /* ===== Layout ===== */
 .layout {
   display: grid;
-  grid-template-columns: 280px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 32px;
-  max-width: 1180px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 24px;
 }
@@ -68,8 +68,9 @@ aside.toc {
   box-shadow: var(--shadow);
 }
 
-/* Quicklinks bovenin de sidebar: Overzicht + Toetsinhoud als rode knoppen */
-.toc-quicklinks {
+/* Quicklinks bovenin de sidebar: Overzicht + Toetsinhoud als rode knoppen.
+   Specificiteit hoog houden om de bullets/counter van de hoofdstuk-lijst te overrulen. */
+aside.toc ul.toc-quicklinks {
   list-style: none;
   margin: 0 0 18px;
   padding: 0 0 16px;
@@ -77,11 +78,23 @@ aside.toc {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  counter-reset: none;
 }
-.toc-quicklinks li { margin: 0; }
-.toc-quicklinks a {
+aside.toc ul.toc-quicklinks li {
+  counter-increment: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+aside.toc ul.toc-quicklinks li::before,
+aside.toc ul.toc-quicklinks li::marker,
+aside.toc ul.toc-quicklinks a::before {
+  content: none !important;
+  display: none !important;
+}
+aside.toc ul.toc-quicklinks a {
   display: block;
-  padding: 9px 14px;
+  padding: 10px 14px;
   background: var(--avans-rood);
   color: #ffffff;
   text-decoration: none;
@@ -92,7 +105,10 @@ aside.toc {
   text-align: center;
   transition: background 0.15s;
 }
-.toc-quicklinks a:hover { background: #a30022; }
+aside.toc ul.toc-quicklinks a:hover {
+  background: #a30022;
+  color: #ffffff;
+}
 
 aside.toc h2 {
   margin: 0 0 12px;
@@ -726,6 +742,26 @@ cite, .ref {
 .spark-scene blockquote {
   background: rgba(255, 255, 255, 0.6);
 }
+
+.callout.aitools {
+  background: #eef3fb;
+  border-color: var(--avans-donkerblauw);
+  border-left-width: 4px;
+}
+.callout.aitools::before {
+  content: "🤖 AI-hulpmiddelen voor dit hoofdstuk";
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--avans-donkerblauw);
+  margin-bottom: 10px;
+}
+.callout.aitools ul { margin: 6px 0 0; padding-left: 22px; }
+.callout.aitools li { margin: 4px 0; }
+.callout.aitools li strong { color: var(--avans-donkerblauw); }
 
 .callout.warning {
   background: var(--red-soft);

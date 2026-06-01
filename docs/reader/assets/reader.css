@@ -164,7 +164,7 @@ aside.toc a:hover {
 }
 
 main {
-  max-width: var(--reading-width);
+  min-width: 0; /* zorg dat grid-cel niet uitbreidt buiten 1fr door brede content */
 }
 
 /* ===== Hero / cover ===== */

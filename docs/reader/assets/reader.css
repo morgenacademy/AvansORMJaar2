@@ -101,21 +101,17 @@ aside.toc h2 {
 .topbar a {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: #ffffff;
-  color: var(--avans-rood);
+  padding: 9px 20px;
+  background: var(--avans-rood);
+  color: #ffffff;
   text-decoration: none;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
+  letter-spacing: 0.01em;
   transition: background 0.15s, transform 0.1s;
-  border: 1.5px solid var(--avans-rood);
 }
-.topbar a:hover {
-  background: var(--avans-rood);
-  color: #ffffff;
-}
+.topbar a:hover { background: #a30022; }
 .topbar a:active { transform: translateY(1px); }
 @media (max-width: 600px) {
   .topbar { padding: 8px 12px; gap: 8px; }
@@ -441,13 +437,21 @@ blockquote cite::before { content: "— "; }
   box-shadow: var(--shadow);
 }
 
-/* ===== Figuur / model-illustratie ===== */
+/* ===== Figuur / model-illustratie (= lesstof, koele kleur) ===== */
 figure {
   margin: 24px 0;
   padding: 20px;
-  background: #faf6ec;
+  background: #eef3fb;
   border-radius: 12px;
   border: 1px solid var(--border);
+  border-left: 4px solid var(--avans-donkerblauw);
+}
+
+/* Figuren binnen Spark-context: warm in plaats van koel, geen blauwe accent */
+.callout.spark figure,
+.spark-scene figure {
+  background: rgba(255, 255, 255, 0.55);
+  border-left: 1px solid var(--border);
 }
 
 figure img {

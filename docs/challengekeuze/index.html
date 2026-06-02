@@ -761,12 +761,14 @@
 
       .pitch-box ul {
         display: grid;
-        gap: 6px;
+        gap: 9px;
         margin: 8px 0 0;
-        padding-left: 18px;
+        padding-left: 20px;
       }
 
       .pitch-box li {
+        display: list-item;
+        line-height: 1.35;
         padding-left: 2px;
       }
 
@@ -1516,10 +1518,12 @@
         const selected = noChoice ? routes[noChoice] : null;
         return {
           label: "Nog geen challenge",
-          count: noChoice ? 1 : 0,
-          total: 1,
-          done: Boolean(noChoice),
+          count: 0,
+          total: 0,
+          done: false,
           started: Boolean(noChoice || interests.size || context),
+          scoreSubText: noChoice ? "Richting gekozen, nog concreet maken" : "Kies eerst je richting",
+          scorePillText: noChoice ? "actie" : "-",
           state: noChoice ? "start" : "warning",
           title: noChoice ? "Volgende stap gekozen" : "Kies je zoekroute",
           summary: noChoice
@@ -1541,7 +1545,8 @@
           ],
           pitchTitle: "Wat doe je nu?",
           pitchLines: [
-            selected ? `${selected.title}: ${selected.body}` : "Kies eerst zelf opzetten of verbetering testen bij een bestaand bedrijf.",
+            selected ? selected.title : "Kies eerst zelf opzetten of verbetering testen bij een bestaand bedrijf.",
+            selected ? selected.body : "Daarna zie je welke vervolgstap logisch is.",
             interestSentence,
             context ? `Eerste richting: ${context}` : "Schrijf je eerste richting, idee of mogelijke plek op."
           ]
@@ -1582,8 +1587,8 @@
         resultTitle.textContent = result.title;
         resultSummary.textContent = result.summary;
         scoreLabel.textContent = result.label;
-        scoreSub.textContent = result.total ? `${result.count} van ${result.total} afgerond` : "Stap 2 is nog dicht";
-        scorePill.textContent = result.total ? `${result.count}/${result.total}` : "-";
+        scoreSub.textContent = result.scoreSubText || (result.total ? `${result.count} van ${result.total} afgerond` : "Stap 2 is nog dicht");
+        scorePill.textContent = result.scorePillText || (result.total ? `${result.count}/${result.total}` : "-");
         renderAdvice(result.items);
         renderPitch(result.pitchTitle, result.pitchLines);
         updateSteps(result.done, result.started);

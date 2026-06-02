@@ -732,6 +732,19 @@
         color: var(--avans-rood);
       }
 
+      .advice-list a,
+      .pitch-box a {
+        color: var(--avans-rood);
+        font-weight: 700;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .advice-list a:hover,
+      .pitch-box a:hover {
+        color: var(--zwart);
+      }
+
       .pitch-box {
         margin-top: 14px;
         padding: 13px;
@@ -744,6 +757,17 @@
       .pitch-box strong {
         display: block;
         margin-bottom: 4px;
+      }
+
+      .pitch-box ul {
+        display: grid;
+        gap: 6px;
+        margin: 8px 0 0;
+        padding-left: 18px;
+      }
+
+      .pitch-box li {
+        padding-left: 2px;
       }
 
       .footer-band {
@@ -949,7 +973,7 @@
               <span class="route-icon">1</span>
               <span>
                 <strong>Extern bedrijf</strong>
-                <span>Je wilt meekijken of verbeteren bij een bestaand bedrijf.</span>
+                <span>Je wilt een verbetering testen bij een bestaand bedrijf.</span>
               </span>
             </button>
             <button class="route-card" type="button" data-route="own" aria-pressed="false">
@@ -963,7 +987,7 @@
               <span class="route-icon">3</span>
               <span>
                 <strong>Nog niets</strong>
-                <span>Je zoekt nog richting voor een eigen idee of bestaand bedrijf.</span>
+                <span>Je zoekt nog richting voor een eigen idee of een plek om te testen.</span>
               </span>
             </button>
           </div>
@@ -1015,7 +1039,7 @@
                   <input type="checkbox" data-check="external-permission" />
                   <span>
                     <strong>Toestemming om te testen, proberen en veranderen</strong>
-                    <span>Je mag niet alleen meekijken; je moet iets kunnen uitproberen en terugkoppelen.</span>
+                    <span>Je mag niet alleen observeren; je moet iets kunnen uitproberen en terugkoppelen.</span>
                   </span>
                 </label>
               </div>
@@ -1026,8 +1050,8 @@
                   <input id="external-company" type="text" placeholder="Bijvoorbeeld: Spark" />
                 </div>
                 <div class="field">
-                  <label for="external-goal">Doel in 1 zin</label>
-                  <input id="external-goal" type="text" placeholder="Bijvoorbeeld: verkoop verdubbelen" />
+                  <label for="external-goal">SMART-doel in 1 zin</label>
+                  <input id="external-goal" type="text" placeholder="Bijvoorbeeld: binnen 6 weken 3 acties testen om offerteconversie met 10% te verhogen" />
                 </div>
               </div>
             </div>
@@ -1036,7 +1060,7 @@
               <div class="branch-title">
                 <div>
                   <h2>Eigen bedrijf checken</h2>
-                  <p>Begin altijd met je waardepropositie. Daarna check je of je doel concreet genoeg is voor een pitch.</p>
+                  <p>Begin altijd met je waardepropositie. Daarna check je of je doel concreet genoeg is voor je mini-presentatie.</p>
                 </div>
                 <span class="branch-tag" id="own-count-label">0/2 aangevinkt</span>
               </div>
@@ -1060,8 +1084,8 @@
                 <label class="check-item">
                   <input type="checkbox" data-check="own-goal" />
                   <span>
-                    <strong>Naam plus afgebakend challenge-doel klaar</strong>
-                    <span>Je kunt in 1 zin zeggen wat je in blok 1 gaat onderzoeken, testen, verbeteren of opleveren.</span>
+                    <strong>Naam plus SMART challenge-doel klaar</strong>
+                    <span>Je kunt in 1 zin zeggen wat je in blok 1 gaat onderzoeken, testen, verbeteren of opleveren, met tijd en meetcriterium.</span>
                   </span>
                 </label>
               </div>
@@ -1072,8 +1096,8 @@
                   <input id="own-company" type="text" placeholder="Bijvoorbeeld: mijn webshop, dienst of startupidee" />
                 </div>
                 <div class="field">
-                  <label for="own-goal-text">Challenge-doel in 1 zin</label>
-                  <input id="own-goal-text" type="text" placeholder="Bijvoorbeeld: valideren of doelgroep X wil betalen voor Y" />
+                  <label for="own-goal-text">SMART challenge-doel in 1 zin</label>
+                  <input id="own-goal-text" type="text" placeholder="Bijvoorbeeld: binnen 6 weken met 15 studenten testen of zij EUR 10 willen betalen voor X" />
                 </div>
               </div>
             </div>
@@ -1089,7 +1113,7 @@
 
               <div class="choice-row" aria-label="Richting kiezen">
                 <button class="choice-button" type="button" data-no-choice="build" aria-pressed="false">Zelf iets opzetten</button>
-                <button class="choice-button" type="button" data-no-choice="watch" aria-pressed="false">Meekijken bij bestaand bedrijf</button>
+                <button class="choice-button" type="button" data-no-choice="watch" aria-pressed="false">Verbetering testen bij bestaand bedrijf</button>
               </div>
 
               <div class="field" style="margin-top: 18px">
@@ -1138,7 +1162,7 @@
               <div class="result-status" data-state="start" id="result-status">
                 <span class="result-kicker" id="result-kicker">Uitkomst</span>
                 <h2 id="result-title">Kies stap 1</h2>
-                <p id="result-summary">Kies eerst een route. Daarna zie je wat je moet doen voor je pitch.</p>
+                <p id="result-summary">Kies eerst een route. Daarna zie je wat je moet doen voor je mini-presentatie.</p>
               </div>
               <div class="result-body">
                 <div class="score-line">
@@ -1147,8 +1171,10 @@
                 </div>
                 <ul class="advice-list" id="advice-list"></ul>
                 <div class="pitch-box" id="pitch-box">
-                  <strong>Voor je pitch</strong>
-                  <span>Kies eerst een route in stap 1.</span>
+                  <strong>Voor je mini-presentatie</strong>
+                  <ul>
+                    <li>Kies eerst een route in stap 1.</li>
+                  </ul>
                 </div>
               </div>
             </aside>
@@ -1163,7 +1189,7 @@
         </article>
         <article class="footer-card blue-mark">
           <h2>Wat neem je mee?</h2>
-          <p>Je route, je checkscore, de naam of richting, het challenge-doel en de concrete herstelactie als iets nog niet voldoet.</p>
+          <p>Je concrete mini-presentatie: minimaal 1 slide, maximaal 2 minuten. Daarmee laat je route, naam of richting, SMART challenge-doel en testruimte zien. Je coach geeft in week 1 go/no-go.</p>
         </article>
       </section>
     </main>
@@ -1197,6 +1223,20 @@
       let accordionOpen = false;
       let noChoice = "";
       const interests = new Set();
+      const toolLinks = [
+        {
+          label: "Waardepropositie Bouwer",
+          url: "https://chatgpt.com/g/g-6824663e94d88191b5023348dd00e2f0-waardepropositie-bouwer"
+        },
+        {
+          label: "Idee Generator",
+          url: "https://chatgpt.com/g/g-682f2fc4026c8191831f908e34747b93-idee-generator-van-inzicht-naar-kans"
+        },
+        {
+          label: "Idee Validator",
+          url: "https://chatgpt.com/g/g-9JfbO9jKb-startup-validator"
+        }
+      ];
 
       const routeCopy = {
         external: {
@@ -1205,11 +1245,11 @@
         },
         own: {
           title: "Eigen bedrijf checken",
-          subtitle: "Je koos eigen bedrijf. Start met de Waardepropositie Bouwer en maak je pitch concreet."
+          subtitle: "Je koos eigen bedrijf. Start met de Waardepropositie Bouwer en maak je mini-presentatie concreet."
         },
         none: {
           title: "Nog geen challenge concreet maken",
-          subtitle: "Je koos nog niets. Gebruik deze stap om tot een eigen idee of extern zoekspoor te komen."
+          subtitle: "Je koos nog niets. Gebruik deze stap om tot een eigen idee of een plek voor een verbeteringstest te komen."
         }
       };
 
@@ -1298,6 +1338,35 @@
         updateResult();
       }
 
+      function appendLinkedText(parent, text) {
+        let remaining = text;
+
+        while (remaining) {
+          const nextMatch = toolLinks
+            .map((tool) => ({ tool, index: remaining.indexOf(tool.label) }))
+            .filter((match) => match.index >= 0)
+            .sort((a, b) => a.index - b.index)[0];
+
+          if (!nextMatch) {
+            parent.append(document.createTextNode(remaining));
+            return;
+          }
+
+          if (nextMatch.index > 0) {
+            parent.append(document.createTextNode(remaining.slice(0, nextMatch.index)));
+          }
+
+          const link = document.createElement("a");
+          link.href = nextMatch.tool.url;
+          link.target = "_blank";
+          link.rel = "noopener";
+          link.textContent = nextMatch.tool.label;
+          parent.append(link);
+
+          remaining = remaining.slice(nextMatch.index + nextMatch.tool.label.length);
+        }
+      }
+
       function renderAdvice(items) {
         adviceList.innerHTML = "";
         items.forEach((item) => {
@@ -1305,7 +1374,7 @@
           const title = document.createElement("strong");
           const body = document.createElement("span");
           title.textContent = item.title;
-          body.textContent = item.body;
+          appendLinkedText(body, item.body);
           li.append(title, body);
           adviceList.append(li);
         });
@@ -1316,11 +1385,14 @@
         const strong = document.createElement("strong");
         strong.textContent = title;
         pitchBox.append(strong);
+
+        const list = document.createElement("ul");
         lines.forEach((line) => {
-          const span = document.createElement("span");
-          span.textContent = line;
-          pitchBox.append(span);
+          const item = document.createElement("li");
+          appendLinkedText(item, line);
+          list.append(item);
         });
+        pitchBox.append(list);
       }
 
       function updateSteps(done, started) {
@@ -1361,21 +1433,22 @@
           state: done ? "success" : "warning",
           title: done ? "Lijkt pitchklaar" : "Voldoet nog niet",
           summary: done
-            ? "Je externe challenge heeft de minimale basis. Bereid nu je pitch voor en bespreek dit met je coach."
+            ? "Je externe challenge heeft de minimale basis. Bereid een mini-presentatie voor: minimaal 1 slide, maximaal 2 minuten."
             : "Deze externe challenge mist nog voorwaarden. Los ze op voordat je dit als uitzondering pitcht.",
           items: done
             ? [
                 {
-                  title: "Volgende stap",
-                  body: "Pitch kort welk bedrijf je kiest, welk doel je aanpakt, waarom dit leerzaam is en welke testruimte je hebt."
+                  title: "Volgende stap: mini-presentatie",
+                  body: "Maak minimaal 1 slide en houd je verhaal maximaal 2 minuten. Pitch dit in week 1 bij je coach; daar hoor je definitief of je hiermee door mag."
                 }
               ]
             : missing,
-          pitchTitle: "Voor je pitch meenemen",
+          pitchTitle: "Voor je mini-presentatie meenemen",
           pitchLines: [
-            company ? `Organisatie: ${company}.` : "Organisatie: vul de naam nog in.",
-            goal ? `Challenge-doel: ${goal}.` : "Challenge-doel: formuleer dit nog in 1 zin.",
-            done ? "Check: 4/4 criteria op orde." : `Check: ${count}/4 criteria op orde.`
+            "Maak minimaal 1 slide en houd je verhaal maximaal 2 minuten.",
+            company ? `Toon welke organisatie het is: ${company}.` : "Toon welke organisatie het is: vul de naam nog in.",
+            goal ? `Toon je SMART-doel: ${goal}.` : "Toon je SMART-doel: formuleer nog tijd, actie en meetcriterium in 1 zin.",
+            done ? "Toon dat alle 4 criteria kloppen: omzet, medewerkers, scope en testruimte." : `Toon wat al op orde is en wat nog ontbreekt: ${count}/4 criteria afgerond.`
           ]
         };
       }
@@ -1402,21 +1475,22 @@
           state: done ? "success" : "warning",
           title: done ? "Klaar voor pitch" : "Voldoet nog niet",
           summary: done
-            ? "Neem je tooluitkomst, naam en challenge-doel mee naar je coach."
+            ? "Bereid een mini-presentatie voor: minimaal 1 slide, maximaal 2 minuten. Doe die in week 1 bij je coach."
             : "Je eigen bedrijfsroute mist nog input. Start met de tool en maak daarna je doel concreet.",
           items: done
             ? [
                 {
-                  title: "Volgende stap",
-                  body: "Bereid je pitch voor met de uitkomst van de Waardepropositie Bouwer, de naam van je idee en je afgebakende challenge-doel."
+                  title: "Volgende stap: mini-presentatie",
+                  body: "Maak minimaal 1 slide en houd je verhaal maximaal 2 minuten. Pitch dit in week 1 bij je coach; daar hoor je definitief of je hiermee door mag."
                 }
               ]
             : missing,
-          pitchTitle: "Voor je pitch meenemen",
+          pitchTitle: "Voor je mini-presentatie meenemen",
           pitchLines: [
-            "Uitkomst Waardepropositie Bouwer: meenemen als bewijsstuk.",
-            company ? `Naam bedrijf of idee: ${company}.` : "Naam bedrijf of idee: vul dit nog in.",
-            goal ? `Challenge-doel: ${goal}.` : "Challenge-doel: formuleer dit nog in 1 zin."
+            "Maak minimaal 1 slide en houd je verhaal maximaal 2 minuten.",
+            "Toon de uitkomst van de Waardepropositie Bouwer.",
+            company ? `Toon de naam van je bedrijf of idee: ${company}.` : "Toon de naam van je bedrijf of idee: vul dit nog in.",
+            goal ? `Toon je SMART challenge-doel: ${goal}.` : "Toon je SMART challenge-doel: formuleer nog tijd, actie en meetcriterium in 1 zin."
           ]
         };
       }
@@ -1434,8 +1508,8 @@
             body: "Doorloop eerst de Idee Generator. Heb je een globale richting, gebruik daarna de Idee Validator. Ga door totdat je de Waardepropositie Bouwer concreet kunt invullen."
           },
           watch: {
-            title: "Bestaand bedrijf zoeken",
-            body: "Gebruik je interesses als zoekrichting en benader minimaal 2 bedrijven. Vraag direct of er een afgebakend project en testruimte mogelijk is."
+            title: "Verbetering testen bij bestaand bedrijf",
+            body: "Gebruik je interesses als zoekrichting en benader minimaal 2 bedrijven. Vraag direct welke verbetering je mag testen en of er testruimte is."
           }
         };
 
@@ -1450,24 +1524,24 @@
           title: noChoice ? "Volgende stap gekozen" : "Kies je zoekroute",
           summary: noChoice
             ? "Je hebt nu een concrete route om verder te komen. Werk dit uit voordat je naar je coach gaat."
-            : "Kies of je zelf iets wilt opzetten of bij een bestaand bedrijf wilt meekijken.",
+            : "Kies of je zelf iets wilt opzetten of een verbetering wilt testen bij een bestaand bedrijf.",
           items: [
             selected || {
               title: "Begin hier",
-              body: "Kies eerst je zoekroute: zelf iets opzetten of meekijken bij een bestaand bedrijf."
+              body: "Kies eerst je zoekroute: zelf iets opzetten of een verbetering testen bij een bestaand bedrijf."
             },
             {
               title: "Maak het concreet",
               body: noChoice === "build"
                 ? "Gebruik daarna Idee Generator, Idee Validator en vervolgens Waardepropositie Bouwer. Pas als je die vragen kunt beantwoorden, ga je terug naar Eigen bedrijf."
                 : noChoice === "watch"
-                  ? "Maak een shortlist van bedrijven en check daarna de route Extern bedrijf met de 4 criteria."
+                  ? "Maak een shortlist van bedrijven, vraag welke verbetering je mag testen en check daarna de route Extern bedrijf met de 4 criteria."
                   : "Selecteer interesses en schrijf je eerste richting op."
             }
           ],
           pitchTitle: "Wat doe je nu?",
           pitchLines: [
-            selected ? `${selected.title}: ${selected.body}` : "Kies eerst zelf opzetten of meekijken bij bestaand bedrijf.",
+            selected ? `${selected.title}: ${selected.body}` : "Kies eerst zelf opzetten of verbetering testen bij een bestaand bedrijf.",
             interestSentence,
             context ? `Eerste richting: ${context}` : "Schrijf je eerste richting, idee of mogelijke plek op."
           ]
@@ -1490,7 +1564,7 @@
               body: "Klik op Extern bedrijf, Eigen bedrijf of Nog niets."
             }
           ],
-          pitchTitle: "Voor je pitch",
+          pitchTitle: "Voor je mini-presentatie",
           pitchLines: ["Kies eerst een route in stap 1."]
         };
       }

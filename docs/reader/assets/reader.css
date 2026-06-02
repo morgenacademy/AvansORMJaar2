@@ -518,6 +518,37 @@ figure {
   }
 }
 
+/* ===== Spark-casus markeringen: alles van Spark warm, niet koel-blauw als lesstof ===== */
+/* Losstaand casus-figuur: warm in plaats van de koel-blauwe lesstof-look */
+figure.spark {
+  background: #fffaf0;
+  border-left-color: var(--avans-rood);
+}
+
+/* Casus-video los in de lopende tekst: warm kader eromheen */
+.spark-media {
+  margin: 24px 0;
+  padding: 16px 18px 8px;
+  background: #fffaf0;
+  border-radius: 14px;
+  border-left: 6px solid var(--avans-rood);
+  box-shadow: inset 0 0 0 1px rgba(198, 0, 42, 0.08);
+}
+.spark-media .video { margin: 0; }
+.spark-media .video-caption { margin: 12px 0 0; }
+
+/* Media binnen het 'Zo deed Spark het'-kader (samengevoegde casus-cluster) */
+.callout.spark > figure { margin: 16px 0 0; }
+.callout.spark .video { margin: 16px 0 0; }
+.callout.spark .video-caption { margin: 12px 0 0; }
+.callout.spark .spark-source {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(198, 0, 42, 0.18);
+}
+.callout.spark .spark-source p { font-size: 14px; }
+.callout.spark .spark-source strong { color: var(--avans-rood); }
+
 /* ===== Lightbox overlay ===== */
 .lightbox-overlay {
   position: fixed;

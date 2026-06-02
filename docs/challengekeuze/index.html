@@ -117,25 +117,6 @@
         font-weight: 700;
       }
 
-      .top-link {
-        display: inline-flex;
-        align-items: center;
-        min-height: 40px;
-        padding: 8px 14px;
-        border: 1px solid var(--lijn-sterk);
-        border-radius: 8px;
-        background: var(--wit);
-        color: var(--zwart);
-        font-size: 14px;
-        font-weight: 700;
-        text-decoration: none;
-      }
-
-      .top-link:hover {
-        border-color: var(--avans-rood);
-        color: var(--avans-rood);
-      }
-
       .app {
         width: min(1220px, calc(100vw - 48px));
         margin: 0 auto;
@@ -923,7 +904,6 @@
         <span class="brand-divider" aria-hidden="true"></span>
         <p class="brand-title">ORM jaar 2 - Business Challenge I</p>
       </div>
-      <a class="top-link" href="../">Praatplaat</a>
     </header>
 
     <main class="app">
@@ -1009,7 +989,7 @@
             <div class="branch" id="branch-external" data-branch="external" hidden>
               <div class="branch-title">
                 <div>
-                  <h2>Extern bedrijf checken</h2>
+                  <h2>Voorwaarden voor je externe challenge</h2>
                   <p>Een externe challenge moet groot genoeg, concreet genoeg en uitvoerbaar genoeg zijn om echt te kunnen testen.</p>
                 </div>
                 <span class="branch-tag" id="external-count-label">0/4 aangevinkt</span>
@@ -1061,7 +1041,7 @@
             <div class="branch" id="branch-own" data-branch="own" hidden>
               <div class="branch-title">
                 <div>
-                  <h2>Eigen bedrijf checken</h2>
+                  <h2>Basis voor je eigen bedrijf</h2>
                   <p>Begin altijd met je waardepropositie. Daarna check je of je doel concreet genoeg is voor je mini-presentatie.</p>
                 </div>
                 <span class="branch-tag" id="own-count-label">0/2 aangevinkt</span>
@@ -1107,7 +1087,7 @@
             <div class="branch" id="branch-none" data-branch="none" hidden>
               <div class="branch-title">
                 <div>
-                  <h2>Nog geen challenge</h2>
+                  <h2>Kies je richting</h2>
                   <p>Dat snappen we. Niet iedereen heeft begin jaar 2 al een bedrijf of opdrachtgever. Gebruik deze stap om tot iets concreets te komen.</p>
                 </div>
                 <span class="branch-tag">richting kiezen</span>
@@ -1250,8 +1230,8 @@
           subtitle: "Je koos eigen bedrijf. Start met de Waardepropositie Bouwer en maak je mini-presentatie concreet."
         },
         none: {
-          title: "Nog geen challenge concreet maken",
-          subtitle: "Je koos nog niets. Gebruik deze stap om tot een eigen idee of een plek voor een verbeteringstest te komen."
+          title: "Nog geen challenge",
+          subtitle: "Gebruik deze stap om tot een eigen idee of een plek voor een verbeteringstest te komen."
         }
       };
 

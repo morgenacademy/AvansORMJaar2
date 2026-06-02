@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Challengekeuze Business Challenge I</title>
+    <meta
+      name="description"
+      content="Keuzehulp voor ORM jaar 2 studenten: check of je eigen of externe challenge stevig genoeg is voor Business Challenge I."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,800;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --avans-rood: #c6002a;
+        --helder-rood: #ff0013;
+        --kalm-paars: #dfbeff;
+        --actief-blauw: #0099ff;
+        --slim-donkerblauw: #001a6a;
+        --wit: #ffffff;
+        --zwart: #000000;
+        --licht: #f7f7f4;
+        --lijn: rgba(0, 0, 0, 0.12);
+        --lijn-sterk: rgba(0, 0, 0, 0.2);
+        --schaduw: 0 18px 44px rgba(0, 0, 0, 0.08);
+        --font-titel: "Sofia Sans Extra Condensed", sans-serif;
+        --font-body: "Hanken Grotesk", Verdana, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--licht);
+        color: var(--zwart);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.45;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(103deg, rgba(198, 0, 42, 0.09) 0 18%, transparent 18% 100%),
+          linear-gradient(103deg, transparent 0 74%, rgba(223, 190, 255, 0.45) 74% 86%, transparent 86% 100%);
+        pointer-events: none;
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      a {
+        color: var(--avans-rood);
+        text-decoration-thickness: 2px;
+        text-underline-offset: 3px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 32px;
+        border-bottom: 1px solid var(--lijn);
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        min-width: 0;
+      }
+
+      .brand img {
+        display: block;
+        width: 112px;
+        height: auto;
+      }
+
+      .brand-divider {
+        width: 1px;
+        height: 30px;
+        background: var(--lijn);
+      }
+
+      .brand-title {
+        margin: 0;
+        color: var(--avans-rood);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .top-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .top-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 40px;
+        padding: 8px 14px;
+        border: 1px solid var(--lijn-sterk);
+        border-radius: 8px;
+        background: var(--wit);
+        color: var(--zwart);
+        font-size: 14px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .top-link:hover {
+        border-color: var(--avans-rood);
+        color: var(--avans-rood);
+      }
+
+      .app {
+        width: min(1440px, calc(100vw - 48px));
+        margin: 0 auto;
+        padding: 22px 0 40px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: 22px;
+        align-items: end;
+        margin-bottom: 14px;
+      }
+
+      .angle-label {
+        display: inline-block;
+        margin-bottom: 12px;
+        transform: skewX(-11deg);
+        border-radius: 8px;
+        background: var(--avans-rood);
+      }
+
+      .angle-label span {
+        display: block;
+        transform: skewX(11deg);
+        padding: 9px 15px;
+        color: var(--wit);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-titel);
+        font-weight: 800;
+        color: var(--avans-rood);
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 780px;
+        font-size: 56px;
+        font-style: italic;
+        line-height: 0.84;
+        text-transform: uppercase;
+      }
+
+      .lead {
+        max-width: 780px;
+        margin: 12px 0 0;
+        color: var(--zwart);
+        font-size: 17px;
+      }
+
+      .hero-note {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--lijn);
+        border-radius: 8px;
+        background: var(--wit);
+        box-shadow: var(--schaduw);
+      }
+
+      .hero-note::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -34px;
+        width: 82px;
+        height: 100%;
+        transform: skewX(-11deg);
+        background: var(--kalm-paars);
+      }
+
+      .hero-note-inner {
+        position: relative;
+        padding: 20px;
+      }
+
+      .hero-note strong,
+      .hero-note span {
+        display: block;
+      }
+
+      .hero-note strong {
+        color: var(--avans-rood);
+        font-size: 15px;
+      }
+
+      .hero-note span {
+        margin-top: 8px;
+        max-width: 250px;
+        font-size: 13px;
+      }
+
+      .progress {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin: 14px 0;
+      }
+
+      .step {
+        min-height: 58px;
+        padding: 10px 14px;
+        border: 1px solid var(--lijn);
+        border-radius: 8px;
+        background: var(--wit);
+      }
+
+      .step-label {
+        color: var(--avans-rood);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .step strong {
+        display: block;
+        margin-top: 2px;
+        color: var(--zwart);
+        font-size: 15px;
+      }
+
+      .step.active {
+        border-color: var(--avans-rood);
+        box-shadow: inset 0 0 0 2px rgba(198, 0, 42, 0.12);
+      }
+
+      .step.done {
+        background: #ffe8ed;
+        border-color: rgba(198, 0, 42, 0.24);
+      }
+
+      .tool-grid {
+        display: grid;
+        grid-template-columns: 300px minmax(0, 1fr) 360px;
+        gap: 16px;
+        align-items: start;
+      }
+
+      .panel {
+        border: 1px solid var(--lijn);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.96);
+        box-shadow: var(--schaduw);
+      }
+
+      .panel-head {
+        padding: 22px 22px 14px;
+        border-bottom: 1px solid var(--lijn);
+      }
+
+      .panel-head h2 {
+        font-size: 34px;
+        line-height: 0.95;
+      }
+
+      .panel-head p {
+        margin: 10px 0 0;
+        font-size: 15px;
+      }
+
+      .route-list {
+        display: grid;
+        gap: 10px;
+        padding: 16px;
+      }
+
+      .route-card {
+        display: grid;
+        grid-template-columns: 34px 1fr;
+        gap: 12px;
+        width: 100%;
+        min-height: 92px;
+        padding: 14px;
+        border: 1px solid var(--lijn);
+        border-radius: 8px;
+        background: var(--wit);
+        color: var(--zwart);
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .route-card:hover,
+      .route-card.active {
+        border-color: var(--avans-rood);
+      }
+
+      .route-card.active {
+        background: #fff0f3;
+        box-shadow: inset 0 0 0 2px rgba(198, 0, 42, 0.12);
+      }
+
+      .route-icon {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        background: var(--avans-rood);
+        color: var(--wit);
+        font-weight: 700;
+      }
+
+      .route-card strong {
+        display: block;
+        color: var(--zwart);
+        font-size: 17px;
+      }
+
+      .route-card span:not(.route-icon) {
+        display: block;
+        margin-top: 4px;
+        color: var(--zwart);
+        font-size: 14px;
+      }
+
+      .route-tip {
+        margin: 0 16px 16px;
+        padding: 14px;
+        border-left: 5px solid var(--avans-rood);
+        border-radius: 8px;
+        background: #fff6f8;
+        font-size: 14px;
+      }
+
+      .branch {
+        padding: 22px;
+      }
+
+      .branch[hidden] {
+        display: none;
+      }
+
+      .branch-title {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .branch-title h2 {
+        font-size: 44px;
+        line-height: 0.9;
+      }
+
+      .branch-title p {
+        margin: 8px 0 0;
+        max-width: 640px;
+      }
+
+      .branch-tag {
+        flex: 0 0 auto;
+        min-width: 100px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        background: var(--zwart);
+        color: var(--wit);
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .check-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .check-item {
+        display: grid;
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+        min-height: 74px;
+        padding: 14px;
+        border: 1px solid var(--lijn);
+        border-radius: 8px;
+        background: var(--wit);
+      }
+
+      .check-item:has(input:checked) {
+        border-color: rgba(198, 0, 42, 0.42);
+        background: #fff0f3;
+      }
+
+      .check-item input {
+        width: 22px;
+        height: 22px;
+        margin: 2px 0 0;
+        accent-color: var(--avans-rood);
+      }
+
+      .check-item strong {
+        display: block;
+        font-size: 17px;
+      }
+
+      .check-item span {
+        display: block;
+        margin-top: 4px;
+        font-size: 14px;
+      }
+
+      .field-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .field {
+        display: grid;
+        gap: 7px;
+      }
+
+      .field label {
+        color: var(--avans-rood);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .field input,
+      .field textarea {
+        width: 100%;
+        min-height: 44px;
+        border: 1px solid var(--lijn-sterk);
+        border-radius: 8px;
+        padding: 10px 12px;
+        background: var(--wit);
+        color: var(--zwart);
+      }
+
+      .field textarea {
+        min-height: 98px;
+        resize: vertical;
+      }
+
+      .link-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 14px;
+        padding: 14px;
+        border: 1px solid rgba(198, 0, 42, 0.28);
+        border-radius: 8px;
+        background: #fff0f3;
+      }
+
+      .link-card strong {
+        display: block;
+      }
+
+      .link-card a {
+        flex: 0 0 auto;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: var(--avans-rood);
+        color: var(--wit);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .choice-row,
+      .interest-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .choice-row {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .interest-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        margin-top: 14px;
+      }
+
+      .choice-button,
+      .interest-button {
+        min-height: 54px;
+        border: 1px solid var(--lijn);
+        border-radius: 8px;
+        background: var(--wit);
+        color: var(--zwart);
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .choice-button:hover,
+      .choice-button.active,
+      .interest-button:hover,
+      .interest-button.active {
+        border-color: var(--avans-rood);
+      }
+
+      .choice-button.active,
+      .interest-button.active {
+        background: #fff0f3;
+        box-shadow: inset 0 0 0 2px rgba(198, 0, 42, 0.12);
+      }
+
+      .interest-button {
+        min-height: 46px;
+        font-size: 14px;
+      }
+
+      .result-panel {
+        position: sticky;
+        top: 86px;
+        overflow: hidden;
+      }
+
+      .result-status {
+        min-height: 154px;
+        padding: 24px;
+        background: var(--avans-rood);
+        color: var(--wit);
+      }
+
+      .result-status[data-state="success"] {
+        background: var(--zwart);
+      }
+
+      .result-status[data-state="start"] {
+        background: var(--slim-donkerblauw);
+      }
+
+      .result-kicker {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .result-status h2 {
+        color: var(--wit);
+        font-size: 50px;
+        line-height: 0.88;
+      }
+
+      .result-status p {
+        margin: 12px 0 0;
+        color: var(--wit);
+        font-size: 15px;
+      }
+
+      .result-body {
+        padding: 18px;
+        background: var(--wit);
+      }
+
+      .score-line {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        margin-bottom: 14px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--lijn);
+      }
+
+      .score-line strong {
+        color: var(--avans-rood);
+      }
+
+      .score-pill {
+        flex: 0 0 auto;
+        min-width: 86px;
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: #fff0f3;
+        color: var(--avans-rood);
+        font-weight: 700;
+        text-align: center;
+      }
+
+      .advice-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .advice-list li {
+        padding: 12px;
+        border: 1px solid var(--lijn);
+        border-left: 5px solid var(--avans-rood);
+        border-radius: 8px;
+        background: var(--wit);
+      }
+
+      .advice-list strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--avans-rood);
+      }
+
+      .coach-box {
+        margin-top: 16px;
+        padding: 14px;
+        border-radius: 8px;
+        background: var(--kalm-paars);
+        color: var(--zwart);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .footer-band {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .footer-card {
+        padding: 18px;
+        border: 1px solid var(--lijn);
+        border-radius: 8px;
+        background: var(--wit);
+      }
+
+      .footer-card h2 {
+        margin-bottom: 8px;
+        font-size: 32px;
+      }
+
+      .footer-card p {
+        margin: 0;
+      }
+
+      .footer-card.blue-mark {
+        border-top: 8px solid var(--actief-blauw);
+      }
+
+      .footer-card.red-mark {
+        border-top: 8px solid var(--avans-rood);
+      }
+
+      @media (max-width: 1180px) {
+        .hero,
+        .tool-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .result-panel {
+          position: static;
+        }
+
+        .route-list {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          padding: 14px 18px;
+        }
+
+        .brand {
+          width: 100%;
+        }
+
+        .brand-title {
+          font-size: 13px;
+        }
+
+        .app {
+          width: min(100vw - 28px, 720px);
+          padding-top: 20px;
+        }
+
+        h1 {
+          font-size: 44px;
+        }
+
+        .lead {
+          font-size: 15px;
+        }
+
+        .hero-note {
+          display: none;
+        }
+
+        .hero-note-inner,
+        .branch,
+        .panel-head,
+        .result-body,
+        .result-status {
+          padding: 16px;
+        }
+
+        .progress,
+        .route-list,
+        .choice-row,
+        .interest-grid,
+        .field-grid,
+        .footer-band {
+          grid-template-columns: 1fr;
+        }
+
+        .progress {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+          gap: 6px;
+        }
+
+        .step {
+          min-height: 50px;
+          padding: 8px;
+        }
+
+        .step-label {
+          font-size: 11px;
+        }
+
+        .step strong {
+          font-size: 13px;
+        }
+
+        .route-card {
+          min-height: 78px;
+        }
+
+        .branch-title {
+          display: block;
+        }
+
+        .branch-title h2 {
+          font-size: 38px;
+        }
+
+        .branch-tag {
+          display: inline-block;
+          margin-top: 12px;
+        }
+
+        .result-status h2 {
+          font-size: 44px;
+        }
+
+        .link-card {
+          display: block;
+        }
+
+        .link-card a {
+          display: inline-flex;
+          margin-top: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img src="assets/Avans_Logo-RGB.png" alt="Avans Hogeschool" />
+        <span class="brand-divider" aria-hidden="true"></span>
+        <p class="brand-title">ORM jaar 2 - Business Challenge I</p>
+      </div>
+      <div class="top-actions">
+        <a class="top-link" href="../">Praatplaat</a>
+      </div>
+    </header>
+
+    <main class="app">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <div class="angle-label"><span>Keuzehulp voor week 1</span></div>
+          <h1 id="page-title">Challengekeuze Business Challenge I</h1>
+          <p class="lead">
+            Check of jouw eigen bedrijf of externe challenge stevig genoeg is om aan je coach te pitchen.
+            Als het nog niet voldoet, zie je meteen wat je moet aanscherpen.
+          </p>
+        </div>
+        <aside class="hero-note" aria-label="Belangrijk">
+          <div class="hero-note-inner">
+            <strong>Coachakkoord blijft nodig</strong>
+            <span>Deze tool helpt je voorbereiden. De coach bepaalt uiteindelijk of je mag afwijken van de standaardcasus.</span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="progress" aria-label="Voortgang">
+        <div class="step done" data-step="start">
+          <span class="step-label">Stap 1</span>
+          <strong>Start</strong>
+        </div>
+        <div class="step active" data-step="route">
+          <span class="step-label">Stap 2</span>
+          <strong>Route</strong>
+        </div>
+        <div class="step" data-step="check">
+          <span class="step-label">Stap 3</span>
+          <strong>Check</strong>
+        </div>
+        <div class="step" data-step="action">
+          <span class="step-label">Stap 4</span>
+          <strong>Actie</strong>
+        </div>
+      </section>
+
+      <section class="tool-grid" aria-label="Challengekeuze tool">
+        <aside class="panel route-panel">
+          <div class="panel-head">
+            <h2>Heb je al een concrete challenge?</h2>
+            <p>Kies de route die nu het best past. Je kunt daarna gewoon wisselen.</p>
+          </div>
+          <div class="route-list" role="list">
+            <button class="route-card active" type="button" data-route="external" aria-pressed="true">
+              <span class="route-icon">1</span>
+              <span>
+                <strong>Extern bedrijf</strong>
+                <span>Je wilt meekijken of verbeteren bij een bestaand bedrijf.</span>
+              </span>
+            </button>
+            <button class="route-card" type="button" data-route="own" aria-pressed="false">
+              <span class="route-icon">2</span>
+              <span>
+                <strong>Eigen bedrijf</strong>
+                <span>Je hebt of start een eigen onderneming met een concrete propositie.</span>
+              </span>
+            </button>
+            <button class="route-card" type="button" data-route="none" aria-pressed="false">
+              <span class="route-icon">3</span>
+              <span>
+                <strong>Nog niets</strong>
+                <span>Je zoekt nog richting of moet terugvallen op de standaardcasus.</span>
+              </span>
+            </button>
+          </div>
+          <p class="route-tip">
+            Business Challenge I start standaard met een casus in groepjes. Alleen met een sterke eigen of externe challenge kun je een uitzondering pitchen.
+          </p>
+        </aside>
+
+        <section class="panel check-panel">
+          <div class="branch active" id="branch-external" data-branch="external">
+            <div class="branch-title">
+              <div>
+                <h2>Extern bedrijf checken</h2>
+                <p>Een externe challenge moet groot genoeg, concreet genoeg en uitvoerbaar genoeg zijn om echt te kunnen testen.</p>
+              </div>
+              <span class="branch-tag">4 vinkjes</span>
+            </div>
+
+            <div class="check-list">
+              <label class="check-item">
+                <input type="checkbox" data-check="external-turnover" />
+                <span>
+                  <strong>Minimaal EUR 250.000 omzet afgelopen jaar</strong>
+                  <span>Zo voorkom je dat je project te klein of te kwetsbaar is om er goed van te leren.</span>
+                </span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" data-check="external-employees" />
+                <span>
+                  <strong>Minimaal 3 medewerkers</strong>
+                  <span>Er moet voldoende organisatiecontext zijn: mensen, processen, rollen en keuzes.</span>
+                </span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" data-check="external-scope" />
+                <span>
+                  <strong>Afgebakend project, proces of doel</strong>
+                  <span>Je challenge is kleiner dan "help dit bedrijf", maar groter dan een losse taak.</span>
+                </span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" data-check="external-permission" />
+                <span>
+                  <strong>Toestemming om te testen, proberen en veranderen</strong>
+                  <span>Je mag niet alleen meekijken; je moet iets kunnen uitproberen en terugkoppelen.</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="external-company">Bedrijf of organisatie</label>
+                <input id="external-company" type="text" placeholder="Bijvoorbeeld: lokale retailer, praktijkbedrijf, familiebedrijf" />
+              </div>
+              <div class="field">
+                <label for="external-goal">Doel in 1 zin</label>
+                <input id="external-goal" type="text" placeholder="Bijvoorbeeld: het retourproces sneller en duidelijker maken" />
+              </div>
+            </div>
+          </div>
+
+          <div class="branch" id="branch-own" data-branch="own" hidden>
+            <div class="branch-title">
+              <div>
+                <h2>Eigen bedrijf checken</h2>
+                <p>Een eigen onderneming mag, als je propositie concreet genoeg is en je weet welk doel je in deze challenge gaat aanpakken.</p>
+              </div>
+              <span class="branch-tag">2 acties</span>
+            </div>
+
+            <div class="check-list">
+              <label class="check-item">
+                <input type="checkbox" data-check="own-vpc" />
+                <span>
+                  <strong>Waardepropositie ingevuld</strong>
+                  <span>Gebruik de Waardepropositie Bouwer en neem de output mee naar je coachgesprek.</span>
+                </span>
+              </label>
+              <label class="check-item">
+                <input type="checkbox" data-check="own-goal" />
+                <span>
+                  <strong>Duidelijk afgebakend doel voor deze challenge</strong>
+                  <span>Maak concreet wat je in blok 1 gaat onderzoeken, testen, verbeteren of opleveren.</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="link-card">
+              <div>
+                <strong>Waardepropositie Bouwer</strong>
+                <span>Werk eerst je klant, probleem, oplossing en waarde scherp uit.</span>
+              </div>
+              <a href="https://chatgpt.com/g/g-6824663e94d88191b5023348dd00e2f0-waardepropositie-bouwer" target="_blank" rel="noopener">Open tool</a>
+            </div>
+
+            <div class="field-grid">
+              <div class="field">
+                <label for="own-company">Naam of idee</label>
+                <input id="own-company" type="text" placeholder="Bijvoorbeeld: mijn webshop, dienst of startupidee" />
+              </div>
+              <div class="field">
+                <label for="own-goal-text">Challenge-doel in 1 zin</label>
+                <input id="own-goal-text" type="text" placeholder="Bijvoorbeeld: valideren of doelgroep X wil betalen voor Y" />
+              </div>
+            </div>
+          </div>
+
+          <div class="branch" id="branch-none" data-branch="none" hidden>
+            <div class="branch-title">
+              <div>
+                <h2>Nog geen challenge</h2>
+                <p>Kies snel een richting. Je hoeft morgen geen perfect plan te hebben, maar wel een volgende actie.</p>
+              </div>
+              <span class="branch-tag">richting</span>
+            </div>
+
+            <div class="choice-row" aria-label="Richting kiezen">
+              <button class="choice-button" type="button" data-no-choice="build" aria-pressed="false">Zelf iets opzetten</button>
+              <button class="choice-button" type="button" data-no-choice="watch" aria-pressed="false">Meekijken bij bedrijf</button>
+              <button class="choice-button" type="button" data-no-choice="case" aria-pressed="false">Standaardcasus</button>
+            </div>
+
+            <div class="field" style="margin-top: 18px">
+              <label>Wat vind je interessant?</label>
+              <div class="interest-grid" aria-label="Interesses">
+                <button class="interest-button" type="button" data-interest="marketing" aria-pressed="false">Marketing</button>
+                <button class="interest-button" type="button" data-interest="sales" aria-pressed="false">Sales</button>
+                <button class="interest-button" type="button" data-interest="proces" aria-pressed="false">Proces</button>
+                <button class="interest-button" type="button" data-interest="finance" aria-pressed="false">Finance</button>
+                <button class="interest-button" type="button" data-interest="legal" aria-pressed="false">Legal</button>
+                <button class="interest-button" type="button" data-interest="ai" aria-pressed="false">AI</button>
+                <button class="interest-button" type="button" data-interest="impact" aria-pressed="false">Impact</button>
+                <button class="interest-button" type="button" data-interest="klant" aria-pressed="false">Klantprobleem</button>
+              </div>
+            </div>
+
+            <div class="field" style="margin-top: 14px">
+              <label for="none-context">Eerste idee of mogelijke plek</label>
+              <textarea id="none-context" placeholder="Bijvoorbeeld: ik ken een sportschool, ik wil iets met AI in sales, of ik wil een eigen dienst testen"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <aside class="panel result-panel" aria-live="polite">
+          <div class="result-status" data-state="warning" id="result-status">
+            <span class="result-kicker" id="result-kicker">Uitkomst</span>
+            <h2 id="result-title">Voldoet nog niet</h2>
+            <p id="result-summary">Vink de criteria af. Ontbrekende punten worden hieronder vertaald naar herstelacties.</p>
+          </div>
+          <div class="result-body">
+            <div class="score-line">
+              <span><strong id="score-label">Extern bedrijf</strong><br /><span id="score-sub">0 van 4 criteria afgevinkt</span></span>
+              <span class="score-pill" id="score-pill">0/4</span>
+            </div>
+            <ul class="advice-list" id="advice-list"></ul>
+            <div class="coach-box" id="coach-box">
+              Bespreek je uitkomst met je coach. Bij twijfel: kleiner maken, concreter maken, of toch de standaardcasus gebruiken.
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="footer-band" aria-label="Achtergrond">
+        <article class="footer-card red-mark">
+          <h2>Waar kijkt je coach naar?</h2>
+          <p>Is de context echt genoeg, is het doel behapbaar, kun je bewijs verzamelen en mag je iets proberen in de praktijk?</p>
+        </article>
+        <article class="footer-card blue-mark">
+          <h2>Wat neem je mee?</h2>
+          <p>Een korte omschrijving van je route, je afgevinkte criteria en de herstelactie als iets nog niet voldoet.</p>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const routeButtons = Array.from(document.querySelectorAll("[data-route]"));
+      const branches = Array.from(document.querySelectorAll("[data-branch]"));
+      const checks = Array.from(document.querySelectorAll("[data-check]"));
+      const noChoiceButtons = Array.from(document.querySelectorAll("[data-no-choice]"));
+      const interestButtons = Array.from(document.querySelectorAll("[data-interest]"));
+      const steps = Array.from(document.querySelectorAll("[data-step]"));
+
+      const resultStatus = document.getElementById("result-status");
+      const resultKicker = document.getElementById("result-kicker");
+      const resultTitle = document.getElementById("result-title");
+      const resultSummary = document.getElementById("result-summary");
+      const scoreLabel = document.getElementById("score-label");
+      const scoreSub = document.getElementById("score-sub");
+      const scorePill = document.getElementById("score-pill");
+      const adviceList = document.getElementById("advice-list");
+      const coachBox = document.getElementById("coach-box");
+
+      let activeRoute = "external";
+      let noChoice = "";
+      const interests = new Set();
+
+      const routeLabels = {
+        external: "Extern bedrijf",
+        own: "Eigen bedrijf",
+        none: "Nog geen challenge"
+      };
+
+      const advice = {
+        companySize: {
+          title: "Bedrijf te klein of onvoldoende organisatiecontext",
+          body: "Zoek een groter bedrijf, kies alsnog voor een eigen bedrijfsidee, of gebruik de standaardcasus. Voor deze route heb je genoeg omzet en medewerkers nodig."
+        },
+        scope: {
+          title: "Scope nog te vaag",
+          body: "Bespreek met het bedrijf welk project, proces of doel klein genoeg is voor blok 1. Maak het concreet, toetsbaar en behapbaar."
+        },
+        permission: {
+          title: "Nog geen ruimte om te testen",
+          body: "Ga in gesprek met je contactpersoon. Leg uit dat je iets moet kunnen proberen, testen of veranderen, niet alleen observeren."
+        },
+        ownVpc: {
+          title: "Waardepropositie eerst aanscherpen",
+          body: "Gebruik de Waardepropositie Bouwer en neem een concrete klant, probleem, oplossing en waarde mee naar je coach."
+        },
+        ownGoal: {
+          title: "Challenge-doel kleiner maken",
+          body: "Formuleer wat je in Business Challenge I precies gaat onderzoeken, testen, verbeteren of opleveren."
+        }
+      };
+
+      function checked(id) {
+        return document.querySelector(`[data-check="${id}"]`)?.checked || false;
+      }
+
+      function checkedCount(ids) {
+        return ids.filter((id) => checked(id)).length;
+      }
+
+      function setRoute(route) {
+        activeRoute = route;
+        routeButtons.forEach((button) => {
+          const isActive = button.dataset.route === route;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+        branches.forEach((branch) => {
+          const isActive = branch.dataset.branch === route;
+          branch.hidden = !isActive;
+          branch.classList.toggle("active", isActive);
+        });
+        updateResult();
+      }
+
+      function setNoChoice(choice) {
+        noChoice = noChoice === choice ? "" : choice;
+        noChoiceButtons.forEach((button) => {
+          const isActive = button.dataset.noChoice === noChoice;
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+        updateResult();
+      }
+
+      function toggleInterest(value) {
+        if (interests.has(value)) {
+          interests.delete(value);
+        } else {
+          interests.add(value);
+        }
+        interestButtons.forEach((button) => {
+          const isActive = interests.has(button.dataset.interest);
+          button.classList.toggle("active", isActive);
+          button.setAttribute("aria-pressed", String(isActive));
+        });
+        updateResult();
+      }
+
+      function renderAdvice(items) {
+        adviceList.innerHTML = "";
+        items.forEach((item) => {
+          const li = document.createElement("li");
+          const title = document.createElement("strong");
+          const body = document.createElement("span");
+          title.textContent = item.title;
+          body.textContent = item.body;
+          li.append(title, body);
+          adviceList.append(li);
+        });
+      }
+
+      function updateSteps(done) {
+        const routeChosen = Boolean(activeRoute);
+        const checkStarted =
+          activeRoute === "none"
+            ? Boolean(noChoice || interests.size)
+            : checks.some((input) => input.closest(`[data-branch="${activeRoute}"]`) && input.checked);
+
+        const states = {
+          start: "done",
+          route: routeChosen ? "done" : "active",
+          check: done ? "done" : checkStarted ? "active" : "",
+          action: done ? "active" : ""
+        };
+
+        steps.forEach((step) => {
+          step.classList.remove("active", "done");
+          const state = states[step.dataset.step];
+          if (state) step.classList.add(state);
+        });
+      }
+
+      function externalResult() {
+        const ids = ["external-turnover", "external-employees", "external-scope", "external-permission"];
+        const count = checkedCount(ids);
+        const missing = [];
+        if (!checked("external-turnover") || !checked("external-employees")) missing.push(advice.companySize);
+        if (!checked("external-scope")) missing.push(advice.scope);
+        if (!checked("external-permission")) missing.push(advice.permission);
+        const done = count === ids.length;
+        return {
+          label: "Extern bedrijf",
+          count,
+          total: ids.length,
+          done,
+          state: done ? "success" : "warning",
+          title: done ? "Lijkt pitchklaar" : "Voldoet nog niet",
+          summary: done
+            ? "Je externe challenge heeft de minimale basis. Bereid nu je pitch voor en bespreek dit met je coach."
+            : "Deze externe challenge mist nog voorwaarden. Los ze op voordat je dit als uitzondering pitcht.",
+          items: done
+            ? [
+                {
+                  title: "Volgende stap",
+                  body: "Maak een pitch van maximaal een paar minuten: welk bedrijf, welk afgebakend doel, waarom leerzaam, en welke testruimte heb je?"
+                }
+              ]
+            : missing
+        };
+      }
+
+      function ownResult() {
+        const ids = ["own-vpc", "own-goal"];
+        const count = checkedCount(ids);
+        const missing = [];
+        if (!checked("own-vpc")) missing.push(advice.ownVpc);
+        if (!checked("own-goal")) missing.push(advice.ownGoal);
+        const done = count === ids.length;
+        return {
+          label: "Eigen bedrijf",
+          count,
+          total: ids.length,
+          done,
+          state: done ? "success" : "warning",
+          title: done ? "Lijkt pitchklaar" : "Voldoet nog niet",
+          summary: done
+            ? "Je eigen bedrijfsroute is concreet genoeg om met je coach te bespreken."
+            : "Je eigen bedrijfsidee is nog te vaag voor een uitzondering. Maak eerst propositie en doel scherp.",
+          items: done
+            ? [
+                {
+                  title: "Volgende stap",
+                  body: "Neem je waardepropositie en afgebakende challenge-doel mee. Laat zien wat je in blok 1 gaat testen of opleveren."
+                }
+              ]
+            : missing
+        };
+      }
+
+      function noneResult() {
+        const selectedInterests = Array.from(interests);
+        const interestText = selectedInterests.length
+          ? `Je interesses: ${selectedInterests.join(", ")}.`
+          : "Kies eventueel 1 of 2 interesses om je richting scherper te maken.";
+
+        const routes = {
+          build: {
+            title: "Maak eigen idee concreet",
+            body: "Start met de Waardepropositie Bouwer. Als je propositie en doel scherp worden, kun je naar de route Eigen bedrijf."
+          },
+          watch: {
+            title: "Zoek extern bedrijf",
+            body: "Benader een bedrijf dat groot genoeg is en vraag expliciet of je een afgebakend project mag testen of verbeteren."
+          },
+          case: {
+            title: "Start met de standaardcasus",
+            body: "Dat is geen probleem. Je leert dezelfde aanpak en kunt later alsnog richting eigen of externe context bewegen."
+          }
+        };
+
+        const selected = noChoice ? routes[noChoice] : null;
+        return {
+          label: "Nog geen challenge",
+          count: noChoice ? 1 : 0,
+          total: 1,
+          done: Boolean(noChoice),
+          state: noChoice ? "start" : "warning",
+          title: noChoice ? "Actie gekozen" : "Kies je richting",
+          summary: noChoice
+            ? "Je hebt een logische volgende stap. Maak die klein genoeg om morgen met je coach te bespreken."
+            : "Zonder eigen of externe challenge start je normaal met de standaardcasus, tenzij je snel een betere route concreet maakt.",
+          items: [
+            selected || {
+              title: "Begin hier",
+              body: "Kies of je zelf iets wilt opzetten, bij een bestaand bedrijf wilt meekijken, of met de standaardcasus start."
+            },
+            {
+              title: "Richting aanscherpen",
+              body: interestText
+            }
+          ]
+        };
+      }
+
+      function updateResult() {
+        const result = activeRoute === "external" ? externalResult() : activeRoute === "own" ? ownResult() : noneResult();
+        resultStatus.dataset.state = result.state;
+        resultKicker.textContent = "Uitkomst";
+        resultTitle.textContent = result.title;
+        resultSummary.textContent = result.summary;
+        scoreLabel.textContent = result.label;
+        scoreSub.textContent = `${result.count} van ${result.total} ${result.total === 1 ? "keuze" : "criteria"} afgevinkt`;
+        scorePill.textContent = `${result.count}/${result.total}`;
+        coachBox.textContent = result.done
+          ? "Bespreek dit altijd met je coach. De tool geeft richting, het coachakkoord bepaalt of je route doorgaat."
+          : "Bij twijfel: kleiner maken, concreter maken, toestemming regelen, een ander bedrijf zoeken of de standaardcasus gebruiken.";
+        renderAdvice(result.items);
+        updateSteps(result.done);
+      }
+
+      routeButtons.forEach((button) => button.addEventListener("click", () => setRoute(button.dataset.route)));
+      checks.forEach((input) => input.addEventListener("change", updateResult));
+      noChoiceButtons.forEach((button) => button.addEventListener("click", () => setNoChoice(button.dataset.noChoice)));
+      interestButtons.forEach((button) => button.addEventListener("click", () => toggleInterest(button.dataset.interest)));
+
+      updateResult();
+    </script>
+  </body>
+</html>

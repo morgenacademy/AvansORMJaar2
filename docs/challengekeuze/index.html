@@ -285,31 +285,6 @@
         line-height: 0.92;
       }
 
-      .accordion[data-ready="false"] .accordion-toggle {
-        padding: 16px 22px;
-        background: var(--rood-zacht);
-      }
-
-      .accordion[data-ready="false"] .step-kicker {
-        margin-bottom: 0;
-      }
-
-      .accordion[data-ready="false"] .accordion-toggle h2 {
-        margin-top: 8px;
-        color: var(--zwart);
-        font-family: "Hanken Grotesk", Arial, sans-serif;
-        font-size: 20px;
-        font-style: normal;
-        line-height: 1.15;
-        text-transform: none;
-      }
-
-      .accordion[data-ready="false"] .accordion-toggle p {
-        margin-top: 4px;
-        color: #505050;
-        font-size: 15px;
-      }
-
       .panel-head p,
       .accordion-toggle p {
         margin: 9px 0 0;
@@ -375,6 +350,10 @@
 
       .accordion {
         overflow: hidden;
+      }
+
+      .accordion[hidden] {
+        display: none;
       }
 
       .accordion-toggle {
@@ -860,14 +839,10 @@
         }
 
         .panel-head h2,
-        .accordion[data-ready="true"] .accordion-toggle h2,
+        .accordion-toggle h2,
         .branch-title h2,
         .result-status h2 {
           font-size: 36px;
-        }
-
-        .accordion[data-ready="false"] .accordion-toggle h2 {
-          font-size: 19px;
         }
 
         .accordion-toggle {
@@ -980,7 +955,7 @@
           </div>
         </section>
 
-        <section class="panel accordion" data-open="false" data-ready="false" aria-labelledby="step-two-title">
+        <section class="panel accordion" data-open="false" aria-labelledby="step-two-title" hidden>
           <div class="accordion-toggle" id="step-two-toggle">
             <span>
               <span class="step-kicker">Stap 2</span>
@@ -1277,7 +1252,7 @@
       function setAccordion(open) {
         accordionOpen = Boolean(open && activeRoute);
         accordion.dataset.open = String(accordionOpen);
-        accordion.dataset.ready = String(Boolean(activeRoute));
+        accordion.hidden = !activeRoute;
         stepTwoContent.hidden = !accordionOpen;
       }
 

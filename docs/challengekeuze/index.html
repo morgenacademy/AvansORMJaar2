@@ -355,37 +355,13 @@
       .accordion-toggle {
         display: flex;
         align-items: center;
-        justify-content: space-between;
         gap: 20px;
         width: 100%;
         border: 0;
         border-bottom: 1px solid var(--lijn);
         background: var(--wit);
         text-align: left;
-        cursor: pointer;
-      }
-
-      .accordion-toggle[disabled] {
         cursor: default;
-        opacity: 0.72;
-      }
-
-      .accordion-chevron {
-        display: grid;
-        flex: 0 0 auto;
-        place-items: center;
-        width: 42px;
-        height: 42px;
-        border-radius: 8px;
-        background: var(--zwart);
-        color: var(--wit);
-        font-size: 24px;
-        font-weight: 700;
-        transition: transform 0.18s ease;
-      }
-
-      .accordion[data-open="true"] .accordion-chevron {
-        transform: rotate(180deg);
       }
 
       .accordion-content {
@@ -976,14 +952,13 @@
         </section>
 
         <section class="panel accordion" data-open="false" aria-labelledby="step-two-title">
-          <button class="accordion-toggle" id="step-two-toggle" type="button" aria-expanded="false" aria-controls="step-two-content" disabled>
+          <div class="accordion-toggle" id="step-two-toggle">
             <span>
               <span class="step-kicker">Stap 2</span>
               <h2 id="step-two-title">Kies eerst stap 1</h2>
               <p id="step-two-subtitle">De juiste check opent hier zodra je een route kiest.</p>
             </span>
-            <span class="accordion-chevron" aria-hidden="true">⌄</span>
-          </button>
+          </div>
 
           <div class="accordion-content" id="step-two-content" hidden>
             <div class="branch" id="branch-external" data-branch="external" hidden>
@@ -1273,8 +1248,6 @@
       function setAccordion(open) {
         accordionOpen = Boolean(open && activeRoute);
         accordion.dataset.open = String(accordionOpen);
-        stepTwoToggle.disabled = !activeRoute;
-        stepTwoToggle.setAttribute("aria-expanded", String(accordionOpen));
         stepTwoContent.hidden = !accordionOpen;
       }
 
@@ -1579,7 +1552,6 @@
       fields.forEach((field) => field.addEventListener("input", updateResult));
       noChoiceButtons.forEach((button) => button.addEventListener("click", () => setNoChoice(button.dataset.noChoice)));
       interestButtons.forEach((button) => button.addEventListener("click", () => toggleInterest(button.dataset.interest)));
-      stepTwoToggle.addEventListener("click", () => setAccordion(!accordionOpen));
 
       setAccordion(false);
       updateResult();

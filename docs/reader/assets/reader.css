@@ -843,21 +843,10 @@ cite, .ref {
 .callout.aitools li a:hover { color: var(--avans-rood); }
 .callout.aitools li a strong { color: inherit; }
 
-.callout.verdieping {
+.callout.dt {
   background: #eef3fb;
   border-color: var(--avans-donkerblauw);
   border-left-width: 4px;
-}
-.callout.verdieping::before {
-  content: "🧭 Verdieping";
-  display: block;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--avans-donkerblauw);
-  margin-bottom: 10px;
 }
 
 .callout.warning {

@@ -651,6 +651,50 @@
         background: var(--wit);
       }
 
+      .search-route {
+        display: grid;
+        gap: 14px;
+        margin-top: 16px;
+      }
+
+      .search-route[hidden] {
+        display: none;
+      }
+
+      .route-tip {
+        padding: 16px;
+      }
+
+      .route-tip strong,
+      .conversation-prompts strong {
+        display: block;
+        color: var(--avans-rood);
+      }
+
+      .route-tip span {
+        display: block;
+        margin-top: 4px;
+      }
+
+      .search-question-list {
+        display: grid;
+        gap: 12px;
+      }
+
+      .conversation-prompts {
+        padding: 16px;
+        border-left: 5px solid var(--avans-rood);
+        border-radius: 8px;
+        background: var(--rood-zacht);
+      }
+
+      .conversation-prompts ul {
+        display: grid;
+        gap: 7px;
+        margin: 10px 0 0;
+        padding-left: 20px;
+      }
+
       .result-panel {
         position: sticky;
         top: 86px;
@@ -805,6 +849,50 @@
         padding-left: 2px;
       }
 
+      .route-return-box {
+        display: grid;
+        gap: 10px;
+        margin-top: 16px;
+        padding-top: 16px;
+        border-top: 1px solid var(--lijn);
+      }
+
+      .route-return-box[hidden] {
+        display: none;
+      }
+
+      .route-return-box strong {
+        color: var(--avans-rood);
+      }
+
+      .route-return-box p {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .route-return-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .return-route-button {
+        min-height: 42px;
+        padding: 9px 10px;
+        border: 1px solid var(--avans-rood);
+        border-radius: 8px;
+        background: var(--wit);
+        color: var(--avans-rood);
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .return-route-button:hover,
+      .return-route-button:focus-visible {
+        background: var(--rood-zacht);
+      }
+
       .footer-band {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -925,6 +1013,7 @@
         .choice-row,
         .interest-grid,
         .field-grid,
+        .route-return-buttons,
         .footer-band {
           grid-template-columns: 1fr;
         }
@@ -1263,32 +1352,80 @@
                 </div>
               </div>
 
-              <div class="tool-sequence">
-                <p>
-                  Heb je nog geen idee? Wij begrijpen dat dat niet voor iedereen even gemakkelijk is. Doorloop deze hulpmiddelen stap voor stap en speel ermee totdat je de vragen van de Waardepropositie Bouwer kunt beantwoorden.
-                </p>
-                <div class="tool-sequence-grid">
-                  <div class="tool-card">
-                    <div>
-                      <strong>1. Idee Generator</strong>
-                      <span>Nog helemaal geen idee? Begin hier en zoek van inzicht naar kans.</span>
+              <section class="search-route" data-no-section="build" aria-label="Zoekhulp voor zelf iets opzetten" hidden>
+                <div class="route-tip">
+                  <strong>Begin niet bij wat je wilt maken</strong>
+                  <span>Begin bij wie je wilt helpen, wat je bij die mensen vermoedt en wat je nog moet begrijpen. Een website, dienst of app kan later een middel blijken.</span>
+                </div>
+
+                <div class="tool-sequence">
+                  <p>
+                    Heb je nog geen idee? Doorloop deze hulpmiddelen stap voor stap en speel ermee totdat je de vragen van de Waardepropositie Bouwer kunt beantwoorden.
+                  </p>
+                  <div class="tool-sequence-grid">
+                    <div class="tool-card">
+                      <div>
+                        <strong>1. Idee Generator</strong>
+                        <span>Nog helemaal geen idee? Begin hier en zoek van inzicht naar kans.</span>
+                      </div>
+                      <a class="tool-link" href="https://chatgpt.com/g/g-682f2fc4026c8191831f908e34747b93-idee-generator-van-inzicht-naar-kans" target="_blank" rel="noopener">Open</a>
                     </div>
-                    <a class="tool-link" href="https://chatgpt.com/g/g-682f2fc4026c8191831f908e34747b93-idee-generator-van-inzicht-naar-kans" target="_blank" rel="noopener">Open</a>
-                  </div>
-                  <div class="tool-card">
-                    <div>
-                      <strong>2. Idee Validator</strong>
-                      <span>Al globaal een idee? Maak het concreter en toets de eerste richting.</span>
+                    <div class="tool-card">
+                      <div>
+                        <strong>2. Idee Validator</strong>
+                        <span>Al globaal een idee? Maak het concreter en toets de eerste richting.</span>
+                      </div>
+                      <a class="tool-link" href="https://chatgpt.com/g/g-9JfbO9jKb-startup-validator" target="_blank" rel="noopener">Open</a>
                     </div>
-                    <a class="tool-link" href="https://chatgpt.com/g/g-9JfbO9jKb-startup-validator" target="_blank" rel="noopener">Open</a>
                   </div>
                 </div>
-              </div>
 
-              <div class="field" style="margin-top: 14px">
-                <label for="none-context">Eerste richting, idee of mogelijke plek</label>
-                <textarea id="none-context" placeholder="Bijvoorbeeld: ik wil iets met AI in sales, ik ken een sportschool, of ik wil een dienst rond impact testen"></textarea>
-              </div>
+                <div class="search-question-list">
+                  <div class="field">
+                    <label for="none-build-audience">1. Wie wil je helpen of voor wie wil je iets verbeteren?</label>
+                    <textarea id="none-build-audience" placeholder="Bijvoorbeeld: startende ondernemers die moeite hebben om hun eerste klanten te vinden"></textarea>
+                  </div>
+                  <div class="field">
+                    <label for="none-build-signal">2. Welk probleem, behoefte of kans vermoed je?</label>
+                    <textarea id="none-build-signal" placeholder="Bijvoorbeeld: zij weten niet welke verkoopaanpak bij hun doelgroep werkt"></textarea>
+                  </div>
+                  <div class="field">
+                    <label for="none-build-action">3. Wat ga je doen om te controleren of dit echt speelt?</label>
+                    <textarea id="none-build-action" placeholder="Bijvoorbeeld: deze week 5 startende ondernemers spreken en hun huidige aanpak vergelijken"></textarea>
+                  </div>
+                </div>
+              </section>
+
+              <section class="search-route" data-no-section="watch" aria-label="Zoekhulp voor een bestaand bedrijf" hidden>
+                <div class="route-tip">
+                  <strong>Vraag niet alleen of een bedrijf een opdracht voor je heeft</strong>
+                  <span>Zoek naar iets dat nu beter moet en waar je uiteindelijk ook iets mag proberen, testen en terugkoppelen.</span>
+                </div>
+
+                <div class="conversation-prompts">
+                  <strong>Voorbeeldvragen voor je gesprek</strong>
+                  <ul>
+                    <li>Wat moet er de komende periode beter?</li>
+                    <li>Waar loopt het bedrijf, de medewerker of de klant nu tegenaan?</li>
+                    <li>Waar zou ik iets mogen testen, proberen en terugkoppelen?</li>
+                  </ul>
+                </div>
+
+                <div class="search-question-list">
+                  <div class="field">
+                    <label for="none-watch-companies">1. Welke bedrijven of organisaties kun je benaderen?</label>
+                    <textarea id="none-watch-companies" placeholder="Bijvoorbeeld: mijn bijbaan, de sportschool in mijn buurt en het bedrijf van een familielid"></textarea>
+                  </div>
+                  <div class="field">
+                    <label for="none-watch-signal">2. Welk probleem, proces of kans vermoed je daar?</label>
+                    <textarea id="none-watch-signal" placeholder="Bijvoorbeeld: de sportschool lijkt moeite te hebben om proefleden te laten terugkomen"></textarea>
+                  </div>
+                  <div class="field">
+                    <label for="none-watch-action">3. Wie ga je benaderen en wat ga je vragen?</label>
+                    <textarea id="none-watch-action" placeholder="Bijvoorbeeld: ik bel deze week de eigenaar en vraag wat er nu beter moet en waar ik iets mag testen"></textarea>
+                  </div>
+                </div>
+              </section>
             </div>
 
             <aside class="result-panel" aria-live="polite">
@@ -1315,6 +1452,15 @@
                     <li>Kies eerst een route in stap 1.</li>
                   </ul>
                 </div>
+                <div class="route-return-box" id="route-return-box" hidden>
+                  <strong>Denk je dat je iets hebt?</strong>
+                  <p>Ga terug naar de echte check en kies de route die bij je mogelijke challenge past.</p>
+                  <div class="route-return-buttons">
+                    <button class="return-route-button" type="button" data-return-route="own">Ga naar Eigen bedrijf</button>
+                    <button class="return-route-button" type="button" data-return-route="external">Ga naar Extern bedrijf</button>
+                  </div>
+                  <p><b>Let op:</b> pas na de algemene basischeck en de routespecifieke vinkjes kan je challenge pitchklaar lijken.</p>
+                </div>
               </div>
             </aside>
           </div>
@@ -1338,7 +1484,9 @@
       const branches = Array.from(document.querySelectorAll("[data-branch]"));
       const checks = Array.from(document.querySelectorAll("[data-check]"));
       const noChoiceButtons = Array.from(document.querySelectorAll("[data-no-choice]"));
+      const noChoiceSections = Array.from(document.querySelectorAll("[data-no-section]"));
       const interestButtons = Array.from(document.querySelectorAll("[data-interest]"));
+      const returnRouteButtons = Array.from(document.querySelectorAll("[data-return-route]"));
       const fields = Array.from(document.querySelectorAll("input[type='text'], textarea"));
       const steps = Array.from(document.querySelectorAll("[data-step]"));
 
@@ -1358,6 +1506,7 @@
       const basisScorePill = document.getElementById("basis-score-pill");
       const adviceList = document.getElementById("advice-list");
       const pitchBox = document.getElementById("pitch-box");
+      const routeReturnBox = document.getElementById("route-return-box");
       const externalBasisCountLabel = document.getElementById("external-basis-count-label");
       const ownBasisCountLabel = document.getElementById("own-basis-count-label");
       const externalCountLabel = document.getElementById("external-count-label");
@@ -1496,6 +1645,9 @@
           const isActive = button.dataset.noChoice === noChoice;
           button.classList.toggle("active", isActive);
           button.setAttribute("aria-pressed", String(isActive));
+        });
+        noChoiceSections.forEach((section) => {
+          section.hidden = section.dataset.noSection !== noChoice;
         });
         updateResult();
       }
@@ -1689,57 +1841,104 @@
 
       function noneResult() {
         const selectedInterests = Array.from(interests);
-        const context = fieldValue("none-context");
         const interestSentence = selectedInterests.length
           ? `Gebruik je interesses (${selectedInterests.join(", ")}) als input voor de volgende stap.`
           : "Kies 1 of 2 interesses als input voor je volgende stap.";
 
+        const searchFieldIds = {
+          build: ["none-build-audience", "none-build-signal", "none-build-action"],
+          watch: ["none-watch-companies", "none-watch-signal", "none-watch-action"]
+        };
+
         const routes = {
           build: {
             title: "Zelf iets opzetten",
-            body: "Doorloop eerst de Idee Generator. Heb je een globale richting, gebruik daarna de Idee Validator. Ga door totdat je de Waardepropositie Bouwer concreet kunt invullen."
+            body: "Gebruik je interesses als startpunt. Doorloop de Idee Generator en Idee Validator als dat helpt, en onderzoek daarna bij echte mensen of je vermoeden klopt.",
+            responseLines: [
+              ["Voor wie je iets wilt verbeteren", "none-build-audience"],
+              ["Welk probleem, behoefte of kans je vermoedt", "none-build-signal"],
+              ["Hoe je gaat controleren of dit echt speelt", "none-build-action"]
+            ],
+            nextRoute: "Ga daarna naar Eigen bedrijf en doorloop daar de algemene basischeck en de vinkjes voor je eigen bedrijf."
           },
           watch: {
             title: "Verbetering testen bij bestaand bedrijf",
-            body: "Gebruik je interesses als zoekrichting en benader minimaal 2 bedrijven. Vraag direct welke verbetering je mag testen en of er testruimte is."
+            body: "Gebruik je interesses als zoekrichting en benader bedrijven met vragen over wat er nu beter moet, waar iemand tegenaan loopt en waar je iets zou mogen testen.",
+            responseLines: [
+              ["Welke bedrijven of organisaties je kunt benaderen", "none-watch-companies"],
+              ["Welk probleem, proces of kans je daar vermoedt", "none-watch-signal"],
+              ["Wie je gaat benaderen en wat je gaat vragen", "none-watch-action"]
+            ],
+            nextRoute: "Ga daarna naar Extern bedrijf en doorloop daar de algemene basischeck en de vinkjes voor een extern bedrijf."
           }
         };
 
         const selected = noChoice ? routes[noChoice] : null;
+        const activeFieldIds = noChoice ? searchFieldIds[noChoice] : [];
+        const searchCount = activeFieldIds.filter((id) => fieldValue(id)).length;
+        const searchComplete = Boolean(noChoice && searchCount === activeFieldIds.length);
+
+        const items = selected
+          ? searchComplete
+            ? [
+                {
+                  title: "Eerste richting genoteerd",
+                  body: "Je hebt nu genoeg opgeschreven om te controleren of hier een echte challenge in zit."
+                },
+                {
+                  title: "Dit is nog geen challenge",
+                  body: selected.nextRoute
+                }
+              ]
+            : [
+                selected,
+                {
+                  title: "Beantwoord de 3 vragen",
+                  body: `Je hebt ${searchCount} van 3 vragen ingevuld. Maak je zoekrichting concreet voordat je beoordeelt of je iets hebt.`
+                }
+              ]
+          : [
+              {
+                title: "Begin hier",
+                body: "Kies eerst je zoekroute: zelf iets opzetten of een verbetering testen bij een bestaand bedrijf."
+              },
+              {
+                title: "Interesses zijn alleen een startpunt",
+                body: "Selecteer wat je interessant vindt. Daarna verschijnen de vragen waarmee je een concrete zoekactie formuleert."
+              }
+            ];
+
+        const pitchLines = selected
+          ? [
+              selected.body,
+              interestSentence,
+              ...selected.responseLines.map(([label, id]) => (fieldValue(id) ? `${label}: ${fieldValue(id)}` : `${label}: vul dit nog in.`)),
+              selected.nextRoute
+            ]
+          : [
+              "Kies eerst zelf iets opzetten of verbetering testen bij een bestaand bedrijf.",
+              interestSentence,
+              "Daarna verschijnen de vragen waarmee je een concrete zoekrichting en eerstvolgende actie formuleert."
+            ];
+
         return {
-          label: "Nog geen challenge",
+          label: "Zoekhulp",
           count: 0,
           total: 0,
           done: false,
-          started: Boolean(noChoice || interests.size || context),
-          scoreSubText: noChoice ? "Richting gekozen, nog concreet maken" : "Kies eerst je richting",
-          scorePillText: noChoice ? "actie" : "-",
+          started: Boolean(noChoice || interests.size || searchCount),
+          scoreSubText: noChoice ? `${searchCount} van 3 vragen ingevuld` : "Kies eerst je zoekroute",
+          scorePillText: noChoice ? `${searchCount}/3` : "-",
           state: noChoice ? "start" : "warning",
-          title: noChoice ? "Volgende stap gekozen" : "Kies je zoekroute",
-          summary: noChoice
-            ? "Je hebt nu een concrete route om verder te komen. Werk dit uit voordat je naar je coach gaat."
-            : "Kies of je zelf iets wilt opzetten of een verbetering wilt testen bij een bestaand bedrijf.",
-          items: [
-            selected || {
-              title: "Begin hier",
-              body: "Kies eerst je zoekroute: zelf iets opzetten of een verbetering testen bij een bestaand bedrijf."
-            },
-            {
-              title: "Maak het concreet",
-              body: noChoice === "build"
-                ? "Gebruik daarna Idee Generator, Idee Validator en vervolgens Waardepropositie Bouwer. Pas als je die vragen kunt beantwoorden, ga je terug naar Eigen bedrijf."
-                : noChoice === "watch"
-                  ? "Maak een shortlist van bedrijven, vraag welke verbetering je mag testen en check daarna de route Extern bedrijf met de 4 criteria."
-                  : "Selecteer interesses en schrijf je eerste richting op."
-            }
-          ],
+          title: searchComplete ? "Eerste richting klaar om te controleren" : noChoice ? "Maak je eerste richting concreet" : "Kies je zoekroute",
+          summary: searchComplete
+            ? "Je hebt een bruikbare eerste richting. Dit is nog geen challenge en nog niet pitchklaar."
+            : noChoice
+              ? "Beantwoord de 3 vragen om van een interesse naar een concrete zoekactie te komen."
+              : "Kies of je zelf iets wilt opzetten of een verbetering wilt testen bij een bestaand bedrijf.",
+          items,
           pitchTitle: "Wat doe je nu?",
-          pitchLines: [
-            selected ? selected.title : "Kies eerst zelf opzetten of verbetering testen bij een bestaand bedrijf.",
-            selected ? selected.body : "Daarna zie je welke vervolgstap logisch is.",
-            interestSentence,
-            context ? `Eerste richting: ${context}` : "Schrijf je eerste richting, idee of mogelijke plek op."
-          ]
+          pitchLines
         };
       }
 
@@ -1784,12 +1983,14 @@
           basisScoreSub.textContent = `${result.basisCount} van ${result.basisTotal} aangetoond`;
           basisScorePill.textContent = `${result.basisCount}/${result.basisTotal}`;
         }
+        routeReturnBox.hidden = activeRoute !== "none";
         renderAdvice(result.items);
         renderPitch(result.pitchTitle, result.pitchLines);
         updateSteps(result.done, result.started);
       }
 
       routeButtons.forEach((button) => button.addEventListener("click", () => setRoute(button.dataset.route)));
+      returnRouteButtons.forEach((button) => button.addEventListener("click", () => setRoute(button.dataset.returnRoute)));
       checks.forEach((input) => input.addEventListener("change", updateResult));
       fields.forEach((field) => field.addEventListener("input", updateResult));
       noChoiceButtons.forEach((button) => button.addEventListener("click", () => setNoChoice(button.dataset.noChoice)));

@@ -62,8 +62,8 @@ Werkhypothese: budget = ECTS × 28 uur × 75%. Toetstijd is inclusief 50% herkan
 |---|---|---|---|---|---|
 | Projectkennis | 3 | 5,0 uur | 1,5 uur | 56,5 uur | 63 uur |
 | Business Challenge I | 7 | 26,0 uur | 0,75 uur | 120,25 uur | 147 uur |
-| Skills of the Future I | 5 | 31,0 uur | 0,75 uur | 73,25 uur | 105 uur |
-| **Totaal** | **15** | **62,0 uur** | **3,0 uur** | **250,0 uur** | **315 uur** |
+| Skills of the Future I | 5 | 27,0 uur | 0,75 uur | 77,25 uur | 105 uur |
+| **Totaal** | **15** | **58,0 uur** | **3,0 uur** | **254,0 uur** | **315 uur** |
 
 ### Blok 2 — Rendabel maken
 

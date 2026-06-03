@@ -410,6 +410,36 @@
         text-align: center;
       }
 
+      .criteria-block {
+        display: grid;
+        gap: 10px;
+        margin-top: 18px;
+      }
+
+      .criteria-block + .criteria-block {
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--lijn);
+      }
+
+      .criteria-head {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .criteria-head h3 {
+        font-size: 30px;
+        line-height: 0.95;
+      }
+
+      .criteria-head p {
+        max-width: 650px;
+        margin: 7px 0 0;
+        font-size: 14px;
+      }
+
       .check-list {
         display: grid;
         gap: 10px;
@@ -444,10 +474,33 @@
         font-size: 17px;
       }
 
-      .check-item span {
+      .check-item > span > span {
         display: block;
         margin-top: 4px;
         font-size: 14px;
+      }
+
+      .check-example {
+        margin-top: 10px !important;
+        padding: 10px 12px;
+        border-left: 4px solid var(--avans-rood);
+        border-radius: 0 6px 6px 0;
+        background: rgba(255, 255, 255, 0.78);
+      }
+
+      .check-example > span {
+        display: block;
+        margin: 0;
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .check-example > span + span {
+        margin-top: 4px;
+      }
+
+      .check-example b {
+        color: var(--avans-rood);
       }
 
       .field-grid {
@@ -646,14 +699,33 @@
         padding: 16px;
       }
 
+      .score-stack {
+        display: grid;
+        gap: 12px;
+        margin-bottom: 14px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--lijn);
+      }
+
       .score-line {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 14px;
-        margin-bottom: 14px;
-        padding-bottom: 14px;
-        border-bottom: 1px solid var(--lijn);
+      }
+
+      .score-line + .score-line {
+        padding-top: 12px;
+        border-top: 1px solid var(--lijn);
+      }
+
+      .score-line[hidden] + .score-line {
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .score-line[hidden] {
+        display: none;
       }
 
       .score-line strong {
@@ -861,6 +933,10 @@
           display: block;
         }
 
+        .criteria-head {
+          display: block;
+        }
+
         .branch-tag {
           display: inline-block;
           margin-top: 12px;
@@ -969,41 +1045,89 @@
               <div class="branch-title">
                 <div>
                   <h2>Voorwaarden voor je externe challenge</h2>
-                  <p>Een externe challenge moet groot genoeg, concreet genoeg en uitvoerbaar genoeg zijn om echt te kunnen testen.</p>
+                  <p>Controleer eerst of de challenge inhoudelijk sterk genoeg is en daarna of de organisatie genoeg ruimte biedt.</p>
                 </div>
-                <span class="branch-tag" id="external-count-label">0/4 aangevinkt</span>
               </div>
 
-              <div class="check-list">
-                <label class="check-item">
-                  <input type="checkbox" data-check="external-turnover" />
-                  <span>
-                    <strong>Minimaal EUR 250.000 omzet afgelopen jaar</strong>
-                    <span>Zo voorkom je dat je project te klein of te kwetsbaar is om er goed van te leren.</span>
-                  </span>
-                </label>
-                <label class="check-item">
-                  <input type="checkbox" data-check="external-employees" />
-                  <span>
-                    <strong>Minimaal 3 medewerkers</strong>
-                    <span>Er moet voldoende organisatiecontext zijn: mensen, processen, rollen en keuzes.</span>
-                  </span>
-                </label>
-                <label class="check-item">
-                  <input type="checkbox" data-check="external-scope" />
-                  <span>
-                    <strong>Afgebakend project, proces of doel</strong>
-                    <span>Je challenge is kleiner dan "help dit bedrijf", maar groter dan een losse taak.</span>
-                  </span>
-                </label>
-                <label class="check-item">
-                  <input type="checkbox" data-check="external-permission" />
-                  <span>
-                    <strong>Toestemming om te testen, proberen en veranderen</strong>
-                    <span>Je mag niet alleen observeren; je moet iets kunnen uitproberen en terugkoppelen.</span>
-                  </span>
-                </label>
-              </div>
+              <section class="criteria-block" aria-labelledby="external-basis-title">
+                <div class="criteria-head">
+                  <div>
+                    <h3 id="external-basis-title">Algemene basis voor je challenge</h3>
+                    <p>Je moet deze punten tijdens je mini-presentatie kunnen aantonen.</p>
+                  </div>
+                  <span class="branch-tag" id="external-basis-count-label">0/3 aangevinkt</span>
+                </div>
+
+                <div class="check-list">
+                  <label class="check-item">
+                    <input type="checkbox" data-check="external-basis-evidence" />
+                    <span>
+                      <strong>Je kunt de aanleiding aantonen</strong>
+                      <span>Je kunt benoemen wie het probleem of de kans ervaart en welk signaal laat zien dat dit echt speelt, bijvoorbeeld gesprekken, vragen, data of observaties.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" data-check="external-basis-effect" />
+                    <span>
+                      <strong>Je kunt het doel formuleren zonder het middel te noemen</strong>
+                      <span>Je kunt zeggen wat er voor de doelgroep of organisatie beter moet worden en waaraan je merkt dat dit lukt.</span>
+                      <span class="check-example">
+                        <span><b>Niet:</b> "Ik ga een nieuwe website maken."</span>
+                        <span><b>Wel:</b> "Ik wil onderzoeken welke aanpak ervoor zorgt dat potentiële klanten begrijpen wat ik aanbied en contact opnemen."</span>
+                        <span>Een website kan een van de middelen zijn.</span>
+                      </span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" data-check="external-basis-open" />
+                    <span>
+                      <strong>De oplossing staat nog niet vast</strong>
+                      <span>Je gaat onderzoeken en testen welke aanpak werkt. Uit je bewijs mag ook blijken dat een andere oplossing beter is.</span>
+                    </span>
+                  </label>
+                </div>
+              </section>
+
+              <section class="criteria-block" aria-labelledby="external-specific-title">
+                <div class="criteria-head">
+                  <div>
+                    <h3 id="external-specific-title">Specifiek voor een extern bedrijf</h3>
+                    <p>De organisatie en opdracht moeten groot genoeg, afgebakend en uitvoerbaar zijn.</p>
+                  </div>
+                  <span class="branch-tag" id="external-count-label">0/4 aangevinkt</span>
+                </div>
+
+                <div class="check-list">
+                  <label class="check-item">
+                    <input type="checkbox" data-check="external-turnover" />
+                    <span>
+                      <strong>Minimaal EUR 250.000 omzet afgelopen jaar</strong>
+                      <span>Zo voorkom je dat je project te klein of te kwetsbaar is om er goed van te leren.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" data-check="external-employees" />
+                    <span>
+                      <strong>Minimaal 3 medewerkers</strong>
+                      <span>Er moet voldoende organisatiecontext zijn: mensen, processen, rollen en keuzes.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" data-check="external-scope" />
+                    <span>
+                      <strong>Afgebakend project, proces of doel</strong>
+                      <span>Je challenge is kleiner dan "help dit bedrijf", maar groter dan een losse taak.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" data-check="external-permission" />
+                    <span>
+                      <strong>Toestemming om te testen, proberen en veranderen</strong>
+                      <span>Je mag niet alleen observeren; je moet iets kunnen uitproberen en terugkoppelen.</span>
+                    </span>
+                  </label>
+                </div>
+              </section>
 
               <div class="field-grid">
                 <div class="field">
@@ -1021,9 +1145,8 @@
               <div class="branch-title">
                 <div>
                   <h2>Basis voor je eigen bedrijf</h2>
-                  <p>Begin altijd met je waardepropositie. Daarna check je of je doel concreet genoeg is voor je mini-presentatie.</p>
+                  <p>Begin altijd met je waardepropositie. Controleer daarna of je challenge inhoudelijk sterk en concreet genoeg is.</p>
                 </div>
-                <span class="branch-tag" id="own-count-label">0/2 aangevinkt</span>
               </div>
 
               <div class="tool-callout">
@@ -1034,22 +1157,71 @@
                 <a class="tool-link" href="https://chatgpt.com/g/g-6824663e94d88191b5023348dd00e2f0-waardepropositie-bouwer" target="_blank" rel="noopener">Open tool</a>
               </div>
 
-              <div class="check-list">
-                <label class="check-item">
-                  <input type="checkbox" data-check="own-vpc" />
-                  <span>
-                    <strong>Waardepropositie Bouwer doorlopen</strong>
-                    <span>Je hebt de uitkomst bewaard en kunt uitleggen voor wie je wat oplost.</span>
-                  </span>
-                </label>
-                <label class="check-item">
-                  <input type="checkbox" data-check="own-goal" />
-                  <span>
-                    <strong>Naam plus SMART challenge-doel klaar</strong>
-                    <span>Je kunt in 1 zin zeggen wat je in blok 1 gaat onderzoeken, testen, verbeteren of opleveren, met tijd en meetcriterium.</span>
-                  </span>
-                </label>
-              </div>
+              <section class="criteria-block" aria-labelledby="own-basis-title">
+                <div class="criteria-head">
+                  <div>
+                    <h3 id="own-basis-title">Algemene basis voor je challenge</h3>
+                    <p>Je moet deze punten tijdens je mini-presentatie kunnen aantonen.</p>
+                  </div>
+                  <span class="branch-tag" id="own-basis-count-label">0/3 aangevinkt</span>
+                </div>
+
+                <div class="check-list">
+                  <label class="check-item">
+                    <input type="checkbox" data-check="own-basis-evidence" />
+                    <span>
+                      <strong>Je kunt de aanleiding aantonen</strong>
+                      <span>Je kunt benoemen wie het probleem of de kans ervaart en welk signaal laat zien dat dit echt speelt, bijvoorbeeld gesprekken, vragen, data of observaties.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" data-check="own-basis-effect" />
+                    <span>
+                      <strong>Je kunt het doel formuleren zonder het middel te noemen</strong>
+                      <span>Je kunt zeggen wat er voor de doelgroep of organisatie beter moet worden en waaraan je merkt dat dit lukt.</span>
+                      <span class="check-example">
+                        <span><b>Niet:</b> "Ik ga een nieuwe website maken."</span>
+                        <span><b>Wel:</b> "Ik wil onderzoeken welke aanpak ervoor zorgt dat potentiële klanten begrijpen wat ik aanbied en contact opnemen."</span>
+                        <span>Een website kan een van de middelen zijn.</span>
+                      </span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" data-check="own-basis-open" />
+                    <span>
+                      <strong>De oplossing staat nog niet vast</strong>
+                      <span>Je gaat onderzoeken en testen welke aanpak werkt. Uit je bewijs mag ook blijken dat een andere oplossing beter is.</span>
+                    </span>
+                  </label>
+                </div>
+              </section>
+
+              <section class="criteria-block" aria-labelledby="own-specific-title">
+                <div class="criteria-head">
+                  <div>
+                    <h3 id="own-specific-title">Specifiek voor je eigen bedrijf</h3>
+                    <p>Maak je waardepropositie en SMART challenge-doel klaar voor de mini-presentatie.</p>
+                  </div>
+                  <span class="branch-tag" id="own-count-label">0/2 aangevinkt</span>
+                </div>
+
+                <div class="check-list">
+                  <label class="check-item">
+                    <input type="checkbox" data-check="own-vpc" />
+                    <span>
+                      <strong>Waardepropositie Bouwer doorlopen</strong>
+                      <span>Je hebt de uitkomst bewaard en kunt uitleggen voor wie je wat oplost.</span>
+                    </span>
+                  </label>
+                  <label class="check-item">
+                    <input type="checkbox" data-check="own-goal" />
+                    <span>
+                      <strong>Naam plus SMART challenge-doel klaar</strong>
+                      <span>Je kunt in 1 zin zeggen wat je in blok 1 gaat onderzoeken, testen, verbeteren of opleveren, met tijd en meetcriterium.</span>
+                    </span>
+                  </label>
+                </div>
+              </section>
 
               <div class="field-grid">
                 <div class="field">
@@ -1126,9 +1298,15 @@
                 <p id="result-summary">Kies eerst een route. Daarna zie je wat je moet doen voor je mini-presentatie.</p>
               </div>
               <div class="result-body">
-                <div class="score-line">
-                  <span><strong id="score-label">Nog geen route</strong><br /><span id="score-sub">Stap 2 is nog dicht</span></span>
-                  <span class="score-pill" id="score-pill">-</span>
+                <div class="score-stack">
+                  <div class="score-line" id="basis-score-line" hidden>
+                    <span><strong>Algemene basis</strong><br /><span id="basis-score-sub">0 van 3 aangetoond</span></span>
+                    <span class="score-pill" id="basis-score-pill">0/3</span>
+                  </div>
+                  <div class="score-line">
+                    <span><strong id="score-label">Nog geen route</strong><br /><span id="score-sub">Stap 2 is nog dicht</span></span>
+                    <span class="score-pill" id="score-pill">-</span>
+                  </div>
                 </div>
                 <ul class="advice-list" id="advice-list"></ul>
                 <div class="pitch-box" id="pitch-box">
@@ -1146,11 +1324,11 @@
       <section class="footer-band" aria-label="Achtergrond">
         <article class="footer-card red-mark">
           <h2>Waar kijkt je coach naar?</h2>
-          <p>Is de context echt genoeg, is het doel behapbaar, kun je bewijs verzamelen en mag je iets proberen in de praktijk?</p>
+          <p>Kun je de aanleiding aantonen, gaat je doel over een gewenst effect in plaats van alleen een middel en kun je nog onderzoeken en testen wat werkt?</p>
         </article>
         <article class="footer-card blue-mark">
           <h2>Wat neem je mee?</h2>
-          <p>Je concrete mini-presentatie: minimaal 1 slide, maximaal 2 minuten. Daarmee laat je route, naam of richting, SMART challenge-doel en testruimte zien. Je coach geeft in week 1 go/no-go.</p>
+          <p>Je concrete mini-presentatie: minimaal 1 slide, maximaal 2 minuten. Toon de aanleiding, het gewenste effect, wat je nog onderzoekt, je route en je SMART challenge-doel. Je coach geeft in week 1 go/no-go.</p>
         </article>
       </section>
     </main>
@@ -1175,8 +1353,13 @@
       const scoreLabel = document.getElementById("score-label");
       const scoreSub = document.getElementById("score-sub");
       const scorePill = document.getElementById("score-pill");
+      const basisScoreLine = document.getElementById("basis-score-line");
+      const basisScoreSub = document.getElementById("basis-score-sub");
+      const basisScorePill = document.getElementById("basis-score-pill");
       const adviceList = document.getElementById("advice-list");
       const pitchBox = document.getElementById("pitch-box");
+      const externalBasisCountLabel = document.getElementById("external-basis-count-label");
+      const ownBasisCountLabel = document.getElementById("own-basis-count-label");
       const externalCountLabel = document.getElementById("external-count-label");
       const ownCountLabel = document.getElementById("own-count-label");
 
@@ -1215,6 +1398,18 @@
       };
 
       const advice = {
+        basisEvidence: {
+          title: "Aanleiding nog niet aantoonbaar",
+          body: "Verzamel eerst signalen van echte mensen, klanten, gebruikers of de organisatie. Denk aan gesprekken, vragen, data of observaties."
+        },
+        basisEffect: {
+          title: "Doel noemt nog vooral een middel",
+          body: "Formuleer welk effect je wilt bereiken zonder website, campagne, dashboard, event of AI-tool te noemen."
+        },
+        basisOpen: {
+          title: "Oplossing staat al vast",
+          body: "Maak ruimte om meerdere aanpakken te onderzoeken, testen en vergelijken. Een andere oplossing moet ook mogelijk zijn."
+        },
         companySize: {
           title: "Bedrijf te klein of onvoldoende organisatiecontext",
           body: "Zoek een groter bedrijf of kies een eigen idee. Voor deze route zijn minimaal EUR 250.000 omzet en 3 medewerkers nodig."
@@ -1247,6 +1442,27 @@
 
       function checkedCount(ids) {
         return ids.filter((id) => checked(id)).length;
+      }
+
+      function basisResult(route) {
+        const ids = [`${route}-basis-evidence`, `${route}-basis-effect`, `${route}-basis-open`];
+        const count = checkedCount(ids);
+        const missing = [];
+
+        if (!checked(`${route}-basis-evidence`)) missing.push(advice.basisEvidence);
+        if (!checked(`${route}-basis-effect`)) missing.push(advice.basisEffect);
+        if (!checked(`${route}-basis-open`)) missing.push(advice.basisOpen);
+
+        const countLabel = route === "external" ? externalBasisCountLabel : ownBasisCountLabel;
+        countLabel.textContent = `${count}/3 aangevinkt`;
+
+        return {
+          count,
+          total: ids.length,
+          done: count === ids.length,
+          started: count > 0,
+          missing
+        };
       }
 
       function setAccordion(open) {
@@ -1371,6 +1587,7 @@
       }
 
       function externalResult() {
+        const basis = basisResult("external");
         const ids = ["external-turnover", "external-employees", "external-scope", "external-permission"];
         const count = checkedCount(ids);
         const company = fieldValue("external-company");
@@ -1383,18 +1600,21 @@
 
         externalCountLabel.textContent = `${count}/4 aangevinkt`;
 
-        const done = count === ids.length;
+        const routeDone = count === ids.length;
+        const done = basis.done && routeDone;
         return {
           label: "Extern bedrijf",
           count,
           total: ids.length,
+          basisCount: basis.count,
+          basisTotal: basis.total,
           done,
-          started: count > 0 || company || goal,
+          started: basis.started || count > 0 || company || goal,
           state: done ? "success" : "warning",
           title: done ? "Lijkt pitchklaar" : "Voldoet nog niet",
           summary: done
-            ? "Je externe challenge heeft de minimale basis. Bereid een mini-presentatie voor: minimaal 1 slide, maximaal 2 minuten."
-            : "Deze externe challenge mist nog voorwaarden. Los ze op voordat je dit als uitzondering pitcht.",
+            ? "Je externe challenge heeft een aantoonbare basis en voldoet aan de voorwaarden voor het bedrijf. Bereid je mini-presentatie voor."
+            : "Je externe challenge is nog niet pitchklaar. Maak de algemene basis en de voorwaarden voor het bedrijf compleet.",
           items: done
             ? [
                 {
@@ -1402,18 +1622,23 @@
                   body: "Maak minimaal 1 slide en houd je verhaal maximaal 2 minuten. Pitch dit in week 1 bij je coach; daar hoor je definitief of je hiermee door mag."
                 }
               ]
-            : missing,
+            : [...basis.missing, ...missing],
           pitchTitle: "Voor je mini-presentatie meenemen",
           pitchLines: [
             "Maak minimaal 1 slide en houd je verhaal maximaal 2 minuten.",
+            "Toon voor wie de challenge relevant is.",
+            "Toon welk bewijs laat zien dat de aanleiding echt speelt.",
+            "Toon welk effect je wilt bereiken, zonder alleen een middel te noemen.",
+            "Toon wat je nog moet onderzoeken of testen.",
             company ? `Toon welke organisatie het is: ${company}.` : "Toon welke organisatie het is: vul de naam nog in.",
             goal ? `Toon je SMART-doel: ${goal}.` : "Toon je SMART-doel: formuleer nog tijd, actie en meetcriterium in 1 zin.",
-            done ? "Toon dat alle 4 criteria kloppen: omzet, medewerkers, scope en testruimte." : `Toon wat al op orde is en wat nog ontbreekt: ${count}/4 criteria afgerond.`
+            routeDone ? "Toon dat alle 4 bedrijfscriteria kloppen: omzet, medewerkers, scope en testruimte." : `Toon wat bij het bedrijf al op orde is en wat nog ontbreekt: ${count}/4 criteria afgerond.`
           ]
         };
       }
 
       function ownResult() {
+        const basis = basisResult("own");
         const ids = ["own-vpc", "own-goal"];
         const count = checkedCount(ids);
         const company = fieldValue("own-company");
@@ -1425,18 +1650,21 @@
 
         ownCountLabel.textContent = `${count}/2 aangevinkt`;
 
-        const done = count === ids.length;
+        const routeDone = count === ids.length;
+        const done = basis.done && routeDone;
         return {
           label: "Eigen bedrijf",
           count,
           total: ids.length,
+          basisCount: basis.count,
+          basisTotal: basis.total,
           done,
-          started: count > 0 || company || goal,
+          started: basis.started || count > 0 || company || goal,
           state: done ? "success" : "warning",
           title: done ? "Klaar voor pitch" : "Voldoet nog niet",
           summary: done
-            ? "Bereid een mini-presentatie voor: minimaal 1 slide, maximaal 2 minuten. Doe die in week 1 bij je coach."
-            : "Je eigen bedrijfsroute mist nog input. Start met de tool en maak daarna je doel concreet.",
+            ? "Je eigen challenge heeft een aantoonbare basis en de benodigde input is compleet. Bereid je mini-presentatie voor."
+            : "Je eigen challenge is nog niet pitchklaar. Maak de algemene basis en de input voor je eigen bedrijf compleet.",
           items: done
             ? [
                 {
@@ -1444,10 +1672,14 @@
                   body: "Maak minimaal 1 slide en houd je verhaal maximaal 2 minuten. Pitch dit in week 1 bij je coach; daar hoor je definitief of je hiermee door mag."
                 }
               ]
-            : missing,
+            : [...basis.missing, ...missing],
           pitchTitle: "Voor je mini-presentatie meenemen",
           pitchLines: [
             "Maak minimaal 1 slide en houd je verhaal maximaal 2 minuten.",
+            "Toon voor wie de challenge relevant is.",
+            "Toon welk bewijs laat zien dat de aanleiding echt speelt.",
+            "Toon welk effect je wilt bereiken, zonder alleen een middel te noemen.",
+            "Toon wat je nog moet onderzoeken of testen.",
             "Toon de uitkomst van de Waardepropositie Bouwer.",
             company ? `Toon de naam van je bedrijf of idee: ${company}.` : "Toon de naam van je bedrijf of idee: vul dit nog in.",
             goal ? `Toon je SMART challenge-doel: ${goal}.` : "Toon je SMART challenge-doel: formuleer nog tijd, actie en meetcriterium in 1 zin."
@@ -1547,6 +1779,11 @@
         scoreLabel.textContent = result.label;
         scoreSub.textContent = result.scoreSubText || (result.total ? `${result.count} van ${result.total} afgerond` : "Stap 2 is nog dicht");
         scorePill.textContent = result.scorePillText || (result.total ? `${result.count}/${result.total}` : "-");
+        basisScoreLine.hidden = !result.basisTotal;
+        if (result.basisTotal) {
+          basisScoreSub.textContent = `${result.basisCount} van ${result.basisTotal} aangetoond`;
+          basisScorePill.textContent = `${result.basisCount}/${result.basisTotal}`;
+        }
         renderAdvice(result.items);
         renderPitch(result.pitchTitle, result.pitchLines);
         updateSteps(result.done, result.started);

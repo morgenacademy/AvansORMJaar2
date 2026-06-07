@@ -45,9 +45,9 @@ Jaar 2 wordt scherper gepositioneerd: van kennismaken (jaar 1) naar verdiepen en
 
 ### Skills of the Future I & II (5 ECTS per blok)
 - Oude inhoudelijke keuzetracks verdwijnen; studenten volgen per blok beide praktijktracks.
-- **MDT Missie** en **AI Lab** wisselen wekelijks af op donderdag 09:00–13:00.
+- **Impact Lab** en **AI Lab** wisselen wekelijks af op donderdag 09:00–13:00.
 - Week 1 (blok 1) en week 11 (blok 2): skill-test → doelen stellen → skill-paspoort.
-- Docentbelasting: AI Lab = 2 docenten in het eerste uur + 4 in het werkdeel; MDT Missie = 2 docenten voor het hele blok.
+- Docentbelasting: AI Lab = 2 docenten in het eerste uur + 4 in het werkdeel; Impact Lab = 2 docenten voor het hele blok.
 - Coachlijn (Janne, Tom, Rosemarijn, Harmen) loopt parallel en wordt apart begroot.
 
 ---

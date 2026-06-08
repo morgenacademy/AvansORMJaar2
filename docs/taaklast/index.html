@@ -2253,7 +2253,7 @@
         <div class="assumption-controls" aria-label="Rekenaannames">
           <label class="assumption-field" for="student-count-input">
             Studenten
-            <input id="student-count-input" type="number" min="1" step="1" value="90" inputmode="numeric" />
+            <input id="student-count-input" type="number" min="1" step="1" value="80" inputmode="numeric" />
           </label>
           <label class="assumption-field" for="retake-rate-input">
             Herkansing %
@@ -3133,7 +3133,7 @@
             </div>
           </article>
         </div>
-        <p class="schedule-note">Uitgangspunt: cohort van circa 90 studenten. Maandag gebruikt per blok 2 leertuinen met ieder 2 docenten. Woensdag gebruikt 09.00-11.30 vier lokalen met 1 docent per lokaal. Donderdag gebruikt 09.00-12.00 twee leertuinen voor Impact Lab of AI Lab, om de week afwisselend, en 12.30-14.30 vier lokalen voor coaching/doelen op de weken waarin die coachlijn geroosterd wordt.</p>
+        <p class="schedule-note">Uitgangspunt: cohort van circa 80 studenten. Maandag gebruikt per blok 2 leertuinen met ieder 2 docenten. Woensdag gebruikt 09.00-11.30 vier lokalen met 1 docent per lokaal. Donderdag gebruikt 09.00-12.00 twee leertuinen voor Impact Lab of AI Lab, om de week afwisselend, en 12.30-14.30 vier lokalen voor coaching/doelen op de weken waarin die coachlijn geroosterd wordt.</p>
       </section>
 
       <section id="taaklast-section" class="panel assessments-panel taskload-panel page-surface" data-page="taaklast" hidden>
@@ -3148,7 +3148,7 @@
         <div class="decision-callout urgent">
           <h3><span class="decision-priority">!</span>Uitvoerbaarheid toetsing eerst expliciet maken</h3>
           <ul class="mini-list">
-            <li><strong>Skills of the Future CGI + inlezen:</strong> huidige werkhypothese is circa 135 docenturen per blok bij 90 studenten en 50% herkansing. Besluit nodig: kan dit qua beoordelaars, tijdvensters en kwaliteit, of moet toetsvorm/inleestijd/organisatie worden versoberd?</li>
+            <li><strong>Skills of the Future CGI + inlezen:</strong> huidige werkhypothese is circa 135 docenturen per blok bij 80 studenten en 50% herkansing. Besluit nodig: kan dit qua beoordelaars, tijdvensters en kwaliteit, of moet toetsvorm/inleestijd/organisatie worden versoberd?</li>
             <li><strong>Business Challenge II portfolio + CGI + HER + inlezen:</strong> huidige werkhypothese is circa 202,5 docenturen in P2. Besluit nodig: blijft portfoliolezen apart naast CGI-inlezen staan, of combineren/versoberen we dit om piekbelasting te verminderen?</li>
           </ul>
         </div>
@@ -3263,7 +3263,7 @@
       const studentCountInput = document.getElementById("student-count-input");
       const retakeRateInput = document.getElementById("retake-rate-input");
       const prepRateInput = document.getElementById("prep-rate-input");
-      let STUDENT_COUNT = 88;
+      let STUDENT_COUNT = 80;
       const HOURS_PER_ECTS = 28;
       const STUDENT_ECTS_PER_BLOCK = 15;
       const ECTS_BY_LANE = { bc_knowledge: 3, bc_challenge: 7, skills: 5 };
@@ -3347,7 +3347,7 @@
         const studentCount = Number.parseInt(studentCountInput?.value || "", 10);
         const retakeRate = Number.parseFloat(retakeRateInput?.value || "");
         const prepRate = Number.parseFloat(prepRateInput?.value || "");
-        STUDENT_COUNT = Number.isFinite(studentCount) && studentCount > 0 ? studentCount : 90;
+        STUDENT_COUNT = Number.isFinite(studentCount) && studentCount > 0 ? studentCount : 80;
         RETAKE_RATE = Number.isFinite(retakeRate) ? Math.max(0, Math.min(retakeRate, 100)) / 100 : 0.5;
         PREPARATION_RATE = Number.isFinite(prepRate) ? Math.max(0, Math.min(prepRate, 200)) / 100 : 0.4;
       }

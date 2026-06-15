@@ -94,7 +94,7 @@
       .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
       .card-full { min-height: 200px; }
 
-      a.card {
+      .card{
         position: relative;
         display: flex;
         flex-direction: column;
@@ -111,7 +111,7 @@
         transform: translateY(-4px);
         box-shadow: 0 12px 28px rgba(198, 0, 42, 0.35);
       }
-      a.card h2 {
+      .card h2 {
         font-family: var(--font-titel);
         font-weight: 800;
         font-style: normal;
@@ -121,7 +121,7 @@
         margin: 0 0 12px;
         letter-spacing: -0.01em;
       }
-      a.card .label {
+      .card .label {
         font-family: var(--font-titel);
         font-weight: 800;
         font-style: italic;
@@ -133,13 +133,13 @@
         margin-bottom: 14px;
         display: inline-block;
       }
-      a.card p {
+      .card p {
         margin: 0;
         font-size: 1rem;
         line-height: 1.5;
         color: var(--wit);
       }
-      a.card .arrow {
+      .card .arrow {
         font-family: var(--font-titel);
         font-weight: 800;
         font-style: italic;
@@ -152,6 +152,39 @@
       }
       a.card:hover .arrow {
         transform: translateX(6px);
+      }
+
+      .subbtns {
+        margin-top: auto;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .subbtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 16px;
+        background: var(--wit);
+        color: var(--avans-rood);
+        border-radius: 12px;
+        text-decoration: none;
+        font-family: var(--font-titel);
+        font-weight: 800;
+        font-style: italic;
+        text-transform: uppercase;
+        font-size: 0.95rem;
+        letter-spacing: 0.02em;
+        transition: transform 0.18s ease, background 0.18s ease;
+      }
+      .subbtn:hover {
+        transform: translateX(4px);
+        background: var(--grijs-licht);
+      }
+      .subbtn span {
+        font-size: 1.15rem;
       }
 
       footer {
@@ -223,17 +256,28 @@
             <span class="arrow">↗</span>
           </a>
 
-          <a
-            class="card"
-            href="https://avans.sharepoint.com/:f:/r/sites/AMBM-School_ORM/Shared%20Documents/Module%20Team%202/2026%20-%202027/Werkmap%20doorontwikkeling/Deliverables/Studiehandleiding%20P1%20(draft)?csf=1&amp;web=1&amp;e=HD1awB"
-            target="_blank"
-            rel="noopener"
-            onclick="window.open('https://avans.sharepoint.com/:f:/r/sites/AMBM-School_ORM/Shared%20Documents/Module%20Team%202/2026%20-%202027/Werkmap%20doorontwikkeling/Deliverables/Studiehandleiding%20P2%20(draft)?csf=1&amp;web=1&amp;e=Xl4hWk', '_blank', 'noopener');"
-          >
+          <div class="card">
             <h2>Studiehandleidingen (2x)</h2>
             <p>1 studiehandleiding per blok. In Brightspace kan vervolgens per track (kennis, challenge, Skills of the Future) meer info gedeeld worden. Zo blijft de overall studiehandleiding behapbaar.</p>
-            <span class="arrow">↗</span>
-          </a>
+            <div class="subbtns">
+              <a
+                class="subbtn"
+                href="https://avans.sharepoint.com/:f:/r/sites/AMBM-School_ORM/Shared%20Documents/Module%20Team%202/2026%20-%202027/Werkmap%20doorontwikkeling/Deliverables/Studiehandleiding%20P1%20(draft)?csf=1&amp;web=1&amp;e=HD1awB"
+                target="_blank"
+                rel="noopener"
+              >
+                P1 (draft) <span>↗</span>
+              </a>
+              <a
+                class="subbtn"
+                href="https://avans.sharepoint.com/:f:/r/sites/AMBM-School_ORM/Shared%20Documents/Module%20Team%202/2026%20-%202027/Werkmap%20doorontwikkeling/Deliverables/Studiehandleiding%20P2%20(draft)?csf=1&amp;web=1&amp;e=Xl4hWk"
+                target="_blank"
+                rel="noopener"
+              >
+                P2 (draft) <span>↗</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="grid cols-2">

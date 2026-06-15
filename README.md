@@ -2,7 +2,7 @@
 
 Dit is de werkrepository voor het herontwerp van het medior semester (jaar 2) binnen de ORM-opleiding. Collega's vinden hier de gepubliceerde praatplaat én de onderbouwing van de keuzes die eraan ten grondslag liggen.
 
-**Gepubliceerde praatplaat:** zie de `docs/`-map of de Netlify-deploylink.
+**Gepubliceerde site:** <https://morgenacademy.github.io/AvansORMJaar2/> (GitHub Pages, gebouwd uit de `docs/`-map op `main`).
 
 ---
 
@@ -45,9 +45,9 @@ Jaar 2 wordt scherper gepositioneerd: van kennismaken (jaar 1) naar verdiepen en
 
 ### Skills of the Future I & II (5 ECTS per blok)
 - Oude inhoudelijke keuzetracks verdwijnen; studenten volgen per blok beide praktijktracks.
-- **Impact Lab** en **AI Lab** wisselen wekelijks af op donderdag 09:00–13:00.
+- **Lead Forward** en **AI Lab** wisselen elkaar af op donderdag.
 - Week 1 (blok 1) en week 11 (blok 2): skill-test → doelen stellen → skill-paspoort.
-- Docentbelasting: AI Lab = 2 docenten in het eerste uur + 4 in het werkdeel; Impact Lab = 2 docenten voor het hele blok.
+- Docentbelasting: AI Lab = 2 docenten in het eerste uur + 4 in het werkdeel; Lead Forward = 2 docenten voor het hele blok.
 - Coachlijn (Janne, Tom, Rosemarijn, Harmen) loopt parallel en wordt apart begroot.
 
 ---
@@ -81,12 +81,15 @@ Werkhypothese: budget = ECTS × 28 uur × 75%. Toetstijd is inclusief 50% herkan
 ## Wat zit er in deze repo?
 
 ```
-docs/               → gepubliceerde HTML-pagina's (Netlify deploy)
-  index.html        → overzichtspagina / praatplaat
-  weekplanning/     → weekplanning-weergave
-  roostering/       → roostering-weergave
-  taaklast/         → docenttaaklast-weergave
-  besluiten/        → besluitenpagina met onderbouwing
+docs/               → gepubliceerde site (GitHub Pages, bouwt uit deze map op main)
+  index.html        → landingspagina (links naar overzicht, reader, challengekeuze)
+  overzicht/        → praatplaat: visueel semesteroverzicht
+  reader/           → reader kennistrack P1 (zes hoofdstukken)
+  challengekeuze/   → keuzehulp Business Challenge I
+  weekplanning/     → praatplaat, deep-link weekplanning-pagina
+  roostering/       → praatplaat, deep-link roostering-pagina (incl. week 1-rooster)
+  taaklast/         → praatplaat, deep-link taaklast-pagina
+  besluiten/        → praatplaat, deep-link besluiten-pagina
 README.md           → dit bestand
 ```
 

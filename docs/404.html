@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doorverwijzen… · ORM Jaar 2</title>
+    <script>
+      // GitHub Pages serveert dit bestand voor onbekende paden. "Kale" tab-URL's
+      // zoals /overzicht/roostering (oude bookmarks of getypte paden) bestaan niet
+      // als bestand en zouden anders doodlopen. We sturen ze door naar de echte
+      // paginamap (bv. /roostering/), die wél bestaat en de juiste tab toont.
+      (function () {
+        var PAGES = ["overzicht", "roostering", "weekplanning", "taaklast", "besluiten"];
+        var segs = location.pathname.split("/").filter(Boolean);
+        var firstKnown = -1, lastKnown = -1;
+        for (var i = 0; i < segs.length; i++) {
+          if (PAGES.indexOf(segs[i].toLowerCase()) !== -1) {
+            if (firstKnown === -1) firstKnown = i;
+            lastKnown = i;
+          }
+        }
+        var target;
+        if (lastKnown !== -1) {
+          var base = "/" + segs.slice(0, firstKnown).join("/");
+          if (base === "/") base = "";
+          target = base + "/" + segs[lastKnown].toLowerCase() + "/";
+        } else {
+          target = "/" + (segs[0] ? segs[0] + "/" : "");
+        }
+        location.replace(target + location.hash);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Doorverwijzen… Als dit blijft hangen, ga naar <a href="/AvansORMJaar2/">het overzicht</a>.</p>
+  </body>
+</html>

@@ -3430,11 +3430,21 @@
       }
 
       function updateRouteForPage(pageId) {
-        if (!window.history?.pushState) return;
+        // Hash-routing i.p.v. een pad: een hash (#roostering) overleeft herladen en
+        // delen op statische hosting (GitHub Pages). Een relatief pad als
+        // /overzicht/roostering bestaat daar niet als bestand en gaf daarom 404.
         try {
-          window.history.pushState({ pageId }, "", routeForPage(pageId));
+          if (pageId === "overview") {
+            if (window.location.hash && window.history?.replaceState) {
+              window.history.replaceState(null, "", window.location.pathname + window.location.search);
+            } else if (window.location.hash) {
+              window.location.hash = "";
+            }
+          } else if (window.location.hash !== "#" + pageId) {
+            window.location.hash = pageId;
+          }
         } catch (error) {
-          window.location.hash = pageId === "overview" ? "" : pageId;
+          /* routing is optioneel; de praatplaat werkt ook zonder */
         }
       }
 

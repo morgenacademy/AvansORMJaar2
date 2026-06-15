@@ -1692,6 +1692,16 @@
         background: rgba(255, 241, 191, 0.62);
       }
 
+      .calendar-event.red {
+        border-left-color: #c6002a;
+        background: rgba(255, 221, 224, 0.66);
+      }
+
+      .calendar-event.orange {
+        border-left-color: #d2691e;
+        background: rgba(255, 233, 209, 0.66);
+      }
+
       .schedule-time {
         display: inline-flex;
         align-items: center;
@@ -2700,7 +2710,7 @@
                 <span>P1: Projectkennis • P2: Vakkennis</span>
               </div>
             </div>
-            <article id="block-bc-knowledge-intro" class="block blue clickable" style="grid-column: 3; grid-row: 3" data-detail="Introcollege in week 1. Nog niet de inhoudelijke sessie Klant- en probleemonderzoek, maar eerst gezamenlijk scherp krijgen wat we in Groeien gaan doen: wat is Business Challenge I, hoe werkt de casus, wanneer kun je met een eigen of externe challenge werken, wat verwachten we qua projectkennis, en hoe lopen kennistoets, challenge, voortgang en eindpitch samen? Dit college duurt 1 uur en wordt gedragen door Eric, Ronald, Ramon en Miriam."><h3>Intro Groeien</h3><p>ma 11:30-12:30</p></article>
+            <article id="block-bc-knowledge-intro" class="block blue clickable" style="grid-column: 3; grid-row: 3" data-detail="Week 1 start met een plenaire semester-aftrap van 09.00-12.00. Daarna, 12.00-14.00, gaan studenten met hun klas uiteen bij Challenge en Kennis (De Onderneming): eerst gezamenlijk scherp krijgen wat Business Challenge I is, hoe de casus werkt, wanneer je met een eigen of externe challenge mag werken, wat we qua projectkennis verwachten, en hoe kennistoets, challenge, voortgang en eindpitch samenlopen. Hier wordt de challenge ook wel of niet goedgekeurd (eisen: zie de challengekeuzetool). Gedragen door Eric, Ronald, Ramon en Miriam. Het detailrooster van week 1 staat op de Roostering-pagina."><h3>Intro Groeien</h3><p>ma 12:00-14:00</p></article>
             <article class="block blue clickable retired-track" style="grid-row: 3" data-detail="Hier wordt de basis gelegd voor Groeien als projectmanagementlijn: onderzoeksmethodes, aanwezigheid en de voorbereiding op het plan van aanpak. Studenten zonder eigen onderneming kunnen hier veilig starten via een case-bedrijf of goed extern bedrijf; de Business Challenge-coach kijkt mee hoe dit past bij challenge, persoonlijke ontwikkeling en ondernemerscontext."><h3>Projectmanagement</h3><p>basis + PvA Groeien</p></article>
             <article class="block blue clickable retired-track" style="grid-row: 3" data-detail="Week waarin studenten leren hoe ze field research, interviewen, klantvalidatie en marktonderzoek inzetten om de challenge scherper en bruikbaarder te maken. Aanscherping vanuit CuCo: expliciet aandacht voor validiteit, betrouwbaarheid, bronnen wegen, eenvoudige kwantitatieve data-analyse en het controleren van AI-output als die in onderzoek of voorbereiding is gebruikt."><h3>Field research</h3><p>interviewen, validatie</p></article>
             <article class="block blue clickable retired-track" style="grid-row: 3" data-detail="Uitleg over de linkerkant en rechterkant van SBMC, zodat studenten snappen in welke logica hun challenge zich beweegt. Dit is ook een inhoudelijke knip tussen jaar 1 en jaar 2: niet alleen het model herkennen, maar gericht kunnen kiezen waar de verdieping zit."><h3>SBMC</h3><p>links of rechts</p></article>
@@ -2770,9 +2780,9 @@
                 <span>AI Lab en Lead Forward wisselen elkaar af</span>
               </div>
             </div>
-            <article id="block-skills-intro" class="block green compact clickable skills-coach-row" style="grid-column: 3; grid-row: 6 / span 3" data-detail="Week 1 is één geïntegreerde start van Skills of the Future. Eerst 45 minuten plenair in een hoorcollegezaal met Janne, Tom, Rosemarijn en Harmen. Studenten doen een eigen skill-test en gebruiken de uitkomst om persoonlijke doelen te bepalen. De resultaten komen op het skill-paspoort. Daarna 2 uur uiteen in 4 aparte lokalen, per coachgroep 1 docent. Eind week 1 leveren studenten hun leerdoelen / roadmap formatief in via Brightspace.">
-              <h3>Intro + aftrap coachlijn</h3>
-              <p>skill-test + doelen</p>
+            <article id="block-skills-intro" class="block green compact clickable skills-coach-row" style="grid-column: 3; grid-row: 6 / span 3" data-detail="Week 1, 14.00-16.00: studenten gaan met hun klas uiteen bij Skills of the Future (De Ondernemer) en bepalen hun doelen. Met Janne, Tom, Rosemarijn en Harmen, per coachgroep 1 docent in een eigen lokaal. Studenten doen een eigen skill-test en gebruiken de uitkomst om persoonlijke doelen te bepalen; de resultaten komen op het skill-paspoort. Eind week 1 leveren studenten hun leerdoelen / roadmap formatief in via Brightspace. Het detailrooster van week 1 staat op de Roostering-pagina.">
+              <h3>Skills: doelen bepalen</h3>
+              <p>ma 14:00-16:00</p>
               <span class="badge deadline">leerdoelen Brightspace</span>
             </article>
             <article class="block green compact clickable retired-track" style="grid-column: 4; grid-row: 7" data-detail="In week 2 stellen studenten persoonlijke groeidoelen, maken zij een scan op het skill-paspoort en verbinden ze die doelen aan Lead Forward, AI Lab en hun ondernemersontwikkeling. Dit loopt naast de start van beide praktijktracks.">
@@ -2998,10 +3008,59 @@
 
       <section id="roostering-section" class="panel assessments-panel page-surface" data-page="roostering" hidden>
         <h2>Globale weekplanning roostering en lokalen</h2>
-        <p class="taskload-intro">Werkritme voor reguliere onderwijsweken. Toetsen, herkansingen en incidentele afrondingsmomenten zijn hier bewust niet meegenomen.</p>
+        <p class="taskload-intro">Werkritme voor reguliere onderwijsweken. Week 1 is een bijzondere aftrapweek en staat als apart blok bovenaan. Toetsen, herkansingen en incidentele afrondingsmomenten zijn hier bewust niet meegenomen.</p>
         <div class="schedule-agenda">
           <article class="schedule-block">
-            <h3>Blok 1: week 1 t/m 10</h3>
+            <h3>Week 1: aftrap (bijzondere week)</h3>
+            <div class="calendar-grid" aria-label="Roostering week 1">
+              <div class="calendar-head" style="grid-column: 1; grid-row: 1" aria-hidden="true"></div>
+              <div class="calendar-head" style="grid-column: 2; grid-row: 1">Maandag</div>
+              <div class="calendar-head" style="grid-column: 3; grid-row: 1">Dinsdag</div>
+              <div class="calendar-head" style="grid-column: 4; grid-row: 1">Woensdag</div>
+              <div class="calendar-head" style="grid-column: 5; grid-row: 1">Donderdag 3 sep</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 2">09.00</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 3"></div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 4">10.00</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 5"></div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 6">11.00</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 7"></div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 8">12.00</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 9"></div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 10">13.00</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 11"></div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 12">14.00</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 13"></div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 14">15.00</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 15"></div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 16">16.00</div>
+              <div class="calendar-time" style="grid-column: 1; grid-row: 17"></div>
+              <div class="calendar-event red" style="grid-column: 2; grid-row: 2 / 8">
+                <span class="schedule-time">09.00-12.00</span>
+                <h4>Aftrap semester</h4>
+                <p>Plenaire aftrap van circa 1,5 uur waarin we het hele semester uitleggen.</p>
+              </div>
+              <div class="calendar-event blue" style="grid-column: 2; grid-row: 8 / 12">
+                <span class="schedule-time">12.00-14.00</span>
+                <h4>Challenge &amp; Kennis — De Onderneming</h4>
+                <p>Studenten gaan uiteen met hun klas. Hier wordt hun challenge wel of niet goedgekeurd (eisen: zie de <a href="../challengekeuze/">challengekeuzetool</a>).</p>
+              </div>
+              <div class="calendar-event green" style="grid-column: 2; grid-row: 12 / 16">
+                <span class="schedule-time">14.00-16.00</span>
+                <h4>Skills of the Future — De Ondernemer</h4>
+                <p>Studenten gaan uiteen met hun klas en bepalen hun doelen.</p>
+              </div>
+              <div class="calendar-event blue" style="grid-column: 5; grid-row: 2 / 8">
+                <span class="schedule-time">Ochtend</span>
+                <h4>Externe locatie bij opdrachtgever</h4>
+              </div>
+              <div class="calendar-event orange" style="grid-column: 5; grid-row: 10 / 16">
+                <span class="schedule-time">Middag</span>
+                <h4>FUN-activiteit</h4>
+              </div>
+            </div>
+          </article>
+          <article class="schedule-block">
+            <h3>Blok 1: reguliere weken (week 2 t/m 10)</h3>
             <div class="calendar-grid" aria-label="Roostering blok 1">
               <div class="calendar-head" style="grid-column: 1; grid-row: 1" aria-hidden="true"></div>
               <div class="calendar-head" style="grid-column: 2; grid-row: 1">Maandag</div>
@@ -3027,7 +3086,7 @@
               <div class="calendar-event blue" style="grid-column: 2; grid-row: 7 / 12">
                 <span class="schedule-time">11.30-14.00</span>
                 <h4>Projectkennis &amp; toepassen op Business Challenge I</h4>
-                <p>Week 1: introcollege 11.30-12.30 met Eric, Ronald, Ramon en Miriam. Week 2 t/m 7: twee leertuinen werken tegelijk aan de zes sessies en passen die direct toe.</p>
+                <p>Week 2 t/m 7: twee leertuinen werken tegelijk aan de zes sessies en passen die direct toe. De aftrap in week 1 staat in het aparte weekblok bovenaan.</p>
                 <div class="schedule-meta">
                   <span>11.30-14.00: 2 leertuinen</span>
                   <span>2 docenten per leertuin</span>
@@ -3037,7 +3096,7 @@
               <div class="calendar-event blue" style="grid-column: 4; grid-row: 2 / 7">
                 <span class="schedule-time">09.00-11.30</span>
                 <h4>Voortgangscoaching Business Challenge</h4>
-                <p>Individueler voortgangsgesprek. In week 1 eventueel uitzondering pitchen; in week 6-7 Business Challenge II voorbereiden.</p>
+                <p>Individueler voortgangsgesprek. In week 6-7 Business Challenge II voorbereiden. De uitzondering (eigen of extern bedrijf) pitch je in week 1, zie het aparte weekblok bovenaan.</p>
                 <div class="schedule-meta">
                   <span>09.00-11.30: 4 lokalen</span>
                   <span>1 docent per lokaal</span>
@@ -3046,7 +3105,7 @@
               <div class="calendar-event green" style="grid-column: 5; grid-row: 2 / 8">
                 <span class="schedule-time">09.00-12.00</span>
                 <h4>Lead Forward en AI Lab</h4>
-                <p>Week 2 t/m 7: Lead Forward en AI Lab wisselen elkaar om de week af. Week 1 is de geïntegreerde intro/aftrap coachlijn; week 8 heeft alleen de overdracht richting CGI.</p>
+                <p>Week 2 t/m 7: Lead Forward en AI Lab wisselen elkaar om de week af. Week 8 heeft alleen de overdracht richting CGI.</p>
                 <div class="schedule-meta">
                   <span>09.00-12.00: Lead Forward of AI Lab</span>
                   <span>2 leertuinen, 1 docent per leertuin</span>
@@ -3055,7 +3114,7 @@
               <div class="calendar-event green" style="grid-column: 5; grid-row: 9 / 13">
                 <span class="schedule-time">12.30-14.30</span>
                 <h4>Coachlijn Skills</h4>
-                <p>Week 1: 45 min hoorcollege + 2 uur coachgroepen. Week 3 t/m 5: coachgesprekken, circa 2 uur per docent per week. Week 2 feedback en week 8 overdracht vragen geen lokaal.</p>
+                <p>Week 3 t/m 5: coachgesprekken, circa 2 uur per docent per week. Week 2 feedback en week 8 overdracht vragen geen lokaal. De aftrap in week 1 staat in het aparte weekblok bovenaan.</p>
                 <div class="schedule-meta">
                   <span>12.30-14.30: 4 lokalen</span>
                   <span>1 docent per lokaal</span>

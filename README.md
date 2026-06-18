@@ -27,8 +27,9 @@ Jaar 2 wordt scherper gepositioneerd: van kennismaken (jaar 1) naar verdiepen en
 - Afgesloten met een kennistoets; inzage in week 9, herkansing in week 10.
 
 ### Business Challenge I (7 ECTS)
-- Start standaard met een zo echt mogelijke casus in groepjes van vier.
-- Uitzondering week 1: studenten met een sterk eigen bedrijf of externe organisatie kunnen dit pitchen aan hun coach.
+- Elke student werkt aan een eigen, individuele challenge met een concrete opdracht: eigen bedrijf, nieuw bedrijf of extern bedrijf (eisen: zie de challengekeuze-tool).
+- In week 1 pitch je je challenge aan de coach, die go/no-go geeft. De beoordeling is altijd individueel; samenwerken met peers binnen de klas wordt gestimuleerd.
+- Wie écht geen challenge of idee heeft, krijgt een opdracht van ons (bewust niet vooraf breed aangeboden); spontane groepjes per klas zijn prima, de beoordeling blijft individueel.
 - Werksessies: maandag 12:00–14:00 en woensdag 09:00–11:00.
 - Afgesloten met een eindpitch.
 
